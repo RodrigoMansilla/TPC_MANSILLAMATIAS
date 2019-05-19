@@ -1,0 +1,16 @@
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\Front2.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\Front2.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\Dominio.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\Dominio.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.csprojAssemblyReference.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.csproj.CoreCompileInputs.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.csproj.CopyComplete
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.csproj.GenerateResource.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\Negocio.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\AceesoDatos.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\Negocio.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\AceesoDatos.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.AltaProducto.resources
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.CategoriaNueva.resources
