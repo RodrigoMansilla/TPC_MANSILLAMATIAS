@@ -82,8 +82,8 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 
-                comando.CommandText = "insert into Productos (Descripcion,IdCategoria,PrecioCompra,PrecioVenta,Ganancia,stock1, StockMinimo, Comentarios,Marca) values ";
-                comando.CommandText += "('" + nuevo.Descripcion + "', " + nuevo.Categoria.ID.ToString() + ",'" + nuevo.PrecioCompra + "', '" + nuevo.PrecioVenta.ToString() + "', '" + nuevo.Ganancia.ToString() + "', '" + nuevo.stock1.ToString() + "', '" + nuevo.StockMinimo.ToString() + "', '" + nuevo.Comentarios.ToString() + "', '" + nuevo.Marca.ToString() +  "')";
+                comando.CommandText = "insert into Productos (Descripcion,IdCategoria,PrecioCompra,PrecioVenta,Ganancia,stock1, StockMinimo, Comentarios,Marca,Estado) values ";
+                comando.CommandText += "('" + nuevo.Descripcion + "', " + nuevo.Categoria.ID.ToString() + ",'" + nuevo.PrecioCompra + "', '" + nuevo.PrecioVenta.ToString() + "', '" + nuevo.Ganancia.ToString() + "', '" + nuevo.stock1.ToString() + "', '" + nuevo.StockMinimo.ToString() + "', '" + nuevo.Comentarios.ToString() + "', '" + nuevo.Marca.ToString() + "','" + 1+"')";
                 //comando.CommandText += "('" + nuevo.Nombre + "', '" + nuevo.Debilidad + "', '" + nuevo.UsaCapa.ToString() + "', '"+ nuevo.Volador.ToString() + "',"+ nuevo.Universo.Id.ToString() + ")";
                 comando.Connection = conexion;
                 conexion.Open();
@@ -132,6 +132,30 @@ namespace Negocio
                 accesoDatos.cerrarConexion();
             }
         }
+
+        public void EliminarProducto(Producto Elimiar)
+        {
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            try
+            {
+
+                accesoDatos.setearConsulta("update Productos set Estado = 0 where ID =  " + Elimiar.ID.ToString());
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("0", Elimiar.Estado);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
         /*
         public void modificarHeroe(Heroe modificar) {
             AccesoDatosManager accesoDatos = new AccesoDatosManager();

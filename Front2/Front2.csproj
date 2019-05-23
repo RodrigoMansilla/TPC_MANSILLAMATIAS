@@ -56,6 +56,12 @@
       <DependentUpon>CategoriaNueva.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar.Designer.cs">
+      <DependentUpon>Eliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CategoriaNueva.resx">
       <DependentUpon>CategoriaNueva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar.resx">
+      <DependentUpon>Eliminar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
