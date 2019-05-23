@@ -1,8 +1,5 @@
-USE Mansilla_DB
-GO
-
-SELECT *FROM Productos
----SELECT *FROM 
+create database Mansilla_DB
+go
 
 use Mansilla_DB
 go
@@ -19,10 +16,10 @@ create table Productos (
          Marca varchar(30) null
 )
 ALTER TABLE Productos ADD PRIMARY KEY (ID);
+alter table Productos add Estado bit
+alter table Productos add IdCategoria int foreign key references Categorias (ID) not null
 
---- poner not null stock1, stockminimo, comentarios marca descripcion, 
 create table Categorias (
 	ID int not null primary key,
-	IdProducto int not null foreign key references Productos 
-
+	Nombre varchar(50) not null
 )
