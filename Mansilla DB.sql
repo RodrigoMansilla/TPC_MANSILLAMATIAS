@@ -18,7 +18,7 @@ create table Productos (
 		 Comentarios varchar(100) null, 
          Marca varchar(30) null
 )
-select *from Productos
+ALTER TABLE Productos ADD PRIMARY KEY (ID);
 
 --- poner not null stock1, stockminimo, comentarios marca descripcion, 
 create table Categorias (

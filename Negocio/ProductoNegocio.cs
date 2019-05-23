@@ -107,11 +107,18 @@ namespace Negocio
             try
             {
 
-                accesoDatos.setearConsulta("update Productos Set Descripcion=@Descripcion, Marca=@Marca" + modificar.ID.ToString());
+                accesoDatos.setearConsulta("update Productos set Descripcion=@desc1, PrecioCompra =@pc, PrecioVenta =@pv, Ganancia =@gan, stock1 = @stock, StockMinimo = @stm, Comentarios = @com, Marca = @Mr, IdCategoria = idcat where ID =  " + modificar.ID.ToString());
                 accesoDatos.Comando.Parameters.Clear();
-                accesoDatos.Comando.Parameters.AddWithValue("@Descripcion", modificar.Descripcion);
-                accesoDatos.Comando.Parameters.AddWithValue("@Marca", modificar.Marca);
-               
+                accesoDatos.Comando.Parameters.AddWithValue("@des1", modificar.Descripcion);
+                accesoDatos.Comando.Parameters.AddWithValue("@pc", modificar.PrecioCompra);
+                accesoDatos.Comando.Parameters.AddWithValue("@pv", modificar.PrecioVenta);
+                accesoDatos.Comando.Parameters.AddWithValue("@gan", modificar.Ganancia);
+                accesoDatos.Comando.Parameters.AddWithValue("@stock", modificar.stock1);
+                accesoDatos.Comando.Parameters.AddWithValue("@stm", modificar.StockMinimo);
+                accesoDatos.Comando.Parameters.AddWithValue("@com", modificar.Comentarios);
+                accesoDatos.Comando.Parameters.AddWithValue("@Mr", modificar.Marca);
+                //accesoDatos.Comando.Parameters.AddWithValue("@IdUni", modificar.Universo.Id);
+                accesoDatos.Comando.Parameters.AddWithValue("@idcat", modificar.Categoria.ID);
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
 
@@ -125,6 +132,32 @@ namespace Negocio
                 accesoDatos.cerrarConexion();
             }
         }
+        /*
+        public void modificarHeroe(Heroe modificar) {
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            try
+            {
+
+                accesoDatos.setearConsulta("update PERSONAJES Set Nombre=@Nombre, Debilidad=@Debilidad, UsaCapa=@UC, Volador=@Vol, IdUniverso=@IdUni Where Id=" + modificar.Id.ToString());
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@Nombre", modificar.Nombre);
+                accesoDatos.Comando.Parameters.AddWithValue("@Debilidad", modificar.Debilidad);
+                accesoDatos.Comando.Parameters.AddWithValue("@UC", modificar.UsaCapa);
+                accesoDatos.Comando.Parameters.AddWithValue("@Vol", modificar.Volador);
+                accesoDatos.Comando.Parameters.AddWithValue("@IdUni", modificar.Universo.Id);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }*/
 
     }
 }

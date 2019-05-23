@@ -36,7 +36,7 @@ namespace TPC_RodrigoMansilla
         }
 
 
-        /*
+        
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
@@ -51,7 +51,7 @@ namespace TPC_RodrigoMansilla
             {
                 MessageBox.Show(ex.ToString());
             }
-        }*/
+        }
 
         private void cargarGrilla()
 {
@@ -100,5 +100,21 @@ dgvProductos.DataSource = lista;
 }
 }
 
+        private void btnModificar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                AltaProducto modificar = new AltaProducto((Producto)dgvProductos.CurrentRow.DataBoundItem);
+                modificar.ShowDialog();
+                cargarGrilla();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
     }
 }

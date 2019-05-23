@@ -147,7 +147,6 @@
             this.textBoxComentarios.Name = "textBoxComentarios";
             this.textBoxComentarios.Size = new System.Drawing.Size(157, 20);
             this.textBoxComentarios.TabIndex = 10;
-            
             // 
             // textBoxMarca
             // 
@@ -234,6 +233,7 @@
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // AltaProducto
             // 
