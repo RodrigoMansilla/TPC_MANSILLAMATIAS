@@ -21,3 +21,5 @@ alter table Productos add Estado bit
 update Productos set Estado = 1 
 
 update Productos set Estado = 0 where ID = 14
+
+select *from Productos
