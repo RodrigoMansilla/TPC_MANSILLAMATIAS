@@ -1,6 +1,6 @@
 ﻿namespace TPC_RodrigoMansilla
 {
-    partial class Form1
+    partial class frmProducto
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -39,7 +39,7 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(279, 107);
+            this.txtBusqueda.Location = new System.Drawing.Point(604, 104);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(100, 20);
             this.txtBusqueda.TabIndex = 6;
@@ -47,12 +47,11 @@
             // lblProductos
             // 
             this.lblProductos.AutoSize = true;
-            this.lblProductos.Location = new System.Drawing.Point(199, 107);
+            this.lblProductos.Location = new System.Drawing.Point(375, 111);
             this.lblProductos.Name = "lblProductos";
             this.lblProductos.Size = new System.Drawing.Size(55, 13);
             this.lblProductos.TabIndex = 7;
             this.lblProductos.Text = "Productos";
-            this.lblProductos.Click += new System.EventHandler(this.lblProductos_Click);
             // 
             // dgvProductos
             // 
@@ -63,7 +62,7 @@
             this.dgvProductos.Location = new System.Drawing.Point(145, 142);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.Size = new System.Drawing.Size(431, 231);
+            this.dgvProductos.Size = new System.Drawing.Size(843, 231);
             this.dgvProductos.TabIndex = 8;
             // 
             // btnAgregar
@@ -78,7 +77,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(257, 394);
+            this.btnModificar.Location = new System.Drawing.Point(543, 394);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 10;
@@ -88,7 +87,7 @@
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(378, 394);
+            this.BtnEliminar.Location = new System.Drawing.Point(841, 394);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
             this.BtnEliminar.TabIndex = 11;
@@ -96,18 +95,18 @@
             this.BtnEliminar.UseVisualStyleBackColor = true;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // Form1
+            // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1092, 586);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.lblProductos);
             this.Controls.Add(this.txtBusqueda);
-            this.Name = "Form1";
+            this.Name = "frmProducto";
             this.Text = "frmProductos";
             this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();

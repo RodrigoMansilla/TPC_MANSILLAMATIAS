@@ -14,11 +14,11 @@ using Dominio;
 
 namespace TPC_RodrigoMansilla
 {
-    public partial class Form1 : Form
+    public partial class frmProducto : Form
     {
       private List<Producto> listaProductos1;
         
-      public Form1()
+      public frmProducto()
        {
             InitializeComponent();
        }
@@ -41,8 +41,6 @@ namespace TPC_RodrigoMansilla
         {
             try
             {
-
-
                 AltaProducto modificar = new AltaProducto((Producto)dgvProductos.CurrentRow.DataBoundItem);
                 modificar.ShowDialog();
                 cargarGrilla();
@@ -61,27 +59,12 @@ namespace TPC_RodrigoMansilla
                 listaProductos1 = negocio.listarProductos();
         dgvProductos.DataSource = listaProductos1;
         dgvProductos.Columns[9].Visible = false;
-        /*dgvProductos.Columns[1].Visible = true;
-        dgvProductos.Columns[4].Visible = true;
-        dgvProductos.Columns[5].Visible = true;*/
-
     }
     catch (Exception ex)
     {
         MessageBox.Show(ex.ToString());
     }
 }
-
-        
-
-
-
-        // basura 
-
-
-
-        private void lblProductos_Click(object sender, EventArgs e)
-        { }
 
 
         // EL ELIMINAR ESTA ACA 

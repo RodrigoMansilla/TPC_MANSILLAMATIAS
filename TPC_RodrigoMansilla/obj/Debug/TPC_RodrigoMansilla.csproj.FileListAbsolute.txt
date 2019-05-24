@@ -65,7 +65,6 @@ D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\bin\Debug\Dominio.p
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\bin\Debug\Negocio.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\bin\Debug\AceesoDatos.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_RodrigoMansilla.csprojAssemblyReference.cache
-D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_RodrigoMansilla.Form1.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_RodrigoMansilla.Properties.Resources.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_RodrigoMansilla.csproj.GenerateResource.cache
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_RodrigoMansilla.csproj.CoreCompileInputs.cache
@@ -74,3 +73,4 @@ D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_Rodri
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_RodrigoMansilla.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\bin\Debug\Front2.dll
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\bin\Debug\Front2.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_RodrigoMansilla.frmProducto.resources

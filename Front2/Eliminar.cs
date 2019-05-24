@@ -15,13 +15,14 @@ namespace Front2
     public partial class Eliminar : Form
     {
         private Producto ProductoLocal = null;
+
         public Eliminar()
         {
             InitializeComponent();
         }
 
 
-        public Eliminar(Producto producto)
+        public Eliminar(Producto producto) //creo constructor
         {
             InitializeComponent();
             ProductoLocal = producto;
@@ -35,8 +36,8 @@ namespace Front2
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             ProductoNegocio negocio = new ProductoNegocio();
-            //negocio.modificarProducto(ProductoLocal);
             negocio.EliminarProducto(ProductoLocal);
+            Visible = false; // aca oculto el form(ELIMINAR) una vez que elijo la opcion 
             
 
         }

@@ -34,13 +34,14 @@ namespace Negocio
                     nuevo = new Producto();
                     nuevo.ID = lector.GetInt32(0);
                     if (!Convert.IsDBNull(lector["Descripcion"])) nuevo.Descripcion = lector.GetString(1);
+                    if (!Convert.IsDBNull(lector["Marca"])) nuevo.Marca = lector["Marca"].ToString();
                     if (!Convert.IsDBNull(lector["PrecioCompra"])) nuevo.PrecioCompra = lector.GetDecimal(3);
                     if (!Convert.IsDBNull(lector["PrecioVenta"])) nuevo.PrecioVenta = lector.GetDecimal(4);
                     if (!Convert.IsDBNull(lector["Ganancia"])) nuevo.Ganancia = lector.GetDecimal(5);
                     if (!Convert.IsDBNull(lector["stock1"])) nuevo.stock1 = lector.GetInt32(6);
                     if (!Convert.IsDBNull(lector["StockMinimo"])) nuevo.StockMinimo = lector.GetInt32(7);
                     if (!Convert.IsDBNull(lector["Comentarios"])) nuevo.Comentarios = lector["Comentarios"].ToString();
-                    if (!Convert.IsDBNull(lector["Marca"])) nuevo.Marca = lector["Marca"].ToString();
+                    
 
                     nuevo.Categoria = new Categoria();
                     nuevo.Categoria.ID = lector.GetInt32(10);
@@ -153,7 +154,8 @@ namespace Negocio
             finally
             {
                 accesoDatos.cerrarConexion();
-                System.Windows.Forms.MessageBox.Show("la puta");
+                System.Windows.Forms.MessageBox.Show("Se elimino correctamente");
+
             }
         }
 
