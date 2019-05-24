@@ -23,7 +23,7 @@ namespace Negocio
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
                 
-                comando.CommandText = "select p.ID, p.Descripcion, p.Marca, p.PrecioCompra, p.PrecioVenta, p.Ganancia, p.stock1, p.StockMinimo, c.Nombre,p.Comentarios, p.IdCategoria 'Categoria' from Productos as p inner join Categorias as c on c.ID = p.IdCategoria ";
+                comando.CommandText = "select p.ID, p.Descripcion, p.Marca, p.PrecioCompra, p.PrecioVenta, p.Ganancia, p.stock1, p.StockMinimo, c.Nombre,p.Comentarios, p.IdCategoria 'Categoria' from Productos as p inner join Categorias as c on c.ID = p.IdCategoria where p.Estado = 1 ";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -153,6 +153,7 @@ namespace Negocio
             finally
             {
                 accesoDatos.cerrarConexion();
+                System.Windows.Forms.MessageBox.Show("la puta");
             }
         }
 

@@ -60,8 +60,8 @@ namespace TPC_RodrigoMansilla
     {
                 listaProductos1 = negocio.listarProductos();
         dgvProductos.DataSource = listaProductos1;
-        /*dgvProductos.Columns[0].Visible = true;
-        dgvProductos.Columns[1].Visible = true;
+        dgvProductos.Columns[9].Visible = false;
+        /*dgvProductos.Columns[1].Visible = true;
         dgvProductos.Columns[4].Visible = true;
         dgvProductos.Columns[5].Visible = true;*/
 

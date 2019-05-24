@@ -34,7 +34,11 @@ namespace Front2
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            EliminarProducto();
+            ProductoNegocio negocio = new ProductoNegocio();
+            //negocio.modificarProducto(ProductoLocal);
+            negocio.EliminarProducto(ProductoLocal);
+            
+
         }
     }
 }
