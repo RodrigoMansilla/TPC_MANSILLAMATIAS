@@ -94,18 +94,7 @@ namespace TPC_RodrigoMansilla
 
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
-{
-if (txtBusqueda.Text == "")
-{
-dgvProductos.DataSource = listaProductos1;
-}
-else
-{
-List<Producto> lista;
-lista = listaProductos1.FindAll(X => X.Descripcion.Contains(txtBusqueda.Text));
-dgvProductos.DataSource = lista;
-}
-}
+        { }
 
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
@@ -123,5 +112,27 @@ dgvProductos.DataSource = lista;
             }
 
         }
+
+        private void btnagregarcategorias_Click(object sender, EventArgs e)
+        {
+            CategoriaNueva nueva = new CategoriaNueva();
+            nueva.ShowDialog();
+        }
+
+        private void txtBusqueda_TextChanged_1(object sender, EventArgs e)
+        
+            {
+                if (txtBusqueda.Text == "")
+                {
+                    dgvProductos.DataSource = listaProductos1;
+                }
+                else
+                {
+                    List<Producto> lista;
+                    lista = listaProductos1.FindAll(X => X.Descripcion.Contains(txtBusqueda.Text));
+                    dgvProductos.DataSource = lista;
+                }
+            }
+        
     }
 }

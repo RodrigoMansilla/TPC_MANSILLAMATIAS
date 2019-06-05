@@ -34,6 +34,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
+            this.btnagregarcategorias = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +44,7 @@
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(100, 20);
             this.txtBusqueda.TabIndex = 6;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged_1);
             // 
             // lblProductos
             // 
@@ -95,11 +97,22 @@
             this.BtnEliminar.UseVisualStyleBackColor = true;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
+            // btnagregarcategorias
+            // 
+            this.btnagregarcategorias.Location = new System.Drawing.Point(231, 488);
+            this.btnagregarcategorias.Name = "btnagregarcategorias";
+            this.btnagregarcategorias.Size = new System.Drawing.Size(576, 23);
+            this.btnagregarcategorias.TabIndex = 13;
+            this.btnagregarcategorias.Text = "AGREGAR CATEGORIAS DE PRODUCTO";
+            this.btnagregarcategorias.UseVisualStyleBackColor = true;
+            this.btnagregarcategorias.Click += new System.EventHandler(this.btnagregarcategorias_Click);
+            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 586);
+            this.Controls.Add(this.btnagregarcategorias);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -123,6 +136,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.Button btnagregarcategorias;
     }
 }
 

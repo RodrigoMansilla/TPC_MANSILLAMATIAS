@@ -18,7 +18,7 @@ namespace Dominio
         public int StockMinimo { get; set; }
         public string Comentarios { get; set; } // cuando se ingrese un producto por 1ª vez podrian en el comentario "Ingrese del productos" 
         public bool Estado { get; set; }
-        public List<string> Mas{ get; set; }
+       // public List<string> Mas{ get; set; }
         public Categoria Categoria { get; set; }
 
     }

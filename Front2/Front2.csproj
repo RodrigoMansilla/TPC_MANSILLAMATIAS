@@ -55,7 +55,6 @@
     <Compile Include="CategoriaNueva.Designer.cs">
       <DependentUpon>CategoriaNueva.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Eliminar.cs">
       <SubType>Form</SubType>
     </Compile>

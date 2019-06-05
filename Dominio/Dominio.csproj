@@ -51,8 +51,10 @@
   <ItemGroup>
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Cp.cs" />
     <Compile Include="DetalledeVenta.cs" />
     <Compile Include="Direccion.cs" />
+    <Compile Include="InfoComercio.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
