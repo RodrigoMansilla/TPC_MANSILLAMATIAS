@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbxcatnueva = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -45,12 +45,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CATEGORIA NUEVA: ";
             // 
-            // textBox1
+            // txtbxcatnueva
             // 
-            this.textBox1.Location = new System.Drawing.Point(171, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtbxcatnueva.Location = new System.Drawing.Point(171, 40);
+            this.txtbxcatnueva.Name = "txtbxcatnueva";
+            this.txtbxcatnueva.Size = new System.Drawing.Size(180, 20);
+            this.txtbxcatnueva.TabIndex = 1;
             // 
             // contextMenuStrip1
             // 
@@ -83,7 +83,7 @@
             this.ClientSize = new System.Drawing.Size(401, 132);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbxcatnueva);
             this.Controls.Add(this.label1);
             this.Name = "CategoriaNueva";
             this.Text = "Catr";
@@ -95,7 +95,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbxcatnueva;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;

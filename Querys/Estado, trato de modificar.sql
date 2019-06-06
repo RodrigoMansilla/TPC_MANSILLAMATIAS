@@ -22,4 +22,25 @@ update Productos set Estado = 1
 
 update Productos set Estado = 0 where ID = 14
 
-select *from Productos
+
+use Mansilla_DB
+go
+
+-- Procedimiento almacenado para agregar categorias 
+
+create procedure SPAgregarCategoria(
+@Nombre varchar (50)
+)
+as
+begin 
+insert into Categorias (Nombre) values (@Nombre)
+end 
+
+alter table categorias add Estado bit
+
+
+
+
+
+
+ 
