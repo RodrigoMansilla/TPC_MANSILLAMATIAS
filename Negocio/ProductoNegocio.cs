@@ -108,8 +108,10 @@ namespace Negocio
             try
             {
 
-                accesoDatos.setearConsulta("update Productos set Descripcion=@desc1, PrecioCompra =@pc, PrecioVenta =@pv, Ganancia =@gan, stock1 = @stock, StockMinimo = @stm, Comentarios = @com, Marca = @Mr, IdCategoria = idcat where ID =  " + modificar.ID.ToString());
+                accesoDatos.setearSP("SPModificarProducto");
+
                 accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@aydi", modificar.ID);
                 accesoDatos.Comando.Parameters.AddWithValue("@des1", modificar.Descripcion);
                 accesoDatos.Comando.Parameters.AddWithValue("@pc", modificar.PrecioCompra);
                 accesoDatos.Comando.Parameters.AddWithValue("@pv", modificar.PrecioVenta);

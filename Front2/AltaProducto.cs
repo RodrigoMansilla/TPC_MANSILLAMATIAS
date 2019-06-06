@@ -84,7 +84,7 @@ namespace Front2
 
                 if (ProductoLocal.ID != 0)
                 {
-                    negocio.modificarProducto(ProductoLocal);
+                   negocio.modificarProducto(ProductoLocal);
                 }
                 else
                 {
