@@ -14,3 +14,9 @@ indica que tiene que comprar y vender minimo y todos los abm
 un reporte de ganancia minimo. 
 https://www.genbeta.com/desarrollo/manejo-de-ramas-de-desarrollo-con-git
 
+
+06/06/19
+EDITAR EL BOTON DE CERRAR PARA QUE CIERRE LA APP
+ELIMINAR CATEGORIAS DESDE APP
+PARA ESTE FINDE SE SEMANA TENGO QUE TENER YA EL FRM QUE VA INICIAR EL PROGRAMA 
+

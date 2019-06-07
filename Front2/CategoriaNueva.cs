@@ -14,15 +14,16 @@ namespace Front2
 {
     public partial class CategoriaNueva : Form
     {
-        //private Heroe heroeLocal = null;
         private Categoria categoriaLocal = null;
+
         public CategoriaNueva()
         {
             InitializeComponent();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        // BOTON ACEPTAR DEL FORM 
 
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
             CategoriaNegocio negocio = new CategoriaNegocio();
             try

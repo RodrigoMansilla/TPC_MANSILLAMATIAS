@@ -15,3 +15,4 @@ D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\AceesoDatos.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.AltaProducto.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.CategoriaNueva.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.Eliminar.resources
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.ListaCategorias.resources

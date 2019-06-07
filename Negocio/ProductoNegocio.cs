@@ -160,33 +160,7 @@ namespace Negocio
 
             }
         }
-
-        /*
-        public void modificarHeroe(Heroe modificar) {
-            AccesoDatosManager accesoDatos = new AccesoDatosManager();
-            try
-            {
-
-                accesoDatos.setearConsulta("update PERSONAJES Set Nombre=@Nombre, Debilidad=@Debilidad, UsaCapa=@UC, Volador=@Vol, IdUniverso=@IdUni Where Id=" + modificar.Id.ToString());
-                accesoDatos.Comando.Parameters.Clear();
-                accesoDatos.Comando.Parameters.AddWithValue("@Nombre", modificar.Nombre);
-                accesoDatos.Comando.Parameters.AddWithValue("@Debilidad", modificar.Debilidad);
-                accesoDatos.Comando.Parameters.AddWithValue("@UC", modificar.UsaCapa);
-                accesoDatos.Comando.Parameters.AddWithValue("@Vol", modificar.Volador);
-                accesoDatos.Comando.Parameters.AddWithValue("@IdUni", modificar.Universo.Id);
-                accesoDatos.abrirConexion();
-                accesoDatos.ejecutarAccion();
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                accesoDatos.cerrarConexion();
-            }
-        }*/
+        
 
     }
 }

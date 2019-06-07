@@ -35,6 +35,8 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.btnagregarcategorias = new System.Windows.Forms.Button();
+            this.btnvercategorias = new System.Windows.Forms.Button();
+            this.btncerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,9 +53,9 @@
             this.lblProductos.AutoSize = true;
             this.lblProductos.Location = new System.Drawing.Point(375, 111);
             this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(55, 13);
+            this.lblProductos.Size = new System.Drawing.Size(146, 13);
             this.lblProductos.TabIndex = 7;
-            this.lblProductos.Text = "Productos";
+            this.lblProductos.Text = "Buscar productos por nombre";
             // 
             // dgvProductos
             // 
@@ -61,11 +63,12 @@
             this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.AllowUserToOrderColumns = true;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(145, 142);
+            this.dgvProductos.Location = new System.Drawing.Point(25, 142);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.Size = new System.Drawing.Size(843, 231);
+            this.dgvProductos.Size = new System.Drawing.Size(1062, 231);
             this.dgvProductos.TabIndex = 8;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
             // btnAgregar
             // 
@@ -99,7 +102,7 @@
             // 
             // btnagregarcategorias
             // 
-            this.btnagregarcategorias.Location = new System.Drawing.Point(231, 488);
+            this.btnagregarcategorias.Location = new System.Drawing.Point(51, 487);
             this.btnagregarcategorias.Name = "btnagregarcategorias";
             this.btnagregarcategorias.Size = new System.Drawing.Size(576, 23);
             this.btnagregarcategorias.TabIndex = 13;
@@ -107,11 +110,32 @@
             this.btnagregarcategorias.UseVisualStyleBackColor = true;
             this.btnagregarcategorias.Click += new System.EventHandler(this.btnagregarcategorias_Click);
             // 
+            // btnvercategorias
+            // 
+            this.btnvercategorias.Location = new System.Drawing.Point(735, 487);
+            this.btnvercategorias.Name = "btnvercategorias";
+            this.btnvercategorias.Size = new System.Drawing.Size(252, 23);
+            this.btnvercategorias.TabIndex = 14;
+            this.btnvercategorias.Text = "VER CATEGORIAS";
+            this.btnvercategorias.UseVisualStyleBackColor = true;
+            this.btnvercategorias.Click += new System.EventHandler(this.btnvercategorias_Click);
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Location = new System.Drawing.Point(983, 551);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(75, 23);
+            this.btncerrar.TabIndex = 15;
+            this.btncerrar.Text = "CERRAR";
+            this.btncerrar.UseVisualStyleBackColor = true;
+            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 586);
+            this.Controls.Add(this.btncerrar);
+            this.Controls.Add(this.btnvercategorias);
             this.Controls.Add(this.btnagregarcategorias);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -137,6 +161,8 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button btnagregarcategorias;
+        private System.Windows.Forms.Button btnvercategorias;
+        private System.Windows.Forms.Button btncerrar;
     }
 }
 
