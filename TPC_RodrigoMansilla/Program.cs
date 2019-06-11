@@ -17,7 +17,7 @@ namespace TPC_RodrigoMansilla
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmProducto()); 
+            Application.Run(new Main()); 
             
         }
         

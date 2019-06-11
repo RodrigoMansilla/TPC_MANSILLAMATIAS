@@ -1,22 +1,57 @@
 
 
-
-
 TENGO QUE :
 
-
-* SACARME LA DUDA DE QUE HAGO CUANDO TENGA QUE GENERAR LA FACTURA, CUANTOS DATOS DE PRODUCTOS PONGO? Y SI PONGO MENOS COMO HAGO? 
-* TERMINAR DE REORDENAR LA PORTADA DEL PROGRAMA 
+* SACARME LA DUDA DE QUE HAGO CUANDO TENGA QUE GENERAR LA FACTURA, CUANTOS DATOS DE PRODUCTOS PONGO? Y SI PONGO MENOS COMO HAGO?
+* TERMINAR DE REORDENAR LA PORTADA DEL PROGRAMA
 * DONDE PONER CATEGORIAS ? DONDE DE LA CARGA DE PRODUCTOS ? O CUANDO INGRESO A PRODUCTOS ?
 * CUANDO SE MODIFICA EL STOCK TENGO QUE GUARDAR EL NOMBRE DE USUARIO? DONDE TENGO ESE NOMBRE ? EN LA CLASE QUE AGREGO CON DATOS DE LA EMPRESA? UNA CLASE NUEVA? DONDE LO GUARDO? EN LA CLASE PRODUCTO?
-
-indica que tiene que comprar y vender minimo y todos los abm 
-un reporte de ganancia minimo. 
+indica que tiene que comprar y vender minimo y todos los abm
+un reporte de ganancia minimo.
 https://www.genbeta.com/desarrollo/manejo-de-ramas-de-desarrollo-con-git
-
 
 06/06/19
 EDITAR EL BOTON DE CERRAR PARA QUE CIERRE LA APP
 ELIMINAR CATEGORIAS DESDE APP
-PARA ESTE FINDE SE SEMANA TENGO QUE TENER YA EL FRM QUE VA INICIAR EL PROGRAMA 
+PARA ESTE FINDE SE SEMANA TENGO QUE TENER YA EL FRM QUE VA INICIAR EL PROGRAMA
 
+en base de datos
+factura
+id
+numero
+fecha
+idcliente
+
+detalle
+id
+id factura
+id producto
+cantidad
+precio
+
+class factura
+lista detallefactura
+
+cuando ingrese una compra, elegir el producto , cargo la cantidad  que va sumar el stock actual del la tabla de productos  
+
+tengo que crear otro form que sea compra de productos 
+
+compra de productos :
+
+*elijo el producto de un combo box 
+*ingreso un numero que se va sumar al stock actual que tiene la tabla productos
+* elijo una opcion donde solo una es valida ‘compra’ 
+cargo el precio nuevo 
+en comentarios se tendria que dejar notificado el usuario que creo esa compra
+Tiene que tener una fecha de compra, así tengo un historial de compras de los productos 
+
+
+tengo que cambiar la modificación del producto, sacar comentarios, sacar  stock1, solo se podria modificar la marca, la categoria, el nombre, el stock se modifica con las compras al igual que el precio, la ganancia de ahjora en mas se tiene que calcular, el precio de venta se carga cuando se compra el producto. 
+
+
+la marca deberia ser una combobox que te de las opcion de los nombre de una tabla “marcas” y que tengas los detalles que quiera, lastima que esa tabla tiene que tener un abm 
+
+El stock actual tiene que inicializar en 0.
+Cuando quiera comprar un producto elijo la categoría y se despliega una lista solo de esa categoría y le pongo la cantidad el precio de compra precio de venta y que calculé la ganancia 
+
+form que tengo que crear 
