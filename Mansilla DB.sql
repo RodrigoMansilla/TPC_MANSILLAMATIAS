@@ -23,3 +23,6 @@ create table Categorias (
 	ID int not null primary key,
 	Nombre varchar(50) not null
 )
+
+ALTER TABLE Productos
+  DROP COLUMN Comentarios;

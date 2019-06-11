@@ -13,6 +13,7 @@ namespace Negocio
     {
         public List<Producto> listarProductos()
         {
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
@@ -22,8 +23,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                
-                comando.CommandText = "select p.ID, p.Descripcion, p.Marca, p.PrecioCompra, p.PrecioVenta, p.Ganancia, p.stock1, p.StockMinimo, c.Nombre,p.Comentarios, p.IdCategoria 'Categoria' from Productos as p inner join Categorias as c on c.ID = p.IdCategoria where p.Estado = 1 ";
+                comando.CommandText = "select p.Id, p.Nombre, c.Nombre, m.Nombre,p.stock,p.stockminimo,p.preciocompra,p.precioventa,p.ganancia,p.estado from Productos as p inner join categorias as c on p.Idcategoria = C.Id inner join Marcas as m on m.id=p.IdMarca";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -33,19 +33,22 @@ namespace Negocio
                     
                     nuevo = new Producto();
                     nuevo.ID = lector.GetInt32(0);
-                    if (!Convert.IsDBNull(lector["Descripcion"])) nuevo.Descripcion = lector.GetString(1);
-                    if (!Convert.IsDBNull(lector["Marca"])) nuevo.Marca = lector["Marca"].ToString();
-                    if (!Convert.IsDBNull(lector["PrecioCompra"])) nuevo.PrecioCompra = lector.GetDecimal(3);
-                    if (!Convert.IsDBNull(lector["PrecioVenta"])) nuevo.PrecioVenta = lector.GetDecimal(4);
-                    if (!Convert.IsDBNull(lector["Ganancia"])) nuevo.Ganancia = lector.GetDecimal(5);
-                    if (!Convert.IsDBNull(lector["stock1"])) nuevo.stock1 = lector.GetInt32(6);
-                    if (!Convert.IsDBNull(lector["StockMinimo"])) nuevo.StockMinimo = lector.GetInt32(7);
-                    if (!Convert.IsDBNull(lector["Comentarios"])) nuevo.Comentarios = lector["Comentarios"].ToString();
-                    
+                    if (!Convert.IsDBNull(lector["Nombre"])) nuevo.Nombre = lector["Nombre"].ToString();
+                    if (!Convert.IsDBNull(lector["stock"])) nuevo.Stock = lector.GetInt32(4);
+                    if (!Convert.IsDBNull(lector["StockMinimo"])) nuevo.StockMinimo = lector.GetInt32(5);
+                    if (!Convert.IsDBNull(lector["PrecioCompra"])) nuevo.PrecioCompra = lector.GetDecimal(6);
+                    if (!Convert.IsDBNull(lector["PrecioVenta"])) nuevo.PrecioVenta = lector.GetDecimal(7);
+                    if (!Convert.IsDBNull(lector["Ganancia"])) nuevo.Ganancia = lector.GetDecimal(8);
+
 
                     nuevo.Categoria = new Categoria();
-                    nuevo.Categoria.ID = lector.GetInt32(10);
-                    nuevo.Categoria.Nombre = lector["Nombre"].ToString();
+                    nuevo.Categoria.ID = (int)lector["Id"];
+                    nuevo.Categoria.Nombre = lector.GetString(2);
+
+                    nuevo.Marca = new Marca();
+                    nuevo.Marca.Id = (int)lector["Id"];
+                    nuevo.Marca.Nombre = lector.GetString(3);
+
                     /*nuevo.Categoria.ID = (int)lector["ID"];
                     nuevo.Categoria.Nombre = lector.GetString(8);*/
                     
@@ -76,7 +79,7 @@ namespace Negocio
         /// <param name="nuevo"></param>
         public void agregarProducto(Producto nuevo)
         {
-            SqlConnection conexion = new SqlConnection();
+           /* SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             try
             {
@@ -99,12 +102,12 @@ namespace Negocio
             finally
             {
                 conexion.Close();
-            }
+            }*/
         }
 
         public void modificarProducto(Producto modificar)
         {
-            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+           /* AccesoDatosManager accesoDatos = new AccesoDatosManager();
             try
             {
 
@@ -133,7 +136,7 @@ namespace Negocio
             finally
             {
                 accesoDatos.cerrarConexion();
-            }
+            }*/
         }
 
         public void EliminarProducto(Producto Elimiar)

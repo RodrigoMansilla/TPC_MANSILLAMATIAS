@@ -25,6 +25,8 @@ namespace TPC_RodrigoMansilla
         private void btnVerProductos_Click(object sender, EventArgs e)
         {
             submenuproductos.Visible = false;
+            frmProducto asd = new frmProducto();
+            asd.ShowDialog();
         }
 
         private void btnNuevaCompra_Click(object sender, EventArgs e)

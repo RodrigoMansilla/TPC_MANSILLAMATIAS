@@ -108,7 +108,7 @@ namespace TPC_RodrigoMansilla
                 else
                 {
                     List<Producto> lista;
-                    lista = listaProductos1.FindAll(X => X.Descripcion.Contains(txtBusqueda.Text));
+                    lista = listaProductos1.FindAll(X => X.Nombre.Contains(txtBusqueda.Text));
                     dgvProductos.DataSource = lista;
                 }
             }

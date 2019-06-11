@@ -17,3 +17,11 @@ C:\Users\Administrador\Desktop\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoD
 C:\Users\Administrador\Desktop\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.csproj.CoreCompileInputs.cache
 C:\Users\Administrador\Desktop\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.dll
 C:\Users\Administrador\Desktop\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\bin\Debug\AceesoDatos.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\bin\Debug\AceesoDatos.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.csprojAssemblyReference.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.Properties.Resources.resources
+D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.csproj.GenerateResource.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.csproj.CoreCompileInputs.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.pdb
