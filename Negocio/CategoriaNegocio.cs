@@ -17,7 +17,7 @@ namespace Negocio
             Categoria cat = new Categoria();
             try
             {
-                accesoDatos.setearConsulta("Select ID, Nombre from Categorias");
+                accesoDatos.setearConsulta("Select ID, Nombre from Categorias where Estado = 1 ");
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarConsulta();
                 while (accesoDatos.Lector.Read())
@@ -62,6 +62,32 @@ namespace Negocio
                 accesoDatos.cerrarConexion();
             }
         }
+
+        public void EliminarCategorias (Categoria nueva)
+        {
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            try
+            {
+                accesoDatos.setearSP("SPEliminarCategorias");
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@aydi", nueva.ID);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+
+            }
+
+
+        }
+
     }
     
 }

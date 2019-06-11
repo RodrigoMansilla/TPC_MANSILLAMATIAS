@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Front2;
 
 namespace TPC_RodrigoMansilla
 {
@@ -25,7 +26,7 @@ namespace TPC_RodrigoMansilla
         private void btnVerProductos_Click(object sender, EventArgs e)
         {
             submenuproductos.Visible = false;
-            frmProducto asd = new frmProducto();
+            Productos asd = new Productos();
             asd.ShowDialog();
         }
 

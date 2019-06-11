@@ -100,7 +100,7 @@
             this.ComboCategoria.Name = "ComboCategoria";
             this.ComboCategoria.Size = new System.Drawing.Size(157, 21);
             this.ComboCategoria.TabIndex = 17;
-            this.ComboCategoria.SelectedIndexChanged += new System.EventHandler(this.ComboCategoria_SelectedIndexChanged);
+
             // 
             // menuStrip1
             // 

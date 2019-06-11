@@ -14,20 +14,22 @@ using Negocio;
 
 namespace Front2
 {
-    public partial class Eliminar : Form
+    public partial class EliminarCategorias : Form
     {
-        private Producto ProductoLocal = null;
 
-        public Eliminar()
+        private Categoria categoriaLocal = null;
+
+        public EliminarCategorias()
         {
             InitializeComponent();
         }
 
+        //creo constructor
 
-        public Eliminar(Producto producto) //creo constructor
+        public EliminarCategorias(Categoria cat) 
         {
             InitializeComponent();
-            ProductoLocal = producto;
+            categoriaLocal = cat;
         }
 
         // CIERRO LA VENTANA Y CANCELO LA OPERACION
@@ -39,11 +41,11 @@ namespace Front2
 
         // ACEPT0 LA ELIMINACION.
 
-        public void btnAceptar_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-            ProductoNegocio negocio = new ProductoNegocio();
-            negocio.EliminarProducto(ProductoLocal);
-            Visible = false; // aca oculto el form(ELIMINAR) una vez que elijo la opcion 
+            CategoriaNegocio negocio = new CategoriaNegocio();
+            negocio.EliminarCategorias(categoriaLocal);
+            Visible = false; // aca oculto el form(ELIMINAR) una vez que elijo la opcion
             
         }
     }

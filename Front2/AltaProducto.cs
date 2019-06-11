@@ -27,6 +27,7 @@ namespace Front2
             ProductoLocal = producto;
         }
 
+        // CARGA DEL FORMULARIO 
 
         private void AltaProducto_Load(object sender, EventArgs e)
         {
@@ -58,6 +59,8 @@ namespace Front2
                 
             }
         }
+
+        // BOTON ACEPTAR
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
@@ -92,23 +95,14 @@ namespace Front2
             }
         }
 
-        private void ComboCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
+        // CIERRO LA VENTANA 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        private void textBoxComentarios_TextChanged(object sender, EventArgs e)
-        {
-                    }
 
-        private void lblComent_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

@@ -38,15 +38,33 @@ namespace Front2
             }
         }
 
+        // CARGA DEL FORMULARIO, CARGA LAS CATEGORIAS EN LA DVG 
+
         private void ListaCategorias_Load(object sender, EventArgs e)
         {
             CargarListaCategorias();
         }
+
+        // BOTON CANCELAR 
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
+        // BOTON ELIMINAR CATEGORIAS 
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EliminarCategorias BAJA = new EliminarCategorias((Categoria)dvgcategoria.CurrentRow.DataBoundItem); // aca tengo que hacer un form para la eliminacion de categorias 
+                BAJA.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

@@ -11,6 +11,9 @@ namespace Negocio
 {
     public  class ProductoNegocio
     {
+
+        // LISTA DE PRODUCTOS 
+
         public List<Producto> listarProductos()
         {
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
@@ -64,10 +67,9 @@ namespace Negocio
                 conexion.Close();
             }
         }
-        /// <summary>
-        ///  aca
-        /// </summary>
-        /// <param name="nuevo"></param>
+
+        // AGREGO PRODUCTOS 
+
         public void agregarProducto(Producto nuevo)
         {
               AccesoDatosManager accesoDatos = new AccesoDatosManager();
@@ -93,6 +95,9 @@ namespace Negocio
                 accesoDatos.cerrarConexion();
             }
             }
+        
+
+        // LOS MODIFICO 
 
         public void modificarProducto(Producto modificar)
         {
@@ -123,18 +128,18 @@ namespace Negocio
             }
         }
 
+        // ELIMINO PRODUCTOS 
+
         public void EliminarProducto(Producto Elimiar)
         {
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
             try
             {
-
                 accesoDatos.setearConsulta("update Productos set Estado = 0 where ID =  " + Elimiar.ID.ToString());
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("0", Elimiar.Estado);
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
-
             }
             catch (Exception ex)
             {
@@ -144,7 +149,6 @@ namespace Negocio
             {
                 accesoDatos.cerrarConexion();
                 System.Windows.Forms.MessageBox.Show("Se elimino correctamente");
-
             }
         }
         

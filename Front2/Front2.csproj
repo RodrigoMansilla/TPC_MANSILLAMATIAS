@@ -61,11 +61,23 @@
     <Compile Include="Eliminar.Designer.cs">
       <DependentUpon>Eliminar.cs</DependentUpon>
     </Compile>
+    <Compile Include="EliminarCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarCategorias.Designer.cs">
+      <DependentUpon>EliminarCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListaCategorias.Designer.cs">
       <DependentUpon>ListaCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,8 +101,14 @@
     <EmbeddedResource Include="Eliminar.resx">
       <DependentUpon>Eliminar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EliminarCategorias.resx">
+      <DependentUpon>EliminarCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListaCategorias.resx">
       <DependentUpon>ListaCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
