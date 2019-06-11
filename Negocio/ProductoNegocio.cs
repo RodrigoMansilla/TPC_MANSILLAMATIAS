@@ -96,7 +96,7 @@ namespace Negocio
 
         public void modificarProducto(Producto modificar)
         {
-           /* AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
             try
             {
 
@@ -104,14 +104,9 @@ namespace Negocio
 
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("@aydi", modificar.ID);
-                accesoDatos.Comando.Parameters.AddWithValue("@des1", modificar.Descripcion);
-                accesoDatos.Comando.Parameters.AddWithValue("@pc", modificar.PrecioCompra);
-                accesoDatos.Comando.Parameters.AddWithValue("@pv", modificar.PrecioVenta);
-                accesoDatos.Comando.Parameters.AddWithValue("@gan", modificar.Ganancia);
-                accesoDatos.Comando.Parameters.AddWithValue("@stock", modificar.stock1);
+                accesoDatos.Comando.Parameters.AddWithValue("@Nom", modificar.Nombre);
                 accesoDatos.Comando.Parameters.AddWithValue("@stm", modificar.StockMinimo);
-                accesoDatos.Comando.Parameters.AddWithValue("@com", modificar.Comentarios);
-                accesoDatos.Comando.Parameters.AddWithValue("@Mr", modificar.Marca);
+                accesoDatos.Comando.Parameters.AddWithValue("@Mar", modificar.Marca.Id);
                 //accesoDatos.Comando.Parameters.AddWithValue("@IdUni", modificar.Universo.Id);
                 accesoDatos.Comando.Parameters.AddWithValue("@idcat", modificar.Categoria.ID);
                 accesoDatos.abrirConexion();
@@ -125,7 +120,7 @@ namespace Negocio
             finally
             {
                 accesoDatos.cerrarConexion();
-            }*/
+            }
         }
 
         public void EliminarProducto(Producto Elimiar)
