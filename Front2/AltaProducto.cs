@@ -15,10 +15,12 @@ namespace Front2
     public partial class AltaProducto : Form
     {
         private Producto ProductoLocal = null;
+
         public AltaProducto()
         {
             InitializeComponent();
         }
+
         public AltaProducto(Producto producto)
         {
             InitializeComponent();
@@ -28,18 +30,22 @@ namespace Front2
 
         private void AltaProducto_Load(object sender, EventArgs e)
         {
-           /* {
+            {
                 
                 CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+
+                MarcaNegocio marcaNegocio = new MarcaNegocio();
 
                 try
                 {
                     ComboCategoria.DataSource = categoriaNegocio.ListarCategorias();
+                    ComboMarcas.DataSource = marcaNegocio.ListarMarcas();
+                    
 
                     if (ProductoLocal != null)
                     {
-                        textBoxNombre.Text = ProductoLocal.Descripcion.ToString();
-                        textBoxMarca.Text = ProductoLocal.Marca.ToString();
+                        textBoxNombre.Text = ProductoLocal.Nombre.ToString();
+                        ComboMarcas.SelectedIndex = ComboMarcas.FindString(ProductoLocal.Marca.Nombre);
                         textBoxStockMinimo.Text = ProductoLocal.StockMinimo.ToString();
                         ComboCategoria.SelectedIndex = ComboCategoria.FindString(ProductoLocal.Categoria.Nombre);
 
@@ -49,34 +55,24 @@ namespace Front2
                 {
                     MessageBox.Show(ex.ToString());
                 }
-
-
-
-            }*/
+                
+            }
         }
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            /*ProductoNegocio negocio = new ProductoNegocio();
+            ProductoNegocio negocio = new ProductoNegocio();
             try
             {
                 if (ProductoLocal == null)
                     ProductoLocal = new Producto();
 
 
-                ProductoLocal.Descripcion = textBoxNombre.Text;
-              // ProductoLocal.PrecioCompra = Convert.ToDecimal(textBoxPrecioCompra.Text);
-               // ProductoLocal.PrecioVenta = Convert.ToDecimal(textBoxPrecioVenta.Text);
-                //ProductoLocal.Ganancia = Convert.ToDecimal(textBoxGanancia.Text); aca calculo precioventa-preciocompra
-               // ProductoLocal.stock1 = Convert.ToInt32(textBoxStock.Text); aca siempre va ser 0, si quiero agregar producto es solamente con una compra, no cargando un producto
+                ProductoLocal.Nombre = textBoxNombre.Text;
                 ProductoLocal.StockMinimo = Convert.ToInt32(textBoxStockMinimo.Text);
-                ProductoLocal.Marca = textBoxMarca.Text;
+                ProductoLocal.Marca = (Marca)ComboMarcas.SelectedItem;
                 ProductoLocal.Categoria = (Categoria)ComboCategoria.SelectedItem;
-               // ProductoLocal.Ganancia = Convert.ToDecimal(textBoxPrecioVenta.Text) - Convert.ToDecimal(textBoxPrecioCompra.Text);
-                ProductoLocal.stock1 = 0;
-
-
-
+                
 
                 if (ProductoLocal.ID != 0)
                 {
@@ -93,7 +89,7 @@ namespace Front2
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-            }*/
+            }
         }
 
         private void ComboCategoria_SelectedIndexChanged(object sender, EventArgs e)

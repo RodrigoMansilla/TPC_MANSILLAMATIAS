@@ -49,15 +49,6 @@ namespace Negocio
                     nuevo.Marca.Id = (int)lector["Id"];
                     nuevo.Marca.Nombre = lector.GetString(3);
 
-                    /*nuevo.Categoria.ID = (int)lector["ID"];
-                    nuevo.Categoria.Nombre = lector.GetString(8);*/
-                    
-
-                    /*
-                    nuevo.Universo = new Universo();
-                    nuevo.Universo.Id = (int)lector["IdUniverso"];
-                    nuevo.Universo.Nombre = lector["Descripcion"].ToString();*/
-
                     listado.Add(nuevo);
                 }
 
@@ -79,31 +70,29 @@ namespace Negocio
         /// <param name="nuevo"></param>
         public void agregarProducto(Producto nuevo)
         {
-           /* SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            try
-            {
-                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
-                comando.CommandType = System.Data.CommandType.Text;
+              AccesoDatosManager accesoDatos = new AccesoDatosManager();
+             try
+             {
+                 accesoDatos.setearSP("Sp_AgregarProducto");
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@nom", nuevo.Nombre);
+                accesoDatos.Comando.Parameters.AddWithValue("@idcat", nuevo.Categoria.ID);
+                accesoDatos.Comando.Parameters.AddWithValue("@idmarca", nuevo.Marca.Id);
+                accesoDatos.Comando.Parameters.AddWithValue("@stm", nuevo.StockMinimo);
                 
-                comando.CommandText = "insert into Productos (Descripcion,IdCategoria,PrecioCompra,PrecioVenta,Ganancia,stock1, StockMinimo, Comentarios,Marca,Estado) values ";
-                comando.CommandText += "('" + nuevo.Descripcion + "', " + nuevo.Categoria.ID.ToString() + ",'" + nuevo.PrecioCompra + "', '" + nuevo.PrecioVenta.ToString() + "', '" + nuevo.Ganancia.ToString() + "', '" + nuevo.stock1.ToString() + "', '" + nuevo.StockMinimo.ToString() + "', '" + nuevo.Comentarios.ToString() + "', '" + nuevo.Marca.ToString() + "','" + 1+"')";
-                //comando.CommandText += "('" + nuevo.Nombre + "', '" + nuevo.Debilidad + "', '" + nuevo.UsaCapa.ToString() + "', '"+ nuevo.Volador.ToString() + "',"+ nuevo.Universo.Id.ToString() + ")";
-                comando.Connection = conexion;
-                conexion.Open();
+                    accesoDatos.abrirConexion();
+                    accesoDatos.ejecutarAccion();
 
-                comando.ExecuteNonQuery();
-
+                 }
+                 catch (Exception ex)
+                 {
+                     throw ex;
+                 }
+                 finally
+                 {
+                accesoDatos.cerrarConexion();
             }
-            catch (Exception ex)
-            {
-                throw ex;
             }
-            finally
-            {
-                conexion.Close();
-            }*/
-        }
 
         public void modificarProducto(Producto modificar)
         {

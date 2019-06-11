@@ -33,13 +33,13 @@
             this.lblStockMinimo = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.textBoxMarca = new System.Windows.Forms.TextBox();
             this.textBoxStockMinimo = new System.Windows.Forms.TextBox();
             this.ComboCategoria = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuAgregarCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.ComboMarcas = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,13 +85,6 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(100, 20);
             this.textBoxNombre.TabIndex = 9;
-            // 
-            // textBoxMarca
-            // 
-            this.textBoxMarca.Location = new System.Drawing.Point(513, 44);
-            this.textBoxMarca.Name = "textBoxMarca";
-            this.textBoxMarca.Size = new System.Drawing.Size(141, 20);
-            this.textBoxMarca.TabIndex = 11;
             // 
             // textBoxStockMinimo
             // 
@@ -145,16 +138,24 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // ComboMarcas
+            // 
+            this.ComboMarcas.FormattingEnabled = true;
+            this.ComboMarcas.Location = new System.Drawing.Point(492, 43);
+            this.ComboMarcas.Name = "ComboMarcas";
+            this.ComboMarcas.Size = new System.Drawing.Size(157, 21);
+            this.ComboMarcas.TabIndex = 21;
+            // 
             // AltaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 350);
+            this.Controls.Add(this.ComboMarcas);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.ComboCategoria);
             this.Controls.Add(this.textBoxStockMinimo);
-            this.Controls.Add(this.textBoxMarca);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblStockMinimo);
@@ -179,12 +180,12 @@
         private System.Windows.Forms.Label lblStockMinimo;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.TextBox textBoxNombre;
-        private System.Windows.Forms.TextBox textBoxMarca;
         private System.Windows.Forms.TextBox textBoxStockMinimo;
         private System.Windows.Forms.ComboBox ComboCategoria;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem MenuAgregarCategoria;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox ComboMarcas;
     }
 }
