@@ -23,7 +23,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select p.Id, p.Nombre, c.Nombre, m.Nombre,p.stock,p.stockminimo,p.preciocompra,p.precioventa,p.ganancia,p.estado from Productos as p inner join categorias as c on p.Idcategoria = C.Id inner join Marcas as m on m.id=p.IdMarca";
+                comando.CommandText = "select p.Id, p.Nombre, c.Nombre, m.Nombre,p.stock,p.stockminimo,p.preciocompra,p.precioventa,p.ganancia,p.estado from Productos as p inner join categorias as c on p.Idcategoria = C.Id inner join Marcas as m on m.id=p.IdMarca where p.estado=1";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
