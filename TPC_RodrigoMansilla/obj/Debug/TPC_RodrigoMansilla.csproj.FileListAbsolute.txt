@@ -73,5 +73,4 @@ D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_Rodri
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_RodrigoMansilla.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\bin\Debug\Front2.dll
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\bin\Debug\Front2.pdb
-D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_RodrigoMansilla.frmProducto.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\TPC_RodrigoMansilla\obj\Debug\TPC_RodrigoMansilla.Main.resources

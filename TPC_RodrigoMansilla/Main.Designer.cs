@@ -37,6 +37,7 @@
             this.btnModStock = new System.Windows.Forms.Button();
             this.btnNuevaCompra = new System.Windows.Forms.Button();
             this.btnVerProductos = new System.Windows.Forms.Button();
+            this.btnvercategorias = new System.Windows.Forms.Button();
             this.submenuproductos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,15 +89,15 @@
             // 
             // submenuproductos
             // 
+            this.submenuproductos.Controls.Add(this.btnvercategorias);
             this.submenuproductos.Controls.Add(this.btnModStock);
             this.submenuproductos.Controls.Add(this.btnNuevaCompra);
             this.submenuproductos.Controls.Add(this.btnVerProductos);
-            this.submenuproductos.Location = new System.Drawing.Point(37, 124);
+            this.submenuproductos.Location = new System.Drawing.Point(130, 123);
             this.submenuproductos.Name = "submenuproductos";
-            this.submenuproductos.Size = new System.Drawing.Size(200, 100);
+            this.submenuproductos.Size = new System.Drawing.Size(206, 138);
             this.submenuproductos.TabIndex = 5;
             this.submenuproductos.Visible = false;
-
             // 
             // btnModStock
             // 
@@ -128,6 +129,16 @@
             this.btnVerProductos.UseVisualStyleBackColor = true;
             this.btnVerProductos.Click += new System.EventHandler(this.btnVerProductos_Click);
             // 
+            // btnvercategorias
+            // 
+            this.btnvercategorias.Location = new System.Drawing.Point(0, 112);
+            this.btnvercategorias.Name = "btnvercategorias";
+            this.btnvercategorias.Size = new System.Drawing.Size(197, 23);
+            this.btnvercategorias.TabIndex = 3;
+            this.btnvercategorias.Text = "VER CATEGORIAS PRODUCTOS";
+            this.btnvercategorias.UseVisualStyleBackColor = true;
+            this.btnvercategorias.Click += new System.EventHandler(this.btnvercategorias_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,5 +168,6 @@
         private System.Windows.Forms.Button btnVerProductos;
         private System.Windows.Forms.Button btnModStock;
         private System.Windows.Forms.Button btnNuevaCompra;
+        private System.Windows.Forms.Button btnvercategorias;
     }
 }

@@ -33,11 +33,20 @@ namespace TPC_RodrigoMansilla
         private void btnNuevaCompra_Click(object sender, EventArgs e)
         {
             submenuproductos.Visible = false;
+            FrmCompra nueva = new FrmCompra();
+            nueva.ShowDialog();
         }
 
         private void btnModStock_Click(object sender, EventArgs e)
         {
             submenuproductos.Visible = false;
+        }
+
+        private void btnvercategorias_Click(object sender, EventArgs e)
+        {
+            submenuproductos.Visible = false;
+            ListaCategorias asd = new ListaCategorias();
+            asd.ShowDialog();
         }
     }
 }
