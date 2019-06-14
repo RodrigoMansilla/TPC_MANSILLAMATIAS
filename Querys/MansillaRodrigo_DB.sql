@@ -94,7 +94,7 @@ begin
 update Productos set PrecioCompra = @preciocompra, PrecioVenta = @precioventa, Stock = Stock + @stock, Ganancia =  @precioventa - @preciocompra where  Nombre like @Nom
 end 
 
-create procedure SPAgregarCompra( 
+alter procedure SPAgregarCompra( 
 @nom varchar(30), -- EL NOMBRE SIEMPRE VA EXISTIR POR QUE LO ELIJE DE UN COMBOBOX, NI HACE FALTA VERIFICAR EL MISMO. 
 @cant int,
 @PC decimal(8,2),
@@ -106,8 +106,9 @@ declare @aux int, @aux2 int -- DECLARO VARIABLES LOCALES
 select @aux=id from Productos where Nombre like @nom -- OBTENGO EN VARIABLE EL ID DEL PRODUCTO QUE LLEGA DE LA APP
 select @aux2 = count(*) from compras  -- CUENTO LAS COMPRAS QUE TENGO EN LA BASE DE DATOS 
 select @aux2 = @aux2 + 1 -- LE SUMO 1 A LAS COMPRAS 
-insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,FCompra)values (@aux2,@aux,@cant,@PC,@PV,@PV-@PC,GETDATE())
+insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,FCompra)values (@aux2,@aux,@cant,@PC,@PV,@PV-@PC,getdate())
 end
 
+exec SPAgregarCompra 'lala', 14, 15, 25
 
 select *from Compras

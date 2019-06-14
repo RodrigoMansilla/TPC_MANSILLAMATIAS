@@ -16,7 +16,7 @@ namespace Front2
     {
         
         private Producto Productolocal = null;
-        private Compra CompraLocal = null;
+        //private Compra CompraLocal = null;
 
         public FrmCompra()
         {
