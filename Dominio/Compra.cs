@@ -15,6 +15,7 @@ namespace Dominio
         public decimal PrecioVenta { get; set; } 
         public decimal Ganancia { get; set; } 
         public bool Estado { get; set; } 
+        public DateTime FCompra { get; set; }
 
     }
 }

@@ -18,23 +18,11 @@ namespace Dominio
         public decimal PrecioVenta { get; set; }
         public decimal Ganancia { get; set; }
         public bool Estado { get; set; }
-       // public List<string> Mas{ get; set; }
-        
+        public override string ToString()
+        {
+            return Nombre;
+        }
 
     }
 }
 
-/*create table Productos (
-create table Productos (
-ID int not null primary key,
-Nombre varchar(30) not null,
-IdCategoria int foreign key references categorias(Id),
-IdMarca int foreign key references marcas(Id),
-Stock int not null, 
-StockMinimo int not null, 
-PrecioCompra decimal(8,2) not null,
-PrecioVenta decimal(8,2) not null, 
-Ganancia decimal(8,2) not null
-) 
-)
-*/

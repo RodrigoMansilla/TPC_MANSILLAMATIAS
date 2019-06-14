@@ -23,13 +23,34 @@ namespace Negocio
                 while (accesoDatos.Lector.Read())
                 {
                     mar = new Marca();
-                    mar.Id = (int)accesoDatos.Lector["ID"];
+                    mar.Id = (int)accesoDatos.Lector["Id"];
                     mar.Nombre = accesoDatos.Lector["Nombre"].ToString();
                     listado.Add(mar);
                 }
                 return listado;
 
-            }
+            }/*public class CategoriaNegocio
+    {
+        public List<Categoria> ListarCategorias()
+        {
+            List<Categoria> listado = new List<Categoria>();
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            Categoria cat = new Categoria();
+            try
+            {
+                accesoDatos.setearConsulta("Select ID, Nombre from Categorias where Estado = 1 ");
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarConsulta();
+                while (accesoDatos.Lector.Read())
+                {
+                    cat = new Categoria();
+                    cat.ID = (int)accesoDatos.Lector["ID"];
+                    cat.Nombre = accesoDatos.Lector["Nombre"].ToString();
+                    listado.Add(cat);
+                }
+                return listado;
+
+            }*/
             catch (Exception ex)
             {
 

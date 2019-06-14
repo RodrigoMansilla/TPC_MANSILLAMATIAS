@@ -128,6 +128,37 @@ namespace Negocio
             }
         }
 
+        // LOS MODIFICO DESDE COMPRA 
+
+        public void modificarProducto2(Producto modificar)
+        {
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            try
+            {
+
+                accesoDatos.setearSP("SPModificarProducto2");//CAMBIAR ESTO
+
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@Nom", modificar.Nombre);
+                accesoDatos.Comando.Parameters.AddWithValue("@stock", modificar.Stock);
+                accesoDatos.Comando.Parameters.AddWithValue("@preciocompra", modificar.PrecioCompra);
+                accesoDatos.Comando.Parameters.AddWithValue("@precioventa", modificar.PrecioVenta);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+                //MessageBox.Show("llegue aca1");
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+            
+        }
+
         // ELIMINO PRODUCTOS 
 
         public void EliminarProducto(Producto Elimiar)

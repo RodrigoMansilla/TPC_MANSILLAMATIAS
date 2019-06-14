@@ -10,13 +10,12 @@ namespace Dominio
     {
         public int Id { get; set; }
         public String Nombre { get; set; }
-        public bool Estado { get; set; } 
+        public bool Estado { get; set; }
 
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
-    /*create table Marcas(
-Id int primary key not null,
-Nombre varchar(50) not null,
-Estado bit not null default 1 
-)
-*/
+    
 }

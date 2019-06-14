@@ -76,6 +76,7 @@ namespace Front2
                 ProductoLocal.Marca = (Marca)ComboMarcas.SelectedItem;
                 ProductoLocal.Categoria = (Categoria)ComboCategoria.SelectedItem;
                 
+                
 
                 if (ProductoLocal.ID != 0)
                 {

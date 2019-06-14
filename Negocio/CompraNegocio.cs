@@ -11,7 +11,7 @@ namespace Negocio
     public class CompraNegocio
     {
 
-        public List<Compra> ListarCompras()
+        /*public List<Compra> ListarCompras()
         {
             List<Compra> listado = new List<Compra>();
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
@@ -25,7 +25,7 @@ namespace Negocio
                 {
                     Com = new Compra();
                     Com.IdCompra = (int)accesoDatos.Lector["ID"];
-                    //Com. = accesoDatos.Lector["Nombre"].ToString();
+                    Com. = accesoDatos.Lector["Nombre"].ToString();
                     listado.Add(Com);
                 }
                 return listado;
@@ -40,7 +40,7 @@ namespace Negocio
             {
                 accesoDatos.cerrarConexion();
             }
-        }
+        }*/
 
 
 

@@ -38,6 +38,7 @@ PrecioVenta decimal(8,2) not null,
 Ganancia decimal(8,2) not null,
 Estado bit not null default 1 
 )
+Alter table Compras add FCompra date not null
 
 create procedure Sp_AgregarProducto(
 @nom varchar(100),
@@ -46,10 +47,8 @@ create procedure Sp_AgregarProducto(
 @stm int
 )
 as 
-begin 
- 
- insert into Productos (Id,Nombre,IdCategoria,IdMarca,Stock,StockMinimo,PrecioCompra,PrecioVenta,Ganancia,Estado) values ((select count(*)from productos)+1,@nom,@idcat,@idmarca,0,@stm,0,0,0,1)
-
+begin  
+insert into Productos (Id,Nombre,IdCategoria,IdMarca,Stock,StockMinimo,PrecioCompra,PrecioVenta,Ganancia,Estado) values ((select count(*)from productos)+1,@nom,@idcat,@idmarca,0,@stm,0,0,0,1)
 end 
 
 create procedure SPModificarProducto(
@@ -61,9 +60,7 @@ create procedure SPModificarProducto(
 )
 as
 begin
-
 update Productos set Nombre = @Nom, StockMinimo = @stm, IdMarca = @Mar, IdCategoria = @idcat where Productos.ID = @aydi;
-
 end 
 
 
@@ -82,14 +79,18 @@ create procedure SPEliminarCategorias(
 )
 as
 begin 
-
 update Categorias set Estado = 0 where Id = @aydi
-
 end 
 
-select *from categorias
+create procedure SPModificarProducto2(
+@Nom varchar(30),
+@stock int,
+@preciocompra decimal(8,2),
+@precioventa decimal(8,2)
+)
+as
+begin
+update Productos set PrecioCompra = @preciocompra, PrecioVenta = @precioventa, Stock = Stock + @stock, Ganancia =  @precioventa - @preciocompra where  Nombre like @Nom
+end 
 
-exec SPEliminarCategorias 2
-
-
-
+select *from Productos where nombre like 'lala'
