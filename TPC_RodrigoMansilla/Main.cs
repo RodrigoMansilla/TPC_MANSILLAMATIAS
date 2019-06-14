@@ -40,6 +40,8 @@ namespace TPC_RodrigoMansilla
         private void btnModStock_Click(object sender, EventArgs e)
         {
             submenuproductos.Visible = false;
+            fmrModificacionDeStock nueva = new fmrModificacionDeStock();
+            nueva.ShowDialog();
         }
 
         private void btnvercategorias_Click(object sender, EventArgs e)

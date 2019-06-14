@@ -25,8 +25,6 @@ namespace Front2
 
         private void FrmCompra_Load(object sender, EventArgs e)
         {
-            {
-                
                 ProductoNegocio productoNegocio = new ProductoNegocio();
 
                 try
@@ -47,8 +45,6 @@ namespace Front2
                 {
                     MessageBox.Show(ex.ToString());
                 }
-
-            }
         }
 
         private void btnaceptar_Click(object sender, EventArgs e)
@@ -58,19 +54,17 @@ namespace Front2
             {
                 if (Productolocal == null)
                     Productolocal = new Producto();
-                // UPDATEA PRODUCTOS 
+                
                 Productolocal.Nombre = Convert.ToString(ComboProductos.SelectedItem);
                 Productolocal.Stock = Convert.ToInt32(txtCantidad.Text);
                 Productolocal.PrecioCompra = Convert.ToDecimal(txtPrecioCompra.Text);
                 Productolocal.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+
+                // UPDATEA PRODUCTOS 
+
                 negocio.modificarProducto2(Productolocal);
 
                 // CREA REGISTRO EN TABLA COMPRAS 
-
-                Productolocal.Nombre = Convert.ToString(ComboProductos.SelectedItem);
-                Productolocal.Stock = Convert.ToInt32(txtCantidad.Text);
-                Productolocal.PrecioCompra = Convert.ToDecimal(txtPrecioCompra.Text);
-                Productolocal.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
                 negocio.agregarCompra(Productolocal);
                 Close();
 

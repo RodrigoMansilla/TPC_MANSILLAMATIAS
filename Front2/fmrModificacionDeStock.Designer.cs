@@ -32,14 +32,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.combitodeproductos = new System.Windows.Forms.ComboBox();
+            this.txtCant = new System.Windows.Forms.TextBox();
+            this.RadioDefectuosos = new System.Windows.Forms.RadioButton();
+            this.GruopBox = new System.Windows.Forms.GroupBox();
+            this.RadioOtros = new System.Windows.Forms.RadioButton();
+            this.RadioVencidos = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.btnaceptar = new System.Windows.Forms.Button();
+            this.btncancelar = new System.Windows.Forms.Button();
+            this.GruopBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -78,65 +80,62 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Elija una opcion : ";
             // 
-            // comboBox1
+            // combitodeproductos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(144, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.combitodeproductos.FormattingEnabled = true;
+            this.combitodeproductos.Location = new System.Drawing.Point(144, 69);
+            this.combitodeproductos.Name = "combitodeproductos";
+            this.combitodeproductos.Size = new System.Drawing.Size(121, 21);
+            this.combitodeproductos.TabIndex = 4;
             // 
-            // textBox1
+            // txtCant
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtCant.Location = new System.Drawing.Point(144, 118);
+            this.txtCant.Name = "txtCant";
+            this.txtCant.Size = new System.Drawing.Size(100, 20);
+            this.txtCant.TabIndex = 5;
             // 
-            // radioButton1
+            // RadioDefectuosos
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(33, 24);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 6;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.RadioDefectuosos.AutoSize = true;
+            this.RadioDefectuosos.Location = new System.Drawing.Point(33, 24);
+            this.RadioDefectuosos.Name = "RadioDefectuosos";
+            this.RadioDefectuosos.Size = new System.Drawing.Size(125, 17);
+            this.RadioDefectuosos.TabIndex = 6;
+            this.RadioDefectuosos.Text = "Cantidad Defectuosa";
+            this.RadioDefectuosos.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // GruopBox
             // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(144, 161);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 144);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.GruopBox.Controls.Add(this.RadioOtros);
+            this.GruopBox.Controls.Add(this.RadioVencidos);
+            this.GruopBox.Controls.Add(this.RadioDefectuosos);
+            this.GruopBox.Location = new System.Drawing.Point(144, 161);
+            this.GruopBox.Name = "GruopBox";
+            this.GruopBox.Size = new System.Drawing.Size(200, 144);
+            this.GruopBox.TabIndex = 7;
+            this.GruopBox.TabStop = false;
             // 
-            // radioButton2
+            // RadioOtros
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(33, 60);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.RadioOtros.AutoSize = true;
+            this.RadioOtros.Location = new System.Drawing.Point(33, 103);
+            this.RadioOtros.Name = "RadioOtros";
+            this.RadioOtros.Size = new System.Drawing.Size(50, 17);
+            this.RadioOtros.TabIndex = 8;
+            this.RadioOtros.Text = "Otros";
+            this.RadioOtros.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // RadioVencidos
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(33, 103);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 17);
-            this.radioButton3.TabIndex = 8;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.RadioVencidos.AutoSize = true;
+            this.RadioVencidos.Location = new System.Drawing.Point(33, 60);
+            this.RadioVencidos.Name = "RadioVencidos";
+            this.RadioVencidos.Size = new System.Drawing.Size(112, 17);
+            this.RadioVencidos.TabIndex = 7;
+            this.RadioVencidos.Text = "Articulos Vencidos";
+            this.RadioVencidos.UseVisualStyleBackColor = true;
+            this.RadioVencidos.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // label5
             // 
@@ -147,23 +146,45 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "En caso de sacar stock, porner la cantidad en negativo";
             // 
+            // btnaceptar
+            // 
+            this.btnaceptar.Location = new System.Drawing.Point(144, 345);
+            this.btnaceptar.Name = "btnaceptar";
+            this.btnaceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnaceptar.TabIndex = 9;
+            this.btnaceptar.Text = "ACEPTAR";
+            this.btnaceptar.UseVisualStyleBackColor = true;
+            this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.Location = new System.Drawing.Point(404, 345);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(75, 23);
+            this.btncancelar.TabIndex = 10;
+            this.btncancelar.Text = "CANCELAR";
+            this.btncancelar.UseVisualStyleBackColor = true;
+            // 
             // fmrModificacionDeStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 314);
+            this.ClientSize = new System.Drawing.Size(800, 398);
+            this.Controls.Add(this.btncancelar);
+            this.Controls.Add(this.btnaceptar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.GruopBox);
+            this.Controls.Add(this.txtCant);
+            this.Controls.Add(this.combitodeproductos);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "fmrModificacionDeStock";
             this.Text = "fmrModificacionDeStock";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.fmrModificacionDeStock_Load);
+            this.GruopBox.ResumeLayout(false);
+            this.GruopBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,12 +196,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.ComboBox combitodeproductos;
+        private System.Windows.Forms.TextBox txtCant;
+        private System.Windows.Forms.RadioButton RadioDefectuosos;
+        private System.Windows.Forms.GroupBox GruopBox;
+        private System.Windows.Forms.RadioButton RadioOtros;
+        private System.Windows.Forms.RadioButton RadioVencidos;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnaceptar;
+        private System.Windows.Forms.Button btncancelar;
     }
 }

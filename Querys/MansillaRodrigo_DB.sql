@@ -41,6 +41,20 @@ Estado bit not null default 1
 Alter table Compras add FCompra date not null
 
 
+Create table ModiStock(
+Id int not null primary key,
+idProducto int not null foreign key references Productos(ID),
+Cantidad int not null,
+Comentario varchar(30) null,
+FechaModificacion date not null,
+estado bit null default 1 ,
+NameProduct varchar(30) null
+)
+--alter table modistock column NameProduct varchar(30) not null
+ALTER TABLE ModiStock modify column  NameProduct varchar(30);
+
+
+
 create procedure Sp_AgregarProducto(
 @nom varchar(100),
 @idcat int,
@@ -73,8 +87,6 @@ begin
 insert into categorias (Id,Nombre,Estado) values ((select count(*) from categorias)+1,@Nombre,1)
 end 
 
-exec SPAgregarCategoria 'Roberto'
-
 create procedure SPEliminarCategorias(
 @aydi int
 )
@@ -94,7 +106,7 @@ begin
 update Productos set PrecioCompra = @preciocompra, PrecioVenta = @precioventa, Stock = Stock + @stock, Ganancia =  @precioventa - @preciocompra where  Nombre like @Nom
 end 
 
-alter procedure SPAgregarCompra( 
+create procedure SPAgregarCompra( 
 @nom varchar(30), -- EL NOMBRE SIEMPRE VA EXISTIR POR QUE LO ELIJE DE UN COMBOBOX, NI HACE FALTA VERIFICAR EL MISMO. 
 @cant int,
 @PC decimal(8,2),
@@ -109,6 +121,21 @@ select @aux2 = @aux2 + 1 -- LE SUMO 1 A LAS COMPRAS
 insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,FCompra)values (@aux2,@aux,@cant,@PC,@PV,@PV-@PC,getdate())
 end
 
-exec SPAgregarCompra 'lala', 14, 15, 25
+alter procedure SPAgregarModificacionSTock(
+@name varchar(30),
+@cant int,
+@Coment varchar(30)
+)
+as
+begin 
+declare @aux int
+select  @aux = id from Productos where Nombre like @name
+insert into ModiStock (Id,idProducto,Cantidad,Comentario,FechaModificacion,estado,NameProduct) values ((select count(*) from ModiStock)+1,@aux,@cant,@Coment,GETDATE(),1,@name)
+end
 
-select *from Compras
+
+
+
+
+
+

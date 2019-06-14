@@ -159,6 +159,8 @@ namespace Negocio
             
         }
 
+        // AGREGO COMPRA
+
         public void agregarCompra(Producto nuevo)
         {
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
@@ -183,6 +185,9 @@ namespace Negocio
                 accesoDatos.cerrarConexion();
             }
         }
+
+       
+
 
         // ELIMINO PRODUCTOS 
 
