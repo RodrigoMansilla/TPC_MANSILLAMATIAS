@@ -159,6 +159,31 @@ namespace Negocio
             
         }
 
+        public void agregarCompra(Producto nuevo)
+        {
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            try
+            {
+                accesoDatos.setearSP("SPAgregarCompra");
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@nom", nuevo.Nombre);
+                accesoDatos.Comando.Parameters.AddWithValue("@cant", nuevo.Stock);
+                accesoDatos.Comando.Parameters.AddWithValue("@PC", nuevo.PrecioCompra);
+                accesoDatos.Comando.Parameters.AddWithValue("@PV", nuevo.PrecioVenta);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
         // ELIMINO PRODUCTOS 
 
         public void EliminarProducto(Producto Elimiar)

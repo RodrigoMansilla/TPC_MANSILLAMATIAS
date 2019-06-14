@@ -40,6 +40,7 @@ Estado bit not null default 1
 )
 Alter table Compras add FCompra date not null
 
+
 create procedure Sp_AgregarProducto(
 @nom varchar(100),
 @idcat int,
@@ -93,4 +94,20 @@ begin
 update Productos set PrecioCompra = @preciocompra, PrecioVenta = @precioventa, Stock = Stock + @stock, Ganancia =  @precioventa - @preciocompra where  Nombre like @Nom
 end 
 
-select *from Productos where nombre like 'lala'
+create procedure SPAgregarCompra( 
+@nom varchar(30), -- EL NOMBRE SIEMPRE VA EXISTIR POR QUE LO ELIJE DE UN COMBOBOX, NI HACE FALTA VERIFICAR EL MISMO. 
+@cant int,
+@PC decimal(8,2),
+@PV decimal(8,2)
+)
+as
+begin
+declare @aux int, @aux2 int -- DECLARO VARIABLES LOCALES 
+select @aux=id from Productos where Nombre like @nom -- OBTENGO EN VARIABLE EL ID DEL PRODUCTO QUE LLEGA DE LA APP
+select @aux2 = count(*) from compras  -- CUENTO LAS COMPRAS QUE TENGO EN LA BASE DE DATOS 
+select @aux2 = @aux2 + 1 -- LE SUMO 1 A LAS COMPRAS 
+insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,FCompra)values (@aux2,@aux,@cant,@PC,@PV,@PV-@PC,GETDATE())
+end
+
+
+select *from Compras

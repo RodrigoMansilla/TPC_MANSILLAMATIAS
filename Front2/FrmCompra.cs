@@ -16,6 +16,7 @@ namespace Front2
     {
         
         private Producto Productolocal = null;
+        private Compra CompraLocal = null;
 
         public FrmCompra()
         {
@@ -57,26 +58,22 @@ namespace Front2
             {
                 if (Productolocal == null)
                     Productolocal = new Producto();
-
+                // UPDATEA PRODUCTOS 
                 Productolocal.Nombre = Convert.ToString(ComboProductos.SelectedItem);
-                MessageBox.Show(Productolocal.Nombre);
-                Productolocal.Stock = Convert.ToInt32(txtCantidad.Text);//bien
+                Productolocal.Stock = Convert.ToInt32(txtCantidad.Text);
                 Productolocal.PrecioCompra = Convert.ToDecimal(txtPrecioCompra.Text);
                 Productolocal.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
-                
-                /*   ProductoLocal.Descripcion = textBoxNombre.Text;
-                ProductoLocal.PrecioCompra = Convert.ToDecimal(textBoxPrecioCompra.Text);
-                ProductoLocal.PrecioVenta = Convert.ToDecimal(textBoxPrecioVenta.Text);
-                ProductoLocal.Ganancia = Convert.ToDecimal(textBoxGanancia.Text);
-                ProductoLocal.stock1 = Convert.ToInt32(textBoxStock.Text);
-                ProductoLocal.StockMinimo = Convert.ToInt32(textBoxStockMinimo.Text);
-                ProductoLocal.Comentarios = textBoxComentarios.Text;
-                ProductoLocal.Marca = textBoxMarca.Text;
-                ProductoLocal.Categoria = (Categoria)ComboCategoria.SelectedItem;*/
-
                 negocio.modificarProducto2(Productolocal);
+
+                // CREA REGISTRO EN TABLA COMPRAS 
+
+                Productolocal.Nombre = Convert.ToString(ComboProductos.SelectedItem);
+                Productolocal.Stock = Convert.ToInt32(txtCantidad.Text);
+                Productolocal.PrecioCompra = Convert.ToDecimal(txtPrecioCompra.Text);
+                Productolocal.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+                negocio.agregarCompra(Productolocal);
                 Close();
-                MessageBox.Show("llegue aca");
+
 
             }
             catch (Exception ex)
@@ -85,10 +82,11 @@ namespace Front2
                 throw ex;
             }
         }
+        
 
-        // BOTON CANCELAR 
+            // BOTON CANCELAR 
 
-        private void btncancelar_Click(object sender, EventArgs e)
+            private void btncancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
