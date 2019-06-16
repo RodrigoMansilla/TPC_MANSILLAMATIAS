@@ -14,7 +14,7 @@ namespace Front2
 {
     public partial class frmHistoricoCompras : Form
     {
-        //private List<Producto> listaProductos2;
+        
         private List<Compra> ListarCompras2;
         public frmHistoricoCompras()
         {
@@ -33,7 +33,8 @@ namespace Front2
             {
                 ListarCompras2 = negocio.ListarCompras();
                 DGVListadeCompras.DataSource = ListarCompras2;
-                
+                DGVListadeCompras.Columns[6].Visible = false;
+
             }
             catch (Exception ex)
             {

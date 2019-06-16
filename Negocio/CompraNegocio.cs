@@ -21,23 +21,28 @@ namespace Negocio
             List<Compra> listado = new List<Compra>();
             
             Compra Com = new Compra();
+            Producto nuevo = new Producto();
             try
             {
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select p.nombre, c.Cantidad, c.PrecioCompra, c.PrecioVenta, c.Ganancia, c.FCompra from Productos as p inner join compras as c on c.IdProducto = p.ID";
+                comando.CommandText = "select c.IdCompra, c.IdProducto, p.nombre, c.Cantidad, c.PrecioCompra, c.PrecioVenta, c.Ganancia from compras as c inner join productos as p on p.id=c.idproducto";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
-                while (accesoDatos.Lector.Read())
+                while (lector.Read())
                 {
                     Com = new Compra();
-                    
-                    Com.Cantidad = lector.GetInt32(0);
-                    Com.PrecioCompra = lector.GetDecimal(1);
-                    Com.PrecioVenta = lector.GetDecimal(2);
-                    Com.Ganancia = lector.GetDecimal(3);
-                    Com.FCompra = lector.GetDateTime(4);
+                    nuevo = new Producto();
+
+                    Com.IdCompra = lector.GetInt32(0);
+                    Com.IdProducto = lector.GetInt32(1);
+                    nuevo.Nombre = lector.GetString(2);
+                    Com.Cantidad = lector.GetDecimal(3);
+                    Com.PrecioCompra = lector.GetDecimal(4);
+                    Com.PrecioVenta = lector.GetDecimal(5);
+                    Com.Ganancia = lector.GetDecimal(6);
+                   // Com.FCompra = lector.GetDateTime(7);
 
                     listado.Add(Com);
                 }
