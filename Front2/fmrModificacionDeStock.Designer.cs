@@ -110,7 +110,7 @@
             this.GruopBox.Controls.Add(this.RadioOtros);
             this.GruopBox.Controls.Add(this.RadioVencidos);
             this.GruopBox.Controls.Add(this.RadioDefectuosos);
-            this.GruopBox.Location = new System.Drawing.Point(144, 161);
+            this.GruopBox.Location = new System.Drawing.Point(177, 161);
             this.GruopBox.Name = "GruopBox";
             this.GruopBox.Size = new System.Drawing.Size(200, 144);
             this.GruopBox.TabIndex = 7;

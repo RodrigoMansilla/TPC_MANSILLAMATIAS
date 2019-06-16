@@ -21,6 +21,12 @@ namespace Front2
             InitializeComponent();
         }
 
+        public fmrModificacionDeStock(ModificacionStock nuevo)
+        {
+            InitializeComponent();
+            Productolocal = nuevo;
+        }
+
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -32,30 +38,39 @@ namespace Front2
             try
             {
                 combitodeproductos.DataSource = productoNegocio.listarProductos();
-                combitodeproductos.SelectedIndex = combitodeproductos.FindString(Productolocal.NameProduct);
-                txtCant.Text = Productolocal.Cantidad.ToString();
-            //string value = "";
 
-            bool isChecked = RadioDefectuosos.Checked;
 
-                if (isChecked)
+
+                if (Productolocal != null)
                 {
+                    combitodeproductos.SelectedIndex = combitodeproductos.FindString(Productolocal.NameProduct);
+                txtCant.Text = Productolocal.Cantidad.ToString();
+
+                    MessageBox.Show("Hola");
+                    bool isChecked = RadioDefectuosos.Checked;
+
+
+                if (RadioDefectuosos.Checked == true)
+                {
+                        
                     Productolocal.Comentarios = RadioDefectuosos.Text;
                 }
 
                 isChecked = RadioVencidos.Checked;
 
-                if (isChecked) { 
-                    Productolocal.Comentarios = RadioVencidos.Text;
+                if (RadioVencidos.Checked == true) {
+                      
+                        Productolocal.Comentarios = RadioVencidos.Text;
+                        
                 }
 
                 isChecked = RadioOtros.Checked;
 
-                if (isChecked)
+                if (RadioOtros.Checked == true)
                 {
                     Productolocal.Comentarios = RadioOtros.Text;
                 }
-
+                }
 
                 //ComboProductos.SelectedIndex = ComboProductos.FindString(Productolocal.Nombre);
             }
@@ -92,19 +107,22 @@ namespace Front2
                 Productolocal.Cantidad = Convert.ToInt32(txtCant.Text);
                 if (RadioDefectuosos.Checked == true)
                 {
+                    
                     Productolocal.Comentarios = Convert.ToString(RadioDefectuosos.Text);
                 }
                 
                 if (RadioOtros.Checked == true)
                 {
-                    Productolocal.Comentarios = Convert.ToString(RadioVencidos.Text);
+                    
+                    Productolocal.Comentarios = Convert.ToString(RadioOtros.Text);
                 }
 
                 if (RadioVencidos.Checked == true)
                 {
-                    Productolocal.Comentarios = Convert.ToString(RadioOtros.Text);
+                    Productolocal.Comentarios = Convert.ToString(RadioVencidos.Text);
                 }
                 negocio.agregarModificacionStock(Productolocal);
+                negocio.UpdateProductos(Productolocal);
                 Close();
 
 

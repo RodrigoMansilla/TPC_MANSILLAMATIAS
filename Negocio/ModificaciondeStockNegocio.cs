@@ -35,7 +35,33 @@ namespace Negocio
             finally
             {
                 accesoDatos.cerrarConexion();
+
             }
+        }
+
+        public void UpdateProductos(ModificacionStock nuevo)
+        {
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            try
+            {
+                accesoDatos.setearSP("SPUpdateProductos");
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@name", nuevo.NameProduct);
+                accesoDatos.Comando.Parameters.AddWithValue("@cant", nuevo.Cantidad); accesoDatos.Comando.Parameters.AddWithValue("@Coment", nuevo.Comentarios);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+
         }
     }
 }
