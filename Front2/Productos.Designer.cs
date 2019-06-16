@@ -112,6 +112,7 @@
             this.txtboxbuscar.Name = "txtboxbuscar";
             this.txtboxbuscar.Size = new System.Drawing.Size(100, 20);
             this.txtboxbuscar.TabIndex = 8;
+            this.txtboxbuscar.TextChanged += new System.EventHandler(this.txtboxbuscar_TextChanged);
             // 
             // Productos
             // 

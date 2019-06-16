@@ -64,6 +64,11 @@ namespace Front2
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
+            if (textBoxNombre.Text.Trim() == "" || textBoxStockMinimo.Text.Trim() == "" )
+            {
+                MessageBox.Show("Debes completar todos los campos");
+                return;
+            }
             ProductoNegocio negocio = new ProductoNegocio();
             try
             {

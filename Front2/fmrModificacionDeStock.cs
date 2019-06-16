@@ -84,25 +84,20 @@ namespace Front2
 
         private void btnaceptar_Click(object sender, EventArgs e)
         {
-            //ModificacionStock negocio = new ModificacionStock();
+
+            if (txtCant.Text.Trim() == "" )
+            {
+                MessageBox.Show("Debes completar todos los campos");
+                return;
+            }
+
             ModificaciondeStockNegocio negocio = new ModificaciondeStockNegocio();
             try
             {
                 if (Productolocal == null)
                     Productolocal = new ModificacionStock();
 
-                /* Productolocal.Nombre = Convert.ToString(ComboProductos.SelectedItem);
-                 Productolocal.Stock = Convert.ToInt32(txtCantidad.Text);
-                 Productolocal.PrecioCompra = Convert.ToDecimal(txtPrecioCompra.Text);
-                 Productolocal.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
-
-                 // UPDATEA PRODUCTOS 
-
-                 negocio.modificarProducto2(Productolocal);
-
-                 // CREA REGISTRO EN TABLA COMPRAS 
-                 negocio.agregarCompra(Productolocal);*/
-
+            
                 Productolocal.NameProduct = Convert.ToString(combitodeproductos.SelectedItem);
                 Productolocal.Cantidad = Convert.ToInt32(txtCant.Text);
                 if (RadioDefectuosos.Checked == true)
@@ -133,5 +128,13 @@ namespace Front2
                 throw ex;
             }
         }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+
+
     }
 }

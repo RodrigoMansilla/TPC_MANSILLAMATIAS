@@ -20,3 +20,4 @@ D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.Productos.resou
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.EliminarCategorias.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.FrmCompra.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.fmrModificacionDeStock.resources
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmHistoricoCompras.resources

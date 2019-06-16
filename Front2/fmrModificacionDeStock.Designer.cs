@@ -87,6 +87,7 @@
             this.combitodeproductos.Name = "combitodeproductos";
             this.combitodeproductos.Size = new System.Drawing.Size(121, 21);
             this.combitodeproductos.TabIndex = 4;
+
             // 
             // txtCant
             // 
@@ -164,6 +165,7 @@
             this.btncancelar.TabIndex = 10;
             this.btncancelar.Text = "CANCELAR";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // fmrModificacionDeStock
             // 

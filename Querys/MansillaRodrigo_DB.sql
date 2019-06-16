@@ -156,5 +156,8 @@ update Productos set Stock=Stock+(@cant) where Nombre like @name
 end 
 go
 
+select *from compras
+select c.Cantidad, c.PrecioCompra, c.PrecioVenta, c.Ganancia, c.FCompra from Productos as p inner join compras as c on c.IdProducto = p.ID
+
 
 

@@ -64,7 +64,7 @@ namespace Negocio
             }
             finally
             {
-                conexion.Close();
+                accesoDatos.cerrarConexion();
             }
         }
 

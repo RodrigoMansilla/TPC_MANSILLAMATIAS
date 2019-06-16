@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using AceesoDatos;
 using Dominio;
 
@@ -11,21 +12,33 @@ namespace Negocio
     public class CompraNegocio
     {
 
-        /*public List<Compra> ListarCompras()
+        public List<Compra> ListarCompras()
         {
-            List<Compra> listado = new List<Compra>();
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<Compra> listado = new List<Compra>();
+            
             Compra Com = new Compra();
             try
             {
-                accesoDatos.setearConsulta("Select ID, Nombre from Categorias where Estado = 1 ");
-                accesoDatos.abrirConexion();
-                accesoDatos.ejecutarConsulta();
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "select p.nombre, c.Cantidad, c.PrecioCompra, c.PrecioVenta, c.Ganancia, c.FCompra from Productos as p inner join compras as c on c.IdProducto = p.ID";
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
                 while (accesoDatos.Lector.Read())
                 {
                     Com = new Compra();
-                    Com.IdCompra = (int)accesoDatos.Lector["ID"];
-                    Com. = accesoDatos.Lector["Nombre"].ToString();
+                    
+                    Com.Cantidad = lector.GetInt32(0);
+                    Com.PrecioCompra = lector.GetDecimal(1);
+                    Com.PrecioVenta = lector.GetDecimal(2);
+                    Com.Ganancia = lector.GetDecimal(3);
+                    Com.FCompra = lector.GetDateTime(4);
+
                     listado.Add(Com);
                 }
                 return listado;
@@ -40,9 +53,8 @@ namespace Negocio
             {
                 accesoDatos.cerrarConexion();
             }
-        }*/
-
-
+        }
+        
 
 
 

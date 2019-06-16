@@ -49,6 +49,12 @@ namespace Front2
 
         private void btnaceptar_Click(object sender, EventArgs e)
         {
+
+            if (txtCantidad.Text.Trim() == "" || txtPrecioCompra.Text.Trim() == "" || txtPrecioVenta.Text.Trim() == "")
+            {
+                MessageBox.Show("Debes completar todos los campos");
+                return;
+            }
             ProductoNegocio negocio = new ProductoNegocio();
             try
             {

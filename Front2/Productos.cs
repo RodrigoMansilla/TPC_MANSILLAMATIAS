@@ -115,5 +115,19 @@ namespace Front2
             ListaCategorias nueva = new ListaCategorias();
             nueva.ShowDialog();
         }
+
+        private void txtboxbuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtboxbuscar.Text == "")
+            {
+                dvgProductos1.DataSource = listaProductos2;
+            }
+            else
+            {
+                List<Producto> lista;
+                lista = listaProductos2.FindAll(X => X.Nombre.Contains(txtboxbuscar.Text));
+                dvgProductos1.DataSource = lista;
+            }
+        }
     }
 }

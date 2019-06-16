@@ -25,6 +25,11 @@ namespace Front2
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (txtbxcatnueva.Text.Trim() == "" )
+            {
+                MessageBox.Show("Debes completar todos los campos");
+                return;
+            }
             CategoriaNegocio negocio = new CategoriaNegocio();
             try
             {
