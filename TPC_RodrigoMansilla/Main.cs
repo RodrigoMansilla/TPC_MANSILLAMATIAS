@@ -22,7 +22,8 @@ namespace TPC_RodrigoMansilla
         {
             SubMenuCompras.Visible = false;
             submenuproductos.Visible = true;
-            
+            subMenuStock.Visible = false;
+
         }
 
         private void btnVerProductos_Click(object sender, EventArgs e)
@@ -64,13 +65,33 @@ namespace TPC_RodrigoMansilla
         {
             SubMenuCompras.Visible = true;
             submenuproductos.Visible = false;
-            
+            subMenuStock.Visible = false;
+
+
         }
 
         private void btnHistorialCompra_Click(object sender, EventArgs e)
         {
             frmHistoricoCompras nuevo = new frmHistoricoCompras();
             nuevo.ShowDialog();
+        }
+
+        private void labelfechahora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void horafecha_Tick(object sender, EventArgs e)
+        {
+            labelfechahora.Text = DateTime.Now.ToLongTimeString();
+            lblfecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            subMenuStock.Visible = true;
+            submenuproductos.Visible = false;
+            SubMenuCompras.Visible = false;
         }
     }
 }

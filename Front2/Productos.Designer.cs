@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dvgProductos1 = new System.Windows.Forms.DataGridView();
             this.btnagregarcategorias = new System.Windows.Forms.Button();
             this.btnvercategorias = new System.Windows.Forms.Button();
@@ -41,11 +42,22 @@
             // 
             // dvgProductos1
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgProductos1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dvgProductos1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgProductos1.Location = new System.Drawing.Point(41, 114);
             this.dvgProductos1.Name = "dvgProductos1";
+            this.dvgProductos1.ReadOnly = true;
+            this.dvgProductos1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgProductos1.Size = new System.Drawing.Size(700, 196);
             this.dvgProductos1.TabIndex = 0;
+            this.dvgProductos1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dvgProductos1_CellFormatting);
             // 
             // btnagregarcategorias
             // 

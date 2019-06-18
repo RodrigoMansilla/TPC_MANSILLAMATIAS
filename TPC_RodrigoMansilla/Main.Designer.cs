@@ -28,21 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnStock = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.submenuproductos = new System.Windows.Forms.Panel();
             this.btnvercategorias = new System.Windows.Forms.Button();
-            this.btnModStock = new System.Windows.Forms.Button();
             this.btnVerProductos = new System.Windows.Forms.Button();
+            this.btnModStock = new System.Windows.Forms.Button();
             this.btnNuevaCompra = new System.Windows.Forms.Button();
             this.labelfechahora = new System.Windows.Forms.Label();
             this.SubMenuCompras = new System.Windows.Forms.Panel();
             this.btnHistorialCompra = new System.Windows.Forms.Button();
+            this.horafecha = new System.Windows.Forms.Timer(this.components);
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.subMenuStock = new System.Windows.Forms.Panel();
+            this.btnHisticoStock = new System.Windows.Forms.Button();
             this.submenuproductos.SuspendLayout();
             this.SubMenuCompras.SuspendLayout();
+            this.subMenuStock.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnProductos
@@ -61,28 +67,29 @@
             this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompras.Location = new System.Drawing.Point(37, 149);
             this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Size = new System.Drawing.Size(75, 23);
+            this.btnCompras.Size = new System.Drawing.Size(102, 23);
             this.btnCompras.TabIndex = 1;
             this.btnCompras.Text = "COMPRAS";
             this.btnCompras.UseVisualStyleBackColor = true;
             this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
-            // button3
+            // btnStock
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(37, 194);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnStock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStock.Location = new System.Drawing.Point(37, 194);
+            this.btnStock.Name = "btnStock";
+            this.btnStock.Size = new System.Drawing.Size(102, 23);
+            this.btnStock.TabIndex = 2;
+            this.btnStock.Text = "STOCK";
+            this.btnStock.UseVisualStyleBackColor = true;
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Location = new System.Drawing.Point(37, 239);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(102, 23);
             this.button4.TabIndex = 3;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
@@ -92,7 +99,7 @@
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Location = new System.Drawing.Point(37, 286);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(102, 23);
             this.button5.TabIndex = 4;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
@@ -100,13 +107,13 @@
             // submenuproductos
             // 
             this.submenuproductos.AllowDrop = true;
+            this.submenuproductos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.submenuproductos.Controls.Add(this.btnvercategorias);
-            this.submenuproductos.Controls.Add(this.btnModStock);
             this.submenuproductos.Controls.Add(this.btnVerProductos);
             this.submenuproductos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submenuproductos.Location = new System.Drawing.Point(130, 123);
+            this.submenuproductos.Location = new System.Drawing.Point(158, 117);
             this.submenuproductos.Name = "submenuproductos";
-            this.submenuproductos.Size = new System.Drawing.Size(206, 117);
+            this.submenuproductos.Size = new System.Drawing.Size(206, 86);
             this.submenuproductos.TabIndex = 5;
             this.submenuproductos.Visible = false;
             // 
@@ -120,16 +127,6 @@
             this.btnvercategorias.UseVisualStyleBackColor = true;
             this.btnvercategorias.Click += new System.EventHandler(this.btnvercategorias_Click);
             // 
-            // btnModStock
-            // 
-            this.btnModStock.Location = new System.Drawing.Point(0, 91);
-            this.btnModStock.Name = "btnModStock";
-            this.btnModStock.Size = new System.Drawing.Size(197, 23);
-            this.btnModStock.TabIndex = 2;
-            this.btnModStock.Text = "MODIFICAR STOCK";
-            this.btnModStock.UseVisualStyleBackColor = true;
-            this.btnModStock.Click += new System.EventHandler(this.btnModStock_Click);
-            // 
             // btnVerProductos
             // 
             this.btnVerProductos.Location = new System.Drawing.Point(0, 3);
@@ -139,6 +136,16 @@
             this.btnVerProductos.Text = "VER PRODUCTOS";
             this.btnVerProductos.UseVisualStyleBackColor = true;
             this.btnVerProductos.Click += new System.EventHandler(this.btnVerProductos_Click);
+            // 
+            // btnModStock
+            // 
+            this.btnModStock.Location = new System.Drawing.Point(0, 14);
+            this.btnModStock.Name = "btnModStock";
+            this.btnModStock.Size = new System.Drawing.Size(197, 23);
+            this.btnModStock.TabIndex = 2;
+            this.btnModStock.Text = "MODIFICAR STOCK";
+            this.btnModStock.UseVisualStyleBackColor = true;
+            this.btnModStock.Click += new System.EventHandler(this.btnModStock_Click);
             // 
             // btnNuevaCompra
             // 
@@ -154,23 +161,25 @@
             // 
             this.labelfechahora.AutoSize = true;
             this.labelfechahora.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelfechahora.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelfechahora.ForeColor = System.Drawing.Color.Blue;
-            this.labelfechahora.Location = new System.Drawing.Point(517, 49);
+            this.labelfechahora.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelfechahora.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.labelfechahora.Location = new System.Drawing.Point(589, 21);
             this.labelfechahora.Name = "labelfechahora";
-            this.labelfechahora.Size = new System.Drawing.Size(62, 26);
+            this.labelfechahora.Size = new System.Drawing.Size(179, 63);
             this.labelfechahora.TabIndex = 6;
             this.labelfechahora.Text = "label1";
+            this.labelfechahora.Click += new System.EventHandler(this.labelfechahora_Click);
             // 
             // SubMenuCompras
             // 
             this.SubMenuCompras.AllowDrop = true;
+            this.SubMenuCompras.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.SubMenuCompras.Controls.Add(this.btnHistorialCompra);
             this.SubMenuCompras.Controls.Add(this.btnNuevaCompra);
             this.SubMenuCompras.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SubMenuCompras.Location = new System.Drawing.Point(342, 155);
+            this.SubMenuCompras.Location = new System.Drawing.Point(158, 152);
             this.SubMenuCompras.Name = "SubMenuCompras";
-            this.SubMenuCompras.Size = new System.Drawing.Size(200, 82);
+            this.SubMenuCompras.Size = new System.Drawing.Size(206, 82);
             this.SubMenuCompras.TabIndex = 4;
             this.SubMenuCompras.Visible = false;
             // 
@@ -184,24 +193,64 @@
             this.btnHistorialCompra.UseVisualStyleBackColor = true;
             this.btnHistorialCompra.Click += new System.EventHandler(this.btnHistorialCompra_Click);
             // 
+            // horafecha
+            // 
+            this.horafecha.Enabled = true;
+            this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.ForeColor = System.Drawing.Color.DarkKhaki;
+            this.lblfecha.Location = new System.Drawing.Point(39, 376);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(126, 46);
+            this.lblfecha.TabIndex = 7;
+            this.lblfecha.Text = "label1";
+            // 
+            // subMenuStock
+            // 
+            this.subMenuStock.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.subMenuStock.Controls.Add(this.btnHisticoStock);
+            this.subMenuStock.Controls.Add(this.btnModStock);
+            this.subMenuStock.Location = new System.Drawing.Point(158, 184);
+            this.subMenuStock.Name = "subMenuStock";
+            this.subMenuStock.Size = new System.Drawing.Size(206, 100);
+            this.subMenuStock.TabIndex = 8;
+            this.subMenuStock.Visible = false;
+            // 
+            // btnHisticoStock
+            // 
+            this.btnHisticoStock.Location = new System.Drawing.Point(0, 60);
+            this.btnHisticoStock.Name = "btnHisticoStock";
+            this.btnHisticoStock.Size = new System.Drawing.Size(197, 23);
+            this.btnHisticoStock.TabIndex = 3;
+            this.btnHisticoStock.Text = "REGISTRO DE MOD. STOCK";
+            this.btnHisticoStock.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.subMenuStock);
             this.Controls.Add(this.SubMenuCompras);
+            this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.labelfechahora);
-            this.Controls.Add(this.submenuproductos);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnStock);
             this.Controls.Add(this.btnCompras);
             this.Controls.Add(this.btnProductos);
+            this.Controls.Add(this.submenuproductos);
             this.Name = "Main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
             this.submenuproductos.ResumeLayout(false);
             this.SubMenuCompras.ResumeLayout(false);
+            this.subMenuStock.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,7 +260,7 @@
 
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnCompras;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnVerProductos;
@@ -222,5 +271,9 @@
         private System.Windows.Forms.Button btnHistorialCompra;
         public System.Windows.Forms.Panel submenuproductos;
         public System.Windows.Forms.Panel SubMenuCompras;
+        private System.Windows.Forms.Timer horafecha;
+        private System.Windows.Forms.Label lblfecha;
+        private System.Windows.Forms.Panel subMenuStock;
+        private System.Windows.Forms.Button btnHisticoStock;
     }
 }

@@ -157,7 +157,7 @@ end
 go
 
 select *from compras
-select c.Cantidad, c.PrecioCompra, c.PrecioVenta, c.Ganancia, c.FCompra from Productos as p inner join compras as c on c.IdProducto = p.ID
+select c.IdCompra, c.IdProducto, p.nombre, c.Cantidad, c.PrecioCompra, c.PrecioVenta, c.Ganancia from compras as c inner join productos as p on p.id=c.idproducto
 
 
 

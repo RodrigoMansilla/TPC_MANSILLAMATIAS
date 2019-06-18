@@ -24,6 +24,8 @@ namespace Front2
         public void Productos_Load(object sender, EventArgs e)
         {
             cargarGrilla1();
+            
+
         }
 
         // FUNCION DE CARGA DE LA GRILLA
@@ -128,6 +130,24 @@ namespace Front2
                 lista = listaProductos2.FindAll(X => X.Nombre.Contains(txtboxbuscar.Text));
                 dvgProductos1.DataSource = lista;
             }
+        }
+
+        private void dvgProductos1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+           /* int A;
+            decimal B;
+            if (this.dvgProductos1.Columns[e.ColumnIndex].Name == "Stock")
+            {
+                A = Convert.ToInt32(e.Value);
+                B = Convert.ToDecimal(this.dvgProductos1.Columns[e.ColumnIndex].Name == "PrecioVenta");
+                MessageBox.Show(Convert.ToString(B));
+                if (A < B)
+                {
+                    e.CellStyle.ForeColor = Color.Red;
+                    e.CellStyle.BackColor = Color.Orange;
+                }
+
+            }*/
         }
     }
 }

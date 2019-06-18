@@ -30,15 +30,17 @@
         {
             this.DGVListadeCompras = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtbusqueda = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVListadeCompras)).BeginInit();
             this.SuspendLayout();
             // 
             // DGVListadeCompras
             // 
             this.DGVListadeCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVListadeCompras.Location = new System.Drawing.Point(80, 79);
+            this.DGVListadeCompras.Location = new System.Drawing.Point(39, 143);
             this.DGVListadeCompras.Name = "DGVListadeCompras";
-            this.DGVListadeCompras.Size = new System.Drawing.Size(585, 295);
+            this.DGVListadeCompras.Size = new System.Drawing.Size(710, 295);
             this.DGVListadeCompras.TabIndex = 0;
             // 
             // label1
@@ -51,11 +53,30 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "HISTORICO DE COMPRAS ";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(115, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(263, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "BUSCADOR DE COMPRAS POR ID DE PRODUCTO";
+            // 
+            // txtbusqueda
+            // 
+            this.txtbusqueda.Location = new System.Drawing.Point(425, 93);
+            this.txtbusqueda.Name = "txtbusqueda";
+            this.txtbusqueda.Size = new System.Drawing.Size(100, 20);
+            this.txtbusqueda.TabIndex = 3;
+            this.txtbusqueda.TextChanged += new System.EventHandler(this.txtbusqueda_TextChanged);
+            // 
             // frmHistoricoCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtbusqueda);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGVListadeCompras);
             this.Name = "frmHistoricoCompras";
@@ -71,5 +92,7 @@
 
         private System.Windows.Forms.DataGridView DGVListadeCompras;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtbusqueda;
     }
 }

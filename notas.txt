@@ -54,4 +54,6 @@ la marca deberia ser una combobox que te de las opcion de los nombre de una tabl
 El stock actual tiene que inicializar en 0.
 Cuando quiera comprar un producto elijo la categoría y se despliega una lista solo de esa categoría y le pongo la cantidad el precio de compra precio de venta y que calculé la ganancia 
 
-form que tengo que crear 
+PREGUNTAR :
+
+COMO HAGO EN UNA DGV PARA TRAER DATOS DE DOS TABLAS DIFERENTES 

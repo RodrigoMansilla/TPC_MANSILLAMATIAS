@@ -42,6 +42,19 @@ namespace Front2
             }
         }
 
+        private void txtbusqueda_TextChanged(object sender, EventArgs e)
+        {
+           /* if (txtbusqueda.Text == "")
+            {
+                DGVListadeCompras.DataSource = ListarCompras2;
+            }
+            else
+            {
+                List<frmHistoricoCompras> lista;
+               // lista = ListarCompras2.FindAll(X => X.IdProducto.Contains(txtbusqueda.Text));
+                DGVListadeCompras.DataSource = lista;
+            }*/
+        }
     }
 
 }
