@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.Sql;
 
 namespace AceesoDatos
 {
@@ -105,5 +106,6 @@ namespace AceesoDatos
             }
         }
 
+        
     }
 }

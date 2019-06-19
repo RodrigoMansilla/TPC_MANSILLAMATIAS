@@ -91,6 +91,12 @@
     <Compile Include="frmHistoricoStock.Designer.cs">
       <DependentUpon>frmHistoricoStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNuevoCp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoCp.Designer.cs">
+      <DependentUpon>frmNuevoCp.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHistoricoStock.resx">
       <DependentUpon>frmHistoricoStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoCp.resx">
+      <DependentUpon>frmNuevoCp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaCategorias.resx">
       <DependentUpon>ListaCategorias.cs</DependentUpon>

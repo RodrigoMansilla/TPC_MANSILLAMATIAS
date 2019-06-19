@@ -3,6 +3,8 @@
 create database MansillaRodrigo_DB
 go
 
+-- CREACION DE TABLAS 
+
 create table Categorias (
 Id int primary key not null, 
 Nombre varchar(50) not null,
@@ -56,7 +58,22 @@ NameProduct varchar(30) null
 )
 go
 
+create table Provincias (
+id int not null primary key,
+Nombre varchar(35) not null
+)
+go
 
+create table Cp(-- DARLE CREATE CUANDO PRIMERO CREE LAS PROVINCIAS 
+CodigoPostal int not null primary key,
+Partido varchar(35) not null,
+Provincia varchar(35) not null,
+estado bit null
+)
+
+go
+
+-- CREACION DE PROCEDIMIENTOS 
 
 create procedure Sp_AgregarProducto(
 @nom varchar(100),
@@ -156,8 +173,18 @@ update Productos set Stock=Stock+(@cant) where Nombre like @name
 end 
 go
 
-select *from compras
-select c.IdCompra, c.IdProducto, p.nombre, c.Cantidad, c.PrecioCompra, c.PrecioVenta, c.Ganancia from compras as c inner join productos as p on p.id=c.idproducto
+create procedure SPAgregarCP(
+@codigo int,
+@par varchar(35),
+@pv varchar(35)
+)
+as
+begin
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (@codigo,@par,@pv,1)
+end 
+
+select *from cp
+
 
 
 

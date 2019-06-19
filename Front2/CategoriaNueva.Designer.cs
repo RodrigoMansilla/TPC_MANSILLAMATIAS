@@ -87,6 +87,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CategoriaNueva";
             this.Text = "Catr";
+            this.Load += new System.EventHandler(this.CategoriaNueva_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

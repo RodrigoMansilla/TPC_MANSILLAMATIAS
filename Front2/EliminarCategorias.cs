@@ -41,6 +41,8 @@ namespace Front2
 
         // ACEPT0 LA ELIMINACION.
 
+        
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             CategoriaNegocio negocio = new CategoriaNegocio();

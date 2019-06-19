@@ -99,5 +99,11 @@ namespace TPC_RodrigoMansilla
             frmHistoricoStock nuevo = new frmHistoricoStock();
             nuevo.ShowDialog();
         }
+
+        private void btncp_Click(object sender, EventArgs e)
+        {
+            frmNuevoCp nuevo = new frmNuevoCp();
+            nuevo.ShowDialog();
+        }
     }
 }

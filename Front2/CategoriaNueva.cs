@@ -48,5 +48,10 @@ namespace Front2
             }
 
         }
+
+        private void CategoriaNueva_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

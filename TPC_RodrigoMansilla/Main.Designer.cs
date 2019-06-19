@@ -33,8 +33,8 @@
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btncp = new System.Windows.Forms.Button();
             this.submenuproductos = new System.Windows.Forms.Panel();
             this.btnvercategorias = new System.Windows.Forms.Button();
             this.btnVerProductos = new System.Windows.Forms.Button();
@@ -92,25 +92,26 @@
             this.btnStock.UseVisualStyleBackColor = true;
             this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
-            // button4
+            // btnClientes
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(37, 261);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(102, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.Location = new System.Drawing.Point(37, 261);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(102, 23);
+            this.btnClientes.TabIndex = 3;
+            this.btnClientes.Text = "CLIENTES";
+            this.btnClientes.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btncp
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(37, 320);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(102, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btncp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncp.Location = new System.Drawing.Point(37, 320);
+            this.btncp.Name = "btncp";
+            this.btncp.Size = new System.Drawing.Size(102, 23);
+            this.btncp.TabIndex = 4;
+            this.btncp.Text = "NUEVO CP ";
+            this.btncp.UseVisualStyleBackColor = true;
+            this.btncp.Click += new System.EventHandler(this.btncp_Click);
             // 
             // submenuproductos
             // 
@@ -171,7 +172,7 @@
             this.labelfechahora.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelfechahora.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelfechahora.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.labelfechahora.Location = new System.Drawing.Point(589, 21);
+            this.labelfechahora.Location = new System.Drawing.Point(549, 22);
             this.labelfechahora.Name = "labelfechahora";
             this.labelfechahora.Size = new System.Drawing.Size(179, 63);
             this.labelfechahora.TabIndex = 6;
@@ -289,8 +290,8 @@
             this.Controls.Add(this.SubMenuCompras);
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.labelfechahora);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btncp);
+            this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnStock);
             this.Controls.Add(this.btnCompras);
             this.Controls.Add(this.btnProductos);
@@ -314,8 +315,8 @@
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnCompras;
         private System.Windows.Forms.Button btnStock;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Button btncp;
         private System.Windows.Forms.Button btnVerProductos;
         private System.Windows.Forms.Button btnModStock;
         private System.Windows.Forms.Button btnNuevaCompra;

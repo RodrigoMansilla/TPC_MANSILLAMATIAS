@@ -51,10 +51,12 @@
   <ItemGroup>
     <Compile Include="CategoriaNegocio.cs" />
     <Compile Include="CompraNegocio.cs" />
+    <Compile Include="CPNegocio.cs" />
     <Compile Include="MarcaNegocio.cs" />
     <Compile Include="ModificaciondeStockNegocio.cs" />
     <Compile Include="ProductoNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvinciaNegocio.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

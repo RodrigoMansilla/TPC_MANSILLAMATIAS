@@ -9,7 +9,6 @@ namespace Dominio
     public class Direccion
     {
         public string CalleYNumero { get; set; }
-        public string Barrio { get; set; }
         public Cp Codigo { get; set; }
     }
 }
