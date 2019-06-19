@@ -41,6 +41,7 @@
             this.dvgcategoria.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.dvgcategoria.Location = new System.Drawing.Point(46, 55);
             this.dvgcategoria.Name = "dvgcategoria";
+            this.dvgcategoria.ReadOnly = true;
             this.dvgcategoria.Size = new System.Drawing.Size(449, 150);
             this.dvgcategoria.TabIndex = 0;
             // 

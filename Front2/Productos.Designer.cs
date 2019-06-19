@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dvgProductos1 = new System.Windows.Forms.DataGridView();
             this.btnagregarcategorias = new System.Windows.Forms.Button();
             this.btnvercategorias = new System.Windows.Forms.Button();
@@ -42,26 +42,28 @@
             // 
             // dvgProductos1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgProductos1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgProductos1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dvgProductos1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgProductos1.Location = new System.Drawing.Point(41, 114);
+            this.dvgProductos1.MultiSelect = false;
             this.dvgProductos1.Name = "dvgProductos1";
             this.dvgProductos1.ReadOnly = true;
+            this.dvgProductos1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dvgProductos1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgProductos1.Size = new System.Drawing.Size(700, 196);
+            this.dvgProductos1.Size = new System.Drawing.Size(943, 196);
             this.dvgProductos1.TabIndex = 0;
             this.dvgProductos1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dvgProductos1_CellFormatting);
             // 
             // btnagregarcategorias
             // 
-            this.btnagregarcategorias.Location = new System.Drawing.Point(414, 397);
+            this.btnagregarcategorias.Location = new System.Drawing.Point(617, 397);
             this.btnagregarcategorias.Name = "btnagregarcategorias";
             this.btnagregarcategorias.Size = new System.Drawing.Size(337, 23);
             this.btnagregarcategorias.TabIndex = 2;
@@ -81,9 +83,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(613, 335);
+            this.btnEliminar.Location = new System.Drawing.Point(730, 335);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(128, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(173, 23);
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -91,9 +93,9 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(326, 335);
+            this.btnModificar.Location = new System.Drawing.Point(401, 335);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(125, 23);
+            this.btnModificar.Size = new System.Drawing.Size(189, 23);
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -103,7 +105,7 @@
             // 
             this.btnAgregar.Location = new System.Drawing.Point(75, 335);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(114, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(158, 23);
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -130,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1028, 517);
             this.Controls.Add(this.txtboxbuscar);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.btnAgregar);

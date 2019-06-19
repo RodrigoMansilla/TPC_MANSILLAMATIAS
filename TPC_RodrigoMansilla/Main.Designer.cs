@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
@@ -46,9 +47,16 @@
             this.lblfecha = new System.Windows.Forms.Label();
             this.subMenuStock = new System.Windows.Forms.Panel();
             this.btnHisticoStock = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.Compras = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.submenuproductos.SuspendLayout();
             this.SubMenuCompras.SuspendLayout();
             this.subMenuStock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Compras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProductos
@@ -76,7 +84,7 @@
             // btnStock
             // 
             this.btnStock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStock.Location = new System.Drawing.Point(37, 194);
+            this.btnStock.Location = new System.Drawing.Point(37, 208);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(102, 23);
             this.btnStock.TabIndex = 2;
@@ -87,7 +95,7 @@
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(37, 239);
+            this.button4.Location = new System.Drawing.Point(37, 261);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(102, 23);
             this.button4.TabIndex = 3;
@@ -97,7 +105,7 @@
             // button5
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(37, 286);
+            this.button5.Location = new System.Drawing.Point(37, 320);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(102, 23);
             this.button5.TabIndex = 4;
@@ -229,12 +237,53 @@
             this.btnHisticoStock.Text = "REGISTRO DE MOD. STOCK";
             this.btnHisticoStock.UseVisualStyleBackColor = true;
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // Compras
+            // 
+            this.Compras.Image = ((System.Drawing.Image)(resources.GetObject("Compras.Image")));
+            this.Compras.InitialImage = ((System.Drawing.Image)(resources.GetObject("Compras.InitialImage")));
+            this.Compras.Location = new System.Drawing.Point(2, 138);
+            this.Compras.Name = "Compras";
+            this.Compras.Size = new System.Drawing.Size(29, 34);
+            this.Compras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Compras.TabIndex = 9;
+            this.Compras.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(2, 83);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(2, 198);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Compras);
             this.Controls.Add(this.subMenuStock);
             this.Controls.Add(this.SubMenuCompras);
             this.Controls.Add(this.lblfecha);
@@ -251,6 +300,9 @@
             this.submenuproductos.ResumeLayout(false);
             this.SubMenuCompras.ResumeLayout(false);
             this.subMenuStock.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Compras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +327,9 @@
         private System.Windows.Forms.Label lblfecha;
         private System.Windows.Forms.Panel subMenuStock;
         private System.Windows.Forms.Button btnHisticoStock;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox Compras;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

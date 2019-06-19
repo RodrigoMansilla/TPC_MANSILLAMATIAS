@@ -42,7 +42,17 @@ namespace Negocio
                     Com.PrecioCompra = lector.GetDecimal(4);
                     Com.PrecioVenta = lector.GetDecimal(5);
                     Com.Ganancia = lector.GetDecimal(6);
-                   // Com.FCompra = lector.GetDateTime(7);
+
+
+                    //Com.FCompra = Convert.ToDateTime(lector.GetDateTime(7));
+
+                    /*while (MyReader.Read())
+{
+   Convert.ToDateTime(MyReader["DateField"]).ToString("dd/MM/yyyy");
+}*/
+
+
+
 
                     listado.Add(Com);
                 }
