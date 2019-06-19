@@ -210,7 +210,7 @@
             // 
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfecha.ForeColor = System.Drawing.Color.DarkKhaki;
+            this.lblfecha.ForeColor = System.Drawing.Color.Black;
             this.lblfecha.Location = new System.Drawing.Point(39, 376);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(126, 46);
@@ -236,6 +236,7 @@
             this.btnHisticoStock.TabIndex = 3;
             this.btnHisticoStock.Text = "REGISTRO DE MOD. STOCK";
             this.btnHisticoStock.UseVisualStyleBackColor = true;
+            this.btnHisticoStock.Click += new System.EventHandler(this.btnHisticoStock_Click);
             // 
             // imageList1
             // 

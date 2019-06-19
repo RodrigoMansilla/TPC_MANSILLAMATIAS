@@ -21,3 +21,4 @@ D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.EliminarCategor
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.FrmCompra.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.fmrModificacionDeStock.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmHistoricoCompras.resources
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmHistoricoStock.resources

@@ -93,5 +93,11 @@ namespace TPC_RodrigoMansilla
             submenuproductos.Visible = false;
             SubMenuCompras.Visible = false;
         }
+
+        private void btnHisticoStock_Click(object sender, EventArgs e)
+        {
+            frmHistoricoStock nuevo = new frmHistoricoStock();
+            nuevo.ShowDialog();
+        }
     }
 }

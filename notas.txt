@@ -57,3 +57,7 @@ Cuando quiera comprar un producto elijo la categoría y se despliega una lista so
 PREGUNTAR :
 
 COMO HAGO EN UNA DGV PARA TRAER DATOS DE DOS TABLAS DIFERENTES 
+
+para la modificacion de stock, en algun momento tengo que validar cuanto stock tengo y no poder quitarle mas que esa cantidad. 
+
+
