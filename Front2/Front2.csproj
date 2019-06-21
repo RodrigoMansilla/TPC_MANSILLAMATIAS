@@ -73,6 +73,12 @@
     <Compile Include="fmrModificacionDeStock.Designer.cs">
       <DependentUpon>fmrModificacionDeStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCargarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCargarCliente.Designer.cs">
+      <DependentUpon>frmCargarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fmrModificacionDeStock.resx">
       <DependentUpon>fmrModificacionDeStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCargarCliente.resx">
+      <DependentUpon>frmCargarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCompra.resx">
       <DependentUpon>FrmCompra.cs</DependentUpon>

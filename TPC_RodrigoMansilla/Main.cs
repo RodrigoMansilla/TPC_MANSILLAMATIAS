@@ -105,5 +105,11 @@ namespace TPC_RodrigoMansilla
             frmNuevoCp nuevo = new frmNuevoCp();
             nuevo.ShowDialog();
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            frmCargarCliente nueva = new frmCargarCliente();
+            nueva.ShowDialog();
+        }
     }
 }

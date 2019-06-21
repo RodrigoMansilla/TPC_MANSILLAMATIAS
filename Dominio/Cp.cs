@@ -11,5 +11,10 @@ namespace Dominio
         public int CodigoPostal { get; set; }
         public string Partido { get; set; }
         public string Provincia { get; set; }
+
+        public override string ToString()
+        {
+            return Partido;
+        }
     }
 }

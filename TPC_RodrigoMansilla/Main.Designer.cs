@@ -101,6 +101,7 @@
             this.btnClientes.TabIndex = 3;
             this.btnClientes.Text = "CLIENTES";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btncp
             // 
