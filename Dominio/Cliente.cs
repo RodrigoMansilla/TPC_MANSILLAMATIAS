@@ -17,7 +17,7 @@ namespace Dominio
         public DateTime FNac { get; set; }
         public DateTime FAlta { get; set; }
         public string CalleYNumero { get; set; }
-        public Cp Codigo { get; set; }
+        public Cp cp { get; set; }
 
     }
 }

@@ -29,12 +29,12 @@ namespace Front2
 
         private void frmCargarCliente_Load(object sender, EventArgs e)
         {
-            CPNegocio negocio = new CPNegocio();
+            CPNegocio cPNegocio = new CPNegocio();
             try
             {
-                comboPartidos.DataSource = negocio.listarCp();
+                comboPartidos.DataSource = cPNegocio.listarCp();
 
-                if (ClienteLocal == null){
+                if (ClienteLocal != null){
                     txtDni.Text = ClienteLocal.DNI.ToString();
                     txtApellido.Text = ClienteLocal.Apellido.ToString();
                     Txtnombre.Text = ClienteLocal.Nombre.ToString();
@@ -42,7 +42,7 @@ namespace Front2
                     txtCorreoElectronico.Text = ClienteLocal.Telefono.ToString();
                     dtpFnac.Text = ClienteLocal.FNac.ToShortDateString();
                     txtDirecion.Text = ClienteLocal.CalleYNumero.ToString();
-                    comboPartidos.SelectedItem = comboPartidos.FindString(ClienteLocal.Codigo.Partido);
+                    comboPartidos.SelectedItem = comboPartidos.FindString(ClienteLocal.cp.Partido);
 
                 }
             }
@@ -72,9 +72,9 @@ namespace Front2
                 ClienteLocal.Apellido = txtApellido.Text;
                 ClienteLocal.Telefono = Convert.ToInt32(TxtTelefon.Text);
                 ClienteLocal.Mail = txtCorreoElectronico.Text;
-                ClienteLocal.FNac = Convert.ToDateTime(dtpFnac.Text); // a cuanto que no anda?
+                ClienteLocal.FNac = Convert.ToDateTime(dtpFnac.Text);
                 ClienteLocal.CalleYNumero = txtDirecion.Text;
-                ClienteLocal.Codigo = (Cp)comboPartidos.SelectedItem;
+                ClienteLocal.cp = (Cp)comboPartidos.SelectedItem;
 
                 if (ClienteLocal.ID != 0)
                 {
@@ -93,6 +93,11 @@ namespace Front2
 
                 throw ex;
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

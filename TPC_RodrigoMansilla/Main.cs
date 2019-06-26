@@ -122,6 +122,12 @@ namespace TPC_RodrigoMansilla
             frmCargarCliente nueva = new frmCargarCliente();
             nueva.ShowDialog();
         }
+
+        private void btnVerClientes_Click(object sender, EventArgs e)
+        {
+            frmVerClientes nuevo = new frmVerClientes();
+            nuevo.ShowDialog();
+        }
     }
 }/*
 

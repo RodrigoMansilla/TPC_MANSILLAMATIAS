@@ -52,8 +52,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.SubMenuClientes = new System.Windows.Forms.Panel();
-            this.btnVerClientes = new System.Windows.Forms.Button();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
+            this.btnVerClientes = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.submenuproductos.SuspendLayout();
             this.SubMenuCompras.SuspendLayout();
             this.subMenuStock.SuspendLayout();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SubMenuClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProductos
@@ -292,15 +294,6 @@
             this.SubMenuClientes.TabIndex = 12;
             this.SubMenuClientes.Visible = false;
             // 
-            // btnVerClientes
-            // 
-            this.btnVerClientes.Location = new System.Drawing.Point(0, 52);
-            this.btnVerClientes.Name = "btnVerClientes";
-            this.btnVerClientes.Size = new System.Drawing.Size(206, 23);
-            this.btnVerClientes.TabIndex = 12;
-            this.btnVerClientes.Text = "VER CLIENTES";
-            this.btnVerClientes.UseVisualStyleBackColor = true;
-            // 
             // btnNuevoCliente
             // 
             this.btnNuevoCliente.Location = new System.Drawing.Point(0, 17);
@@ -311,12 +304,33 @@
             this.btnNuevoCliente.UseVisualStyleBackColor = true;
             this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
             // 
+            // btnVerClientes
+            // 
+            this.btnVerClientes.Location = new System.Drawing.Point(0, 52);
+            this.btnVerClientes.Name = "btnVerClientes";
+            this.btnVerClientes.Size = new System.Drawing.Size(206, 23);
+            this.btnVerClientes.TabIndex = 12;
+            this.btnVerClientes.Text = "VER CLIENTES";
+            this.btnVerClientes.UseVisualStyleBackColor = true;
+            this.btnVerClientes.Click += new System.EventHandler(this.btnVerClientes_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(2, 244);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(29, 40);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.SubMenuClientes);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -341,6 +355,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.SubMenuClientes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +387,6 @@
         private System.Windows.Forms.Panel SubMenuClientes;
         private System.Windows.Forms.Button btnVerClientes;
         private System.Windows.Forms.Button btnNuevoCliente;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

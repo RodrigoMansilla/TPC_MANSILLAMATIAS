@@ -189,6 +189,7 @@
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtCorreoElectronico
             // 
@@ -196,7 +197,6 @@
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(200, 20);
             this.txtCorreoElectronico.TabIndex = 23;
-            
             // 
             // lblMail
             // 
@@ -206,7 +206,6 @@
             this.lblMail.Size = new System.Drawing.Size(132, 13);
             this.lblMail.TabIndex = 22;
             this.lblMail.Text = "CORREO ELECTRONICO";
-            
             // 
             // frmCargarCliente
             // 
