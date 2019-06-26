@@ -26,7 +26,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select c.IdCompra, c.IdProducto, p.nombre, c.Cantidad, c.PrecioCompra, c.PrecioVenta, c.Ganancia from compras as c inner join productos as p on p.id=c.idproducto";
+                comando.CommandText = "select c.IdCompra, c.IdProducto, p.nombre, c.Cantidad, c.PrecioCompra, c.PrecioVenta, c.Ganancia, c.Fcompra from compras as c inner join productos as p on p.id=c.idproducto";
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -42,6 +42,7 @@ namespace Negocio
                     Com.PrecioCompra = lector.GetDecimal(4);
                     Com.PrecioVenta = lector.GetDecimal(5);
                     Com.Ganancia = lector.GetDecimal(6);
+                    Com.FCompra = lector.GetDateTime(7);
 
 
                     //Com.FCompra = Convert.ToDateTime(lector.GetDateTime(7));

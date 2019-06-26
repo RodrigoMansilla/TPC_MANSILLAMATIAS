@@ -23,6 +23,7 @@ namespace TPC_RodrigoMansilla
             SubMenuCompras.Visible = false;
             submenuproductos.Visible = true;
             subMenuStock.Visible = false;
+            SubMenuClientes.Visible = false;
 
         }
 
@@ -66,6 +67,7 @@ namespace TPC_RodrigoMansilla
             SubMenuCompras.Visible = true;
             submenuproductos.Visible = false;
             subMenuStock.Visible = false;
+            SubMenuClientes.Visible = false;
 
 
         }
@@ -92,6 +94,7 @@ namespace TPC_RodrigoMansilla
             subMenuStock.Visible = true;
             submenuproductos.Visible = false;
             SubMenuCompras.Visible = false;
+            SubMenuClientes.Visible = false;
         }
 
         private void btnHisticoStock_Click(object sender, EventArgs e)
@@ -108,8 +111,18 @@ namespace TPC_RodrigoMansilla
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+            SubMenuClientes.Visible = true;
+            subMenuStock.Visible = false;
+            submenuproductos.Visible = false;
+            SubMenuCompras.Visible = false;
+        }
+
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
             frmCargarCliente nueva = new frmCargarCliente();
             nueva.ShowDialog();
         }
     }
-}
+}/*
+
+*/

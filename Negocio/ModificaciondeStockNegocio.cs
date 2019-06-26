@@ -92,7 +92,7 @@ namespace Negocio
                     nuevo.IdProducto = lector.GetInt32(1);
                     nuevo.Cantidad = lector.GetInt32(2);
                     nuevo.Comentarios = lector.GetString(3);
-                    // aca va la fecha
+                    nuevo.FechaModificacion = lector.GetDateTime(4);
                     // aca el estado 
                     nuevo.NameProduct = lector.GetString(6);
                     

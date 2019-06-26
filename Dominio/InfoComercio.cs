@@ -9,7 +9,6 @@ namespace Dominio
     public class InfoComercio
     {
         public string NombreComercio{ get; set; }
-        public Direccion direccion { get; set; }
         public DateTime FechaIncioActividades { get; set; }
         public int CUIT { get; set; }
     }

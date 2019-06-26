@@ -103,6 +103,12 @@
     <Compile Include="frmNuevoCp.Designer.cs">
       <DependentUpon>frmNuevoCp.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVerClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerClientes.Designer.cs">
+      <DependentUpon>frmVerClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNuevoCp.resx">
       <DependentUpon>frmNuevoCp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerClientes.resx">
+      <DependentUpon>frmVerClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaCategorias.resx">
       <DependentUpon>ListaCategorias.cs</DependentUpon>

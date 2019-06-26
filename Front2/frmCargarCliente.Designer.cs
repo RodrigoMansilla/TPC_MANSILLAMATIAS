@@ -38,18 +38,15 @@
             this.Txtnombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.TxtTelefon = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.RadioMasculino = new System.Windows.Forms.RadioButton();
-            this.RadioFemenino = new System.Windows.Forms.RadioButton();
-            this.RadioOtro = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFnac = new System.Windows.Forms.DateTimePicker();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblPartido = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDirecion = new System.Windows.Forms.TextBox();
             this.comboPartidos = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
+            this.lblMail = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCargaClientes
@@ -82,7 +79,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(35, 203);
+            this.lblApellido.Location = new System.Drawing.Point(35, 210);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(59, 13);
             this.lblApellido.TabIndex = 3;
@@ -100,7 +97,7 @@
             // lblFnac
             // 
             this.lblFnac.AutoSize = true;
-            this.lblFnac.Location = new System.Drawing.Point(35, 311);
+            this.lblFnac.Location = new System.Drawing.Point(35, 381);
             this.lblFnac.Name = "lblFnac";
             this.lblFnac.Size = new System.Drawing.Size(130, 13);
             this.lblFnac.TabIndex = 5;
@@ -122,7 +119,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(197, 200);
+            this.txtApellido.Location = new System.Drawing.Point(197, 207);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 20);
             this.txtApellido.TabIndex = 8;
@@ -134,57 +131,12 @@
             this.TxtTelefon.Size = new System.Drawing.Size(200, 20);
             this.TxtTelefon.TabIndex = 9;
             // 
-            // dateTimePicker1
+            // dtpFnac
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(197, 311);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 10;
-            // 
-            // RadioMasculino
-            // 
-            this.RadioMasculino.AutoSize = true;
-            this.RadioMasculino.Location = new System.Drawing.Point(25, 42);
-            this.RadioMasculino.Name = "RadioMasculino";
-            this.RadioMasculino.Size = new System.Drawing.Size(73, 17);
-            this.RadioMasculino.TabIndex = 12;
-            this.RadioMasculino.TabStop = true;
-            this.RadioMasculino.Text = "Masculino";
-            this.RadioMasculino.UseVisualStyleBackColor = true;
-            // 
-            // RadioFemenino
-            // 
-            this.RadioFemenino.AutoSize = true;
-            this.RadioFemenino.Location = new System.Drawing.Point(143, 42);
-            this.RadioFemenino.Name = "RadioFemenino";
-            this.RadioFemenino.Size = new System.Drawing.Size(71, 17);
-            this.RadioFemenino.TabIndex = 13;
-            this.RadioFemenino.TabStop = true;
-            this.RadioFemenino.Text = "Femenino";
-            this.RadioFemenino.UseVisualStyleBackColor = true;
-            // 
-            // RadioOtro
-            // 
-            this.RadioOtro.AutoSize = true;
-            this.RadioOtro.Location = new System.Drawing.Point(267, 42);
-            this.RadioOtro.Name = "RadioOtro";
-            this.RadioOtro.Size = new System.Drawing.Size(45, 17);
-            this.RadioOtro.TabIndex = 14;
-            this.RadioOtro.TabStop = true;
-            this.RadioOtro.Text = "Otro";
-            this.RadioOtro.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.RadioOtro);
-            this.groupBox1.Controls.Add(this.RadioMasculino);
-            this.groupBox1.Controls.Add(this.RadioFemenino);
-            this.groupBox1.Location = new System.Drawing.Point(38, 363);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(383, 66);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Genero";
+            this.dtpFnac.Location = new System.Drawing.Point(197, 381);
+            this.dtpFnac.Name = "dtpFnac";
+            this.dtpFnac.Size = new System.Drawing.Size(200, 20);
+            this.dtpFnac.TabIndex = 10;
             // 
             // lblDireccion
             // 
@@ -204,12 +156,12 @@
             this.lblPartido.TabIndex = 17;
             this.lblPartido.Text = "Partido";
             // 
-            // textBox1
+            // txtDirecion
             // 
-            this.textBox1.Location = new System.Drawing.Point(476, 134);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(291, 20);
-            this.textBox1.TabIndex = 18;
+            this.txtDirecion.Location = new System.Drawing.Point(476, 134);
+            this.txtDirecion.Name = "txtDirecion";
+            this.txtDirecion.Size = new System.Drawing.Size(291, 20);
+            this.txtDirecion.TabIndex = 18;
             // 
             // comboPartidos
             // 
@@ -227,6 +179,7 @@
             this.btnAceptar.TabIndex = 20;
             this.btnAceptar.Text = "ACEPTAR";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -237,19 +190,38 @@
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // txtCorreoElectronico
+            // 
+            this.txtCorreoElectronico.Location = new System.Drawing.Point(197, 322);
+            this.txtCorreoElectronico.Name = "txtCorreoElectronico";
+            this.txtCorreoElectronico.Size = new System.Drawing.Size(200, 20);
+            this.txtCorreoElectronico.TabIndex = 23;
+            
+            // 
+            // lblMail
+            // 
+            this.lblMail.AutoSize = true;
+            this.lblMail.Location = new System.Drawing.Point(35, 322);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(132, 13);
+            this.lblMail.TabIndex = 22;
+            this.lblMail.Text = "CORREO ELECTRONICO";
+            
+            // 
             // frmCargarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtCorreoElectronico);
+            this.Controls.Add(this.lblMail);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.comboPartidos);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDirecion);
             this.Controls.Add(this.lblPartido);
             this.Controls.Add(this.lblDireccion);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFnac);
             this.Controls.Add(this.TxtTelefon);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.Txtnombre);
@@ -263,8 +235,6 @@
             this.Name = "frmCargarCliente";
             this.Text = "frmCargarCliente";
             this.Load += new System.EventHandler(this.frmCargarCliente_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,16 +252,14 @@
         private System.Windows.Forms.TextBox Txtnombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox TxtTelefon;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton RadioMasculino;
-        private System.Windows.Forms.RadioButton RadioFemenino;
-        private System.Windows.Forms.RadioButton RadioOtro;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dtpFnac;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblPartido;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDirecion;
         private System.Windows.Forms.ComboBox comboPartidos;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox txtCorreoElectronico;
+        private System.Windows.Forms.Label lblMail;
     }
 }

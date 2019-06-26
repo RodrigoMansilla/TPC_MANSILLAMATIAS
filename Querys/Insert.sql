@@ -54,6 +54,20 @@ insert into Categorias (Id,Nombre,Estado) values ((select count(*) from Categori
  insert into Provincias (id,Nombre) values (22,'Tierra del Fuego')
  insert into Provincias (id,Nombre) values (23,'Tucumán')
 
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1607,'VILLA ADELINA','Buenos Aires', 1)
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1621,'BENAVIDEZ','Buenos Aires', 1)
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1617,'PACHECO','Buenos Aires', 1)
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1648,'TIGRE','Buenos Aires', 1)
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1611,'DON TORCUATO','Buenos Aires', 1)
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1641,'ACASSUSO','Buenos Aires', 1)
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1643,'BECAR','Buenos Aires', 1)
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1609,'BOULOGNE ','Buenos Aires', 1)
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1640,'MARTINEZ','Buenos Aires', 1)
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1642,'SAN ISIDRO','Buenos Aires', 1)
+insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1619,'GARIN','Buenos Aires', 1)
+
+
+
  
  
 

@@ -51,12 +51,16 @@
             this.Compras = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.SubMenuClientes = new System.Windows.Forms.Panel();
+            this.btnVerClientes = new System.Windows.Forms.Button();
+            this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.submenuproductos.SuspendLayout();
             this.SubMenuCompras.SuspendLayout();
             this.subMenuStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Compras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.SubMenuClientes.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnProductos
@@ -278,12 +282,42 @@
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
+            // SubMenuClientes
+            // 
+            this.SubMenuClientes.Controls.Add(this.btnNuevoCliente);
+            this.SubMenuClientes.Controls.Add(this.btnVerClientes);
+            this.SubMenuClientes.Location = new System.Drawing.Point(155, 261);
+            this.SubMenuClientes.Name = "SubMenuClientes";
+            this.SubMenuClientes.Size = new System.Drawing.Size(206, 100);
+            this.SubMenuClientes.TabIndex = 12;
+            this.SubMenuClientes.Visible = false;
+            // 
+            // btnVerClientes
+            // 
+            this.btnVerClientes.Location = new System.Drawing.Point(0, 52);
+            this.btnVerClientes.Name = "btnVerClientes";
+            this.btnVerClientes.Size = new System.Drawing.Size(206, 23);
+            this.btnVerClientes.TabIndex = 12;
+            this.btnVerClientes.Text = "VER CLIENTES";
+            this.btnVerClientes.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevoCliente
+            // 
+            this.btnNuevoCliente.Location = new System.Drawing.Point(0, 17);
+            this.btnNuevoCliente.Name = "btnNuevoCliente";
+            this.btnNuevoCliente.Size = new System.Drawing.Size(206, 23);
+            this.btnNuevoCliente.TabIndex = 13;
+            this.btnNuevoCliente.Text = "NUEVO CLIENTE";
+            this.btnNuevoCliente.UseVisualStyleBackColor = true;
+            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SubMenuClientes);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Compras);
@@ -306,6 +340,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Compras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.SubMenuClientes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +369,8 @@
         private System.Windows.Forms.PictureBox Compras;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel SubMenuClientes;
+        private System.Windows.Forms.Button btnVerClientes;
+        private System.Windows.Forms.Button btnNuevoCliente;
     }
 }

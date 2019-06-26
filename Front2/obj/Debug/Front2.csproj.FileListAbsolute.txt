@@ -24,3 +24,4 @@ D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmHistoricoCom
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmHistoricoStock.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmNuevoCp.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmCargarCliente.resources
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmVerClientes.resources

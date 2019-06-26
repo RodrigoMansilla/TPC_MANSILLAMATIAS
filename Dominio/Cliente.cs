@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Cliente : Persona
+    public class Cliente
     {
-        public Direccion direcion { get; set; }
+        public int ID { get; set; }
+        public int DNI { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public int Telefono { get; set; }
+        public string Mail { get; set; }
+        public DateTime FNac { get; set; }
+        public DateTime FAlta { get; set; }
+        public string CalleYNumero { get; set; }
+        public Cp Codigo { get; set; }
 
     }
 }
-

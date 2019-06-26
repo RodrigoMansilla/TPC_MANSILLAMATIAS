@@ -1,12 +1,17 @@
--- NUEVA 
+use master
+go
 
+drop database MansillaRodrigo_DB
 create database MansillaRodrigo_DB
 go
 
--- CREACION DE TABLAS 
+use MansillaRodrigo_DB
+go
+
+-- CREACION DE TABLAS
 
 create table Categorias (
-Id int primary key not null, 
+Id int primary key not null,
 Nombre varchar(50) not null,
 Estado bit not null default 1
 )
@@ -15,7 +20,7 @@ go
 create table Marcas(
 Id int primary key not null,
 Nombre varchar(50) not null,
-Estado bit not null default 1 
+Estado bit not null default 1
 )
 go
 
@@ -24,13 +29,13 @@ ID int not null primary key,
 Nombre varchar(30) not null,
 IdCategoria int foreign key references categorias(Id),
 IdMarca int foreign key references marcas(Id),
-Stock int not null, 
-StockMinimo int not null, 
+Stock int not null,
+StockMinimo int not null,
 PrecioCompra decimal(8,2) not null,
-PrecioVenta decimal(8,2) not null, 
+PrecioVenta decimal(8,2) not null,
 Ganancia decimal(8,2) not null,
-Estado bit not null default 1 
-) 
+Estado bit not null default 1
+)
 go
 
 create table Compras(
@@ -40,7 +45,7 @@ Cantidad decimal(8,2) not null,
 PrecioCompra decimal(8,2) not null,
 PrecioVenta decimal(8,2) not null,
 Ganancia decimal(8,2) not null,
-Estado bit not null default 1 
+Estado bit not null default 1
 )
 go
 
@@ -64,7 +69,7 @@ Nombre varchar(35) not null
 )
 go
 
-create table Cp(-- DARLE CREATE CUANDO PRIMERO CREE LAS PROVINCIAS 
+create table Cp(
 CodigoPostal int not null primary key,
 Partido varchar(35) not null,
 Provincia varchar(35) not null,
@@ -73,7 +78,23 @@ estado bit null
 
 go
 
--- CREACION DE PROCEDIMIENTOS 
+create table Clientes (
+ID int not null,
+DNI int not null primary key,
+Cp int not null foreign key references Cp(CodigoPostal),
+Nombre varchar(35) not null,
+Apellido varchar(35) not null,
+Telefono int not null,
+correo varchar(55) not null,
+Fnac date not null,
+calle varchar(50) not null,
+FAlta date not null,
+Estado bit null
+)    
+go
+
+
+-- CREACION DE PROCEDIMIENTOS
 
 create procedure Sp_AgregarProducto(
 @nom varchar(100),
@@ -81,10 +102,10 @@ create procedure Sp_AgregarProducto(
 @idmarca int,
 @stm int
 )
-as 
+as
 begin  
 insert into Productos (Id,Nombre,IdCategoria,IdMarca,Stock,StockMinimo,PrecioCompra,PrecioVenta,Ganancia,Estado) values ((select count(*)from productos)+1,@nom,@idcat,@idmarca,0,@stm,0,0,0,1)
-end 
+end
 go
 
 create procedure SPModificarProducto(
@@ -97,25 +118,25 @@ create procedure SPModificarProducto(
 as
 begin
 update Productos set Nombre = @Nom, StockMinimo = @stm, IdMarca = @Mar, IdCategoria = @idcat where Productos.ID = @aydi;
-end 
+end
 go
 
 create procedure SPAgregarCategoria(
 @Nombre varchar(30)
 )
 as
-begin 
+begin
 insert into categorias (Id,Nombre,Estado) values ((select count(*) from categorias)+1,@Nombre,1)
-end 
+end
 go
 
 create procedure SPEliminarCategorias(
 @aydi int
 )
 as
-begin 
+begin
 update Categorias set Estado = 0 where Id = @aydi
-end 
+end
 go
 
 create procedure SPModificarProducto2(
@@ -127,21 +148,21 @@ create procedure SPModificarProducto2(
 as
 begin
 update Productos set PrecioCompra = @preciocompra, PrecioVenta = @precioventa, Stock = Stock + @stock, Ganancia =  @precioventa - @preciocompra where  Nombre like @Nom
-end 
+end
 go
 
-create procedure SPAgregarCompra( 
-@nom varchar(30), -- EL NOMBRE SIEMPRE VA EXISTIR POR QUE LO ELIJE DE UN COMBOBOX, NI HACE FALTA VERIFICAR EL MISMO. 
+create procedure SPAgregarCompra(
+@nom varchar(30), -- EL NOMBRE SIEMPRE VA EXISTIR POR QUE LO ELIJE DE UN COMBOBOX, NI HACE FALTA VERIFICAR EL MISMO.
 @cant int,
 @PC decimal(8,2),
 @PV decimal(8,2)
 )
 as
 begin
-declare @aux int, @aux2 int -- DECLARO VARIABLES LOCALES 
+declare @aux int, @aux2 int -- DECLARO VARIABLES LOCALES
 select @aux=id from Productos where Nombre like @nom -- OBTENGO EN VARIABLE EL ID DEL PRODUCTO QUE LLEGA DE LA APP
-select @aux2 = count(*) from compras  -- CUENTO LAS COMPRAS QUE TENGO EN LA BASE DE DATOS 
-select @aux2 = @aux2 + 1 -- LE SUMO 1 A LAS COMPRAS 
+select @aux2 = count(*) from compras  -- CUENTO LAS COMPRAS QUE TENGO EN LA BASE DE DATOS
+select @aux2 = @aux2 + 1 -- LE SUMO 1 A LAS COMPRAS
 insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,FCompra)values (@aux2,@aux,@cant,@PC,@PV,@PV-@PC,getdate())
 end
 go
@@ -153,7 +174,7 @@ create procedure SPAgregarModificacionSTock(
 @Coment varchar(30)
 )
 as
-begin 
+begin
 declare @aux int
 select  @aux = id from Productos where Nombre like @name
 insert into ModiStock (Id,idProducto,Cantidad,Comentario,FechaModificacion,estado,NameProduct) values ((select count(*) from ModiStock)+1,@aux,@cant,@Coment,GETDATE(),1,@name)
@@ -166,11 +187,11 @@ create procedure SPUpdateProductos(
 @Coment varchar(30)
 )
 as
-begin 
-declare @aux int 
+begin
+declare @aux int
 select  @aux = id from Productos where Nombre like @name
 update Productos set Stock=Stock+(@cant) where Nombre like @name
-end 
+end
 go
 
 create procedure SPAgregarCP(
@@ -181,10 +202,23 @@ create procedure SPAgregarCP(
 as
 begin
 insert into Cp (CodigoPostal,Partido,Provincia,estado) values (@codigo,@par,@pv,1)
+end
+go
+
+alter procedure Sp_AgregarCliente(
+@dn int,
+@part int,
+@nom varchar(40),
+@ap varchar(40),
+@tl int,
+@co varchar(40),
+@fn date, 
+@cn varchar(40)
+)
+as
+begin
+insert into Clientes (ID, DNI, Cp ,Nombre, Apellido,Telefono, correo, Fnac, calle, FAlta, Estado) values ((select count(*) from Clientes)+1,@dn,@part,@nom,@ap,@tl,@co,@fn,@cn,GETDATE(),1)
 end 
-
-select *from cp
-
-
+go
 
 
