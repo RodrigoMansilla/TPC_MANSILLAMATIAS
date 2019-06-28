@@ -35,6 +35,8 @@ namespace Front2
                 ListarCli = negocio.listarCliente();
                 dgvVerClientes.DataSource = ListarCli;
                 dgvVerClientes.Columns[0].Visible = false;
+                dgvVerClientes.Columns[6].Visible = false;        
+                dgvVerClientes.Columns[10].Visible = false;
             }
             catch (Exception ex)
             {

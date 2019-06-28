@@ -221,4 +221,3 @@ insert into Clientes (ID, DNI, Cp ,Nombre, Apellido,Telefono, correo, Fnac, call
 end 
 go
 
-

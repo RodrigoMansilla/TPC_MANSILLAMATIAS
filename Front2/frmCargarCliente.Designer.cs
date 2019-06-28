@@ -47,6 +47,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.lblMail = new System.Windows.Forms.Label();
+            this.txtpassword = new System.Windows.Forms.TextBox();
+            this.lblpass = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCargaClientes
@@ -97,7 +99,7 @@
             // lblFnac
             // 
             this.lblFnac.AutoSize = true;
-            this.lblFnac.Location = new System.Drawing.Point(35, 381);
+            this.lblFnac.Location = new System.Drawing.Point(33, 405);
             this.lblFnac.Name = "lblFnac";
             this.lblFnac.Size = new System.Drawing.Size(130, 13);
             this.lblFnac.TabIndex = 5;
@@ -133,7 +135,7 @@
             // 
             // dtpFnac
             // 
-            this.dtpFnac.Location = new System.Drawing.Point(197, 381);
+            this.dtpFnac.Location = new System.Drawing.Point(195, 405);
             this.dtpFnac.Name = "dtpFnac";
             this.dtpFnac.Size = new System.Drawing.Size(200, 20);
             this.dtpFnac.TabIndex = 10;
@@ -193,7 +195,7 @@
             // 
             // txtCorreoElectronico
             // 
-            this.txtCorreoElectronico.Location = new System.Drawing.Point(197, 322);
+            this.txtCorreoElectronico.Location = new System.Drawing.Point(195, 307);
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(200, 20);
             this.txtCorreoElectronico.TabIndex = 23;
@@ -201,17 +203,35 @@
             // lblMail
             // 
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(35, 322);
+            this.lblMail.Location = new System.Drawing.Point(33, 307);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(132, 13);
             this.lblMail.TabIndex = 22;
             this.lblMail.Text = "CORREO ELECTRONICO";
+            // 
+            // txtpassword
+            // 
+            this.txtpassword.Location = new System.Drawing.Point(195, 361);
+            this.txtpassword.Name = "txtpassword";
+            this.txtpassword.Size = new System.Drawing.Size(200, 20);
+            this.txtpassword.TabIndex = 25;
+            // 
+            // lblpass
+            // 
+            this.lblpass.AutoSize = true;
+            this.lblpass.Location = new System.Drawing.Point(33, 361);
+            this.lblpass.Name = "lblpass";
+            this.lblpass.Size = new System.Drawing.Size(81, 13);
+            this.lblpass.TabIndex = 24;
+            this.lblpass.Text = "CONTRASEÑA";
             // 
             // frmCargarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtpassword);
+            this.Controls.Add(this.lblpass);
             this.Controls.Add(this.txtCorreoElectronico);
             this.Controls.Add(this.lblMail);
             this.Controls.Add(this.btnCancelar);
@@ -260,5 +280,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtCorreoElectronico;
         private System.Windows.Forms.Label lblMail;
+        private System.Windows.Forms.TextBox txtpassword;
+        private System.Windows.Forms.Label lblpass;
     }
 }

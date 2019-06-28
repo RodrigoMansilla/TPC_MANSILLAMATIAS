@@ -31,20 +31,21 @@ namespace Negocio
                 while (lector.Read())
                 {
                     nuevo = new Cliente();
-                    //nuevo.ID = lector.GetInt32(0);
+                    nuevo.ID = lector.GetInt32(0);
                     nuevo.DNI = lector.GetInt32(1);
                     nuevo.Nombre = lector.GetString(3);
                     nuevo.Apellido = lector.GetString(4);
                     nuevo.Telefono = lector.GetInt32(5);
                     nuevo.Mail = lector.GetString(6);
-                    nuevo.FNac = lector.GetDateTime(7);
-                    nuevo.CalleYNumero = lector.GetString(8);
-                    nuevo.FAlta = lector.GetDateTime(9);
+                    nuevo.contrasenia = lector.GetString(7);
+                    nuevo.FNac = lector.GetDateTime(8);
+                    nuevo.CalleYNumero = lector.GetString(9);
+                    nuevo.FAlta = lector.GetDateTime(10);
 
                     nuevo.cp = new Cp();
                     nuevo.cp.CodigoPostal = (int)lector["Cp"];
                     nuevo.cp.CodigoPostal = lector.GetInt32(2);
-                    //nuevo.cp.Partido = lector.GetString(2);
+                    
 
 
 /*                    nuevo.Categoria = new Categoria();
@@ -80,6 +81,7 @@ namespace Negocio
                 accesoDatos.Comando.Parameters.AddWithValue("@ap", nuevo.Apellido);
                 accesoDatos.Comando.Parameters.AddWithValue("@tl", nuevo.Telefono);
                 accesoDatos.Comando.Parameters.AddWithValue("@co", nuevo.Mail);
+                accesoDatos.Comando.Parameters.AddWithValue("@pass", nuevo.contrasenia);
                 accesoDatos.Comando.Parameters.AddWithValue("@fn", nuevo.FNac);
                 accesoDatos.Comando.Parameters.AddWithValue("@cn", nuevo.CalleYNumero);
                 accesoDatos.Comando.Parameters.AddWithValue("@part", nuevo.cp.CodigoPostal);

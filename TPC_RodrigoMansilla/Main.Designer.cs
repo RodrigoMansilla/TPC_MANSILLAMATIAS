@@ -55,6 +55,9 @@
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.btnVerClientes = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblCargo = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
             this.submenuproductos.SuspendLayout();
             this.SubMenuCompras.SuspendLayout();
             this.subMenuStock.SuspendLayout();
@@ -179,7 +182,7 @@
             this.labelfechahora.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelfechahora.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelfechahora.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.labelfechahora.Location = new System.Drawing.Point(549, 22);
+            this.labelfechahora.Location = new System.Drawing.Point(598, 364);
             this.labelfechahora.Name = "labelfechahora";
             this.labelfechahora.Size = new System.Drawing.Size(179, 63);
             this.labelfechahora.TabIndex = 6;
@@ -288,7 +291,7 @@
             // 
             this.SubMenuClientes.Controls.Add(this.btnNuevoCliente);
             this.SubMenuClientes.Controls.Add(this.btnVerClientes);
-            this.SubMenuClientes.Location = new System.Drawing.Point(155, 261);
+            this.SubMenuClientes.Location = new System.Drawing.Point(158, 261);
             this.SubMenuClientes.Name = "SubMenuClientes";
             this.SubMenuClientes.Size = new System.Drawing.Size(206, 100);
             this.SubMenuClientes.TabIndex = 12;
@@ -324,12 +327,42 @@
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
             // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(665, 33);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(35, 13);
+            this.lblNombre.TabIndex = 15;
+            this.lblNombre.Text = "label1";
+            // 
+            // lblCargo
+            // 
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Location = new System.Drawing.Point(665, 67);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(35, 13);
+            this.lblCargo.TabIndex = 17;
+            this.lblCargo.Text = "label3";
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Location = new System.Drawing.Point(665, 102);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(35, 13);
+            this.lblCorreo.TabIndex = 18;
+            this.lblCorreo.Text = "label4";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCorreo);
+            this.Controls.Add(this.lblCargo);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.SubMenuClientes);
             this.Controls.Add(this.pictureBox2);
@@ -388,5 +421,8 @@
         private System.Windows.Forms.Button btnVerClientes;
         private System.Windows.Forms.Button btnNuevoCliente;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblCargo;
+        private System.Windows.Forms.Label lblCorreo;
     }
 }

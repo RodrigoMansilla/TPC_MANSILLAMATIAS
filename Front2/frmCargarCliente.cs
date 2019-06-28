@@ -43,6 +43,7 @@ namespace Front2
                     dtpFnac.Text = ClienteLocal.FNac.ToShortDateString();
                     txtDirecion.Text = ClienteLocal.CalleYNumero.ToString();
                     comboPartidos.SelectedItem = comboPartidos.FindString(ClienteLocal.cp.Partido);
+                    txtpassword.Text = ClienteLocal.contrasenia.ToString();
 
                 }
             }
@@ -56,7 +57,7 @@ namespace Front2
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtDni.Text.Trim() == "" || Txtnombre.Text.Trim() == "" || txtApellido.Text.Trim() == "" || txtCorreoElectronico.Text.Trim() == "" || TxtTelefon.Text.Trim() == "" || txtDirecion.Text.Trim() == "")
+            if (txtDni.Text.Trim() == "" || Txtnombre.Text.Trim() == "" || txtApellido.Text.Trim() == "" || txtCorreoElectronico.Text.Trim() == "" || TxtTelefon.Text.Trim() == "" || txtpassword.Text.Trim() == "")
             {
                 MessageBox.Show("Debes completar todos los campos");
                 return;
@@ -75,6 +76,7 @@ namespace Front2
                 ClienteLocal.FNac = Convert.ToDateTime(dtpFnac.Text);
                 ClienteLocal.CalleYNumero = txtDirecion.Text;
                 ClienteLocal.cp = (Cp)comboPartidos.SelectedItem;
+                ClienteLocal.contrasenia = txtpassword.Text;
 
                 if (ClienteLocal.ID != 0)
                 {

@@ -25,3 +25,6 @@ D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.cspro
 D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.csproj.CoreCompileInputs.cache
 D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.dll
 D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\bin\Debug\Common.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\bin\Debug\Common.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.csproj.CopyComplete

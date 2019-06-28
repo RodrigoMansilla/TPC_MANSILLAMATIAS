@@ -25,3 +25,5 @@ D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmHistoricoSto
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmNuevoCp.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmCargarCliente.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmVerClientes.resources
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\Common.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\Common.pdb

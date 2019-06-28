@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Front2", "Front2\Front2.csproj", "{CDAC640A-130A-4DEC-B8A8-A4974FED6251}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWeb", "AppWeb\AppWeb.csproj", "{BB20E1CD-1960-4384-9074-92652471E05F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{E085E887-C56A-475B-B8C8-7871DA6DD78D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,14 @@ Global
 		{CDAC640A-130A-4DEC-B8A8-A4974FED6251}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDAC640A-130A-4DEC-B8A8-A4974FED6251}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDAC640A-130A-4DEC-B8A8-A4974FED6251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB20E1CD-1960-4384-9074-92652471E05F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB20E1CD-1960-4384-9074-92652471E05F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB20E1CD-1960-4384-9074-92652471E05F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB20E1CD-1960-4384-9074-92652471E05F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E085E887-C56A-475B-B8C8-7871DA6DD78D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E085E887-C56A-475B-B8C8-7871DA6DD78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E085E887-C56A-475B-B8C8-7871DA6DD78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E085E887-C56A-475B-B8C8-7871DA6DD78D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

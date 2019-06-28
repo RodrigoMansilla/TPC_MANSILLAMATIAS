@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Front2;
+using Common.Cache;
 
 namespace TPC_RodrigoMansilla
 {
@@ -59,6 +60,7 @@ namespace TPC_RodrigoMansilla
         private void Main_Load(object sender, EventArgs e)
         {
             labelfechahora.Text = String.Format("{0:G}", DateTime.Now);
+            LoadUSer();
 
         }
 
@@ -127,6 +129,19 @@ namespace TPC_RodrigoMansilla
         {
             frmVerClientes nuevo = new frmVerClientes();
             nuevo.ShowDialog();
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void LoadUSer()
+        {
+            lblNombre.Text = UserLoginCache.Nombre + ", " + UserLoginCache.Apellido;
+            lblCargo.Text = UserLoginCache.Cargo;
+            lblCorreo.Text = UserLoginCache.Correo;
+
         }
     }
 }/*
