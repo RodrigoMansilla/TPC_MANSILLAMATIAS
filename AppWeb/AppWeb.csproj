@@ -120,6 +120,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="datoscostumer.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Estilos.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -134,6 +135,7 @@
     <Content Include="carrito.xsc">
       <DependentUpon>carrito.xsd</DependentUpon>
     </Content>
+    <Content Include="wfVerProductos.aspx" />
     <None Include="carrito.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -254,6 +256,13 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="wfVerProductos.aspx.cs">
+      <DependentUpon>wfVerProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfVerProductos.aspx.designer.cs">
+      <DependentUpon>wfVerProductos.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -273,6 +282,10 @@
     <ProjectReference Include="..\AceesoDatos\AceesoDatos.csproj">
       <Project>{b5b88a75-a111-489d-83a9-8e2a027ab44c}</Project>
       <Name>AceesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{e085e887-c56a-475b-b8c8-7871da6dd78d}</Project>
+      <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dominio\Dominio.csproj">
       <Project>{c17f84f8-d14a-4fdd-94da-bde9c964934b}</Project>

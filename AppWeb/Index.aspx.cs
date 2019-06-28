@@ -16,10 +16,10 @@ namespace AppWeb
 
         }
 
-        protected void btnLogIn(object sender, EventArgs e)
+       protected void btnLogIn(object sender, EventArgs e)
         {
             UsuarioNegocio negocio = new UsuarioNegocio();
-            var validar = negocio.LoginUser(TextBox1.Text, TextBox2.Text);
+            var validar = negocio.LoginUser(txtUsuario.Text, txtpass.Text);
             if (validar == true)
             {
 
@@ -33,9 +33,15 @@ namespace AppWeb
         }
 
         protected void Button1_Click(object sender, EventArgs e)
-        {
+        {   if (txtpass.Text==""|| txtpass.Text=="")
+            {
+                Response.Write("<script>window.alert('Completa los campos down');</script>");
+                txtUsuario.Text = "";
+                txtpass.Text = "";
+                return;
+            }
             UsuarioNegocio negocio = new UsuarioNegocio();
-            var validar = negocio.LoginUser(TextBox1.Text, TextBox2.Text);
+            var validar = negocio.LoginUser(txtUsuario.Text, txtpass.Text);
             if (validar == true)
             {
 
@@ -44,7 +50,10 @@ namespace AppWeb
             }
             else
             {
-                //aca decir datos incorrectos 
+                Response.Write("<script>window.alert('datos invalidos');</script>");
+                txtUsuario.Text = "";
+                txtpass.Text = "";
+
             }
         }
     }
