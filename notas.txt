@@ -60,4 +60,8 @@ COMO HAGO EN UNA DGV PARA TRAER DATOS DE DOS TABLAS DIFERENTES
 
 para la modificacion de stock, en algun momento tengo que validar cuanto stock tengo y no poder quitarle mas que esa cantidad. 
 
+IMPORTANTE URGENTE !
+
+CUANDO HAY UN INSERT EN LA TABLA CLIENTES, DISPARAR UN TRIGGER QUE HAGA UN INSERT EN LA TABLA USUARIOS. 
+TOTAL TIENE TODOS LOS DATOS. 
 

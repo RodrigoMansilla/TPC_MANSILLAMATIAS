@@ -86,6 +86,7 @@ Nombre varchar(35) not null,
 Apellido varchar(35) not null,
 Telefono int not null,
 correo varchar(55) not null,
+Contrasenia varchar(40) not null,
 Fnac date not null,
 calle varchar(50) not null,
 FAlta date not null,
@@ -93,6 +94,16 @@ Estado bit null
 )    
 go
 
+create table Usuarios(
+Id int not null primary key,
+LoginName varchar(50) not null,
+Pass varchar(50) not null,
+Nombre varchar(50) not null,
+Apellido varchar(50) not null,
+Cargo varchar(50) not null,
+Correo varchar(50) not null,
+)
+go 
 
 -- CREACION DE PROCEDIMIENTOS
 
@@ -205,19 +216,31 @@ insert into Cp (CodigoPostal,Partido,Provincia,estado) values (@codigo,@par,@pv,
 end
 go
 
-alter procedure Sp_AgregarCliente(
+create procedure Sp_AgregarCliente(
 @dn int,
 @part int,
 @nom varchar(40),
 @ap varchar(40),
 @tl int,
 @co varchar(40),
+@pass varchar(40),
 @fn date, 
 @cn varchar(40)
 )
 as
 begin
-insert into Clientes (ID, DNI, Cp ,Nombre, Apellido,Telefono, correo, Fnac, calle, FAlta, Estado) values ((select count(*) from Clientes)+1,@dn,@part,@nom,@ap,@tl,@co,@fn,@cn,GETDATE(),1)
+insert into Clientes (ID, DNI, Cp ,Nombre, Apellido,Telefono, correo,Contrasenia ,Fnac, calle, FAlta, Estado) values ((select count(*) from Clientes)+1,@dn,@part,@nom,@ap,@tl,@co,@pass,@fn,@cn,GETDATE(),1)
 end 
 go
+
+create procedure DameProductos(
+@id int
+)
+as
+begin
+select *from productos where id = @id
+end
+go
+
+
 

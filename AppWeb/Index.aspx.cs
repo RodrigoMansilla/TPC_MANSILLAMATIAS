@@ -44,7 +44,7 @@ namespace AppWeb
             var validar = negocio.LoginUser(txtUsuario.Text, txtpass.Text);
             if (validar == true)
             {
-
+                
                 Response.Redirect("~/datoscostumer.aspx");
 
             }
