@@ -16,8 +16,8 @@
             <br />
             CONTRASEÑA
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
             <br />
-            <asp:Button ID="btnLogIn" runat="server" OnClick="btnLogIn" Text="log in" />
 
         </div>
     </form>

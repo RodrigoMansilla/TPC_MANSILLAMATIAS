@@ -86,3 +86,5 @@ D:\Internet Explorer\TPC_RodrigoMansilla\AppWeb\bin\Front2.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\AppWeb\bin\Negocio.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\AppWeb\bin\TPC_RodrigoMansilla.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\AppWeb\bin\TPC_RodrigoMansilla.exe.config
+D:\Internet Explorer\TPC_RodrigoMansilla\AppWeb\bin\Common.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\AppWeb\bin\Common.pdb
