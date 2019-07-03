@@ -243,4 +243,25 @@ end
 go
 
 
+create trigger ro on clientes
+after insert 
+as 
+begin 
+insert into usuarios values ((select count(*) from Usuarios)+1,(select correo from inserted),(select Contrasenia from inserted),(select Nombre from inserted),(select Apellido from inserted),'Cliente',(select correo from inserted))  
+end 
+go
 
+use MansillaRodrigo_DB
+go
+
+select * from Productos
+
+create procedure SpCarrito(
+@aydi int, 
+@cant int
+)
+as
+begin 
+select p.Nombre, p.PrecioVenta, (select p.Estado *@cant ) as cantidad, (select p.PrecioVenta * @cant) as Subtotal from Productos as p where ID = @aydi
+end
+go

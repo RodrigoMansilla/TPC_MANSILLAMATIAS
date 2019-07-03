@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Linq;
-using System.Web;
+using System.Web; 
 using System.Web.UI;
+using System.Collections;
 using System.Web.UI.WebControls;
 using Dominio;
 using Negocio;
@@ -12,26 +15,31 @@ using Common.Cache;
 
 namespace AppWeb
 {
+    [Serializable]
     public partial class wfVerProductos : System.Web.UI.Page
     {
+        private ArrayList ProductosSelecionados = new ArrayList();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            Inicializar();
-            ProductoNegocio productoNegocio = new ProductoNegocio();
-            List<Producto> lista = productoNegocio.listarProductos();
-            gvProductos.DataSource = lista;
-            gvProductos.DataBind();
+              if (!this.IsPostBack)
+            {
+                Inicializar();
+                ProductoNegocio productoNegocio = new ProductoNegocio();
+                List<Producto> lista = productoNegocio.listarProductos();
+                gvProductos.DataSource = lista;
+                gvProductos.DataBind();
+            }
+                /*      
+                 *      DataGridView1.Columns[1].Visible = false;
 
-            /*      
-             *      DataGridView1.Columns[1].Visible = false;
 
+                 *      dgvVerClientes.DataSource = ListarCli;
+                    dgvVerClientes.Columns[0].Visible = false;
+                    dgvVerClientes.Columns[6].Visible = false;        
+                    dgvVerClientes.Columns[10].Visible = false;*/
 
-             *      dgvVerClientes.DataSource = ListarCli;
-                dgvVerClientes.Columns[0].Visible = false;
-                dgvVerClientes.Columns[6].Visible = false;        
-                dgvVerClientes.Columns[10].Visible = false;*/
         }
-
         protected void gvProductos_RowCreated(object sender, GridViewRowEventArgs e)
         {
             
@@ -74,16 +82,15 @@ namespace AppWeb
 
         protected void TreeViewProductos_SelectedNodeChanged(object sender, EventArgs e)
         {
+            //Response.Write("<script>window.alert('carga nodo');</script>");
             TreeNode nodo = TreeViewProductos.SelectedNode;
-            Cargadegiladas(nodo.Value);
+            Cargadelabels(nodo.Value);
             lblNombre.Visible = true;
-            //lblCantidad.Visible = true;
             lblPrecioVenta.Visible = true;
             lblStock.Visible = true;
-
         }
 
-        private void Cargadegiladas(string id) {
+        private void Cargadelabels(string id) {
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -104,7 +111,7 @@ namespace AppWeb
                     lblStock.Text = "STOCK " + lector["Stock"].ToString();
                 }
                 lector.Close();
-                comando.Dispose();
+                conexion.Dispose();
             }
             catch (Exception ex)
             {
@@ -112,8 +119,46 @@ namespace AppWeb
             }
             finally
             {
-                accesoDatos.cerrarConexion();
+                conexion.Close();
+                conexion.Dispose();
             }
         }
+
+        protected override void LoadViewState(object savedState)
+        {
+            base.LoadViewState(savedState);
+            this.ProductosSelecionados = (ArrayList)this.ViewState["productoCarro"];
+         }
+
+        protected override object SaveViewState()
+        {
+            this.ViewState.Add("productoCarro", ProductosSelecionados);
+            return base.SaveViewState();
+        }
+
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            TreeNode node = TreeViewProductos.SelectedNode;
+            ProductosSelecionados.Add(node.Value);
+            ProductosSelecionados.Add(txtcantidad.Text);
+        }
+
+        protected void btnVerCarro_Click(object sender, EventArgs e)
+        {
+            ArrayList producto = this.ProductosSelecionados;
+            DataTable dt = new DataTable();
+            dt.Columns.Add("idProducto");
+            dt.Columns.Add("Cantidad");
+
+            for (int i = 0; i < producto.Count; i = i + 2)
+            {
+                dt.Rows.Add(producto[i], producto[i + 1]);
+            }
+            DVCarrito.DataSource = dt;
+            DVCarrito.DataBind();
+
+        }
+
+
     }
 }

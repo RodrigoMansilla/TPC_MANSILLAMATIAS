@@ -14,6 +14,9 @@
         .auto-style2 {
             width: 256px;
         }
+        .auto-style3 {
+            width: 110px;
+        }
     </style>
 </head>
 <body>
@@ -59,12 +62,25 @@
 
             
             <asp:TextBox ID="txtcantidad" runat="server" placeholder="CANTIDAD" ></asp:TextBox>
-                   <asp:Button ID="btnAceptar" runat="server" Text="ACEPTAR" />
+                   <asp:RequiredFieldValidator ID="mreqEmail" runat="server" ControlToValidate="txtcantidad" ErrorMessage="*" Display="Dynamic" Forecolor="red" ></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="mregEmail" runat="server" ControlToValidate="txtcantidad" ErrorMessage="INTRODUZCA UN NUMERO" ValidationExpression="^\d+$" Display="Dynamic" Forecolor="red"></asp:RegularExpressionValidator>    
+
+                   <asp:Button ID="btnAceptar" runat="server" Text="AGREGAR AL CARRO" OnClick="btnAceptar_Click" />
                    </td>
-                </tr>
+    <td class="auto-style3">
+        <asp:Button ID="btnVerCarro" runat="server" Text="VER CARRITO DE COMPRAS" OnClick="btnVerCarro_Click" />
+
+    </td>
+                    <td>
+                        <asp:GridView ID="DVCarrito" runat="server"></asp:GridView>
+                        </td>
+                </1tr>
 
             </table>
         </div>
+
+
+
     </form>
 </body>
 </html>
