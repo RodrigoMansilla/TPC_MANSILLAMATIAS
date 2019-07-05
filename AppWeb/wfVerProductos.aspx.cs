@@ -83,6 +83,9 @@ namespace AppWeb
         protected void TreeViewProductos_SelectedNodeChanged(object sender, EventArgs e)
         {
             //Response.Write("<script>window.alert('carga nodo');</script>");
+            txtcantidad.Visible = true;
+            btnVerCarro.Visible = true;
+            btnAceptar.Visible = true;
             TreeNode nodo = TreeViewProductos.SelectedNode;
             Cargadelabels(nodo.Value);
             lblNombre.Visible = true;
@@ -141,24 +144,67 @@ namespace AppWeb
             TreeNode node = TreeViewProductos.SelectedNode;
             ProductosSelecionados.Add(node.Value);
             ProductosSelecionados.Add(txtcantidad.Text);
+            Response.Write("<script>window.alert('Producto agregado al carrito de compras. ');</script>");
         }
 
         protected void btnVerCarro_Click(object sender, EventArgs e)
         {
+            int i = 0;
             ArrayList producto = this.ProductosSelecionados;
             DataTable dt = new DataTable();
             dt.Columns.Add("idProducto");
+            dt.Columns.Add("Nombre");
+            dt.Columns.Add("PrecioVenta");
             dt.Columns.Add("Cantidad");
+            dt.Columns.Add("Subtotal");
+            
 
-            for (int i = 0; i < producto.Count; i = i + 2)
+            for (i = 0; i < producto.Count; i = i + 2)
             {
-                dt.Rows.Add(producto[i], producto[i + 1]);
+                AccesoDatosManager accesoDatos = new AccesoDatosManager();
+                SqlConnection conexion = new SqlConnection();
+                SqlCommand comando = new SqlCommand();
+                SqlDataReader lector;
+                List<ClaseParaListarCarro> listado = new List<ClaseParaListarCarro>();
+                ClaseParaListarCarro nuevo;
+                try
+                {
+                    conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                    comando.CommandType = System.Data.CommandType.Text;
+                    comando.CommandText = "select p.Nombre, p.PrecioVenta, (select p.Estado * "+ producto[i +1 ] + ") as cantidad, (select p.PrecioVenta *"+ producto[i+ 1] + ") as Subtotal from Productos as p where ID =" + producto[i];
+                    comando.Connection = conexion;
+                    conexion.Open();
+                    lector = comando.ExecuteReader();
+
+                    while (lector.Read())
+                    {
+                        nuevo = new ClaseParaListarCarro();
+                        nuevo.Nombre = lector["Nombre"].ToString();
+                        nuevo.PrecioVenta = nuevo.PrecioVenta = lector.GetDecimal(1);
+                        nuevo.SubTotal = nuevo.SubTotal = lector.GetDecimal(3);
+                        dt.Rows.Add(producto[i], nuevo.Nombre,nuevo.PrecioVenta, producto[i + 1],nuevo.SubTotal);
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    accesoDatos.cerrarConexion();
+                }
             }
             DVCarrito.DataSource = dt;
             DVCarrito.DataBind();
-
+            lbltoto.Visible = true;
+            decimal suma = 0;
+            foreach (DataRow dr in dt.Rows)
+            {
+                suma = suma + Convert.ToDecimal(dr[4]);
+            }
+            lblNtotal.Text = suma.ToString();
         }
-
-
+        
     }
 }

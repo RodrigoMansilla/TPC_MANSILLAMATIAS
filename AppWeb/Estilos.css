@@ -7,3 +7,20 @@
     width: 203px;
     text-align: center;
 }
+
+/* Para los label's alineados */
+.form_label_align {
+    float: left;
+    width: 50%;
+    text-align: right;
+}
+
+/* indicamos una pequeña separación en cada label, input, select y textarea */
+label, input, select, textarea {
+    margin-bottom: 0.3em;
+}
+
+.ss {
+    display: inline-block;
+    text-align: center;
+}

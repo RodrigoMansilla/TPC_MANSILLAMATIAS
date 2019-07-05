@@ -255,6 +255,7 @@ use MansillaRodrigo_DB
 go
 
 select * from Productos
+go
 
 create procedure SpCarrito(
 @aydi int, 
@@ -265,3 +266,4 @@ begin
 select p.Nombre, p.PrecioVenta, (select p.Estado *@cant ) as cantidad, (select p.PrecioVenta * @cant) as Subtotal from Productos as p where ID = @aydi
 end
 go
+

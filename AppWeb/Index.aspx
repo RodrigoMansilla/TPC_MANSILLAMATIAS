@@ -18,7 +18,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Mandali&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="ss">
     <style>         
         div{
      background-color: #FFFFE0;

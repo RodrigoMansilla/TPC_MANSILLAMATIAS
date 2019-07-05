@@ -33,3 +33,11 @@ width 1012px;
 margin 0px auto;
 text-align : left;
 }
+
+<asp:RequiredFieldValidator ID=
+
+if(!this.IsPostBack){
+inicializar
+}
+
+
