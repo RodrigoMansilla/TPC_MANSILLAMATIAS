@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
-using System.Web; 
+using System.Web;
 using System.Web.UI;
 using System.Collections;
 using System.Web.UI.WebControls;
@@ -15,36 +15,23 @@ using Common.Cache;
 
 namespace AppWeb
 {
-    
-    public partial class wfVerProductos : System.Web.UI.Page
+    public partial class fmrCompra : System.Web.UI.Page
     {
         private ArrayList ProductosSelecionados = new ArrayList();
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
-              if (!this.IsPostBack)
+            if (!this.IsPostBack)
             {
                 Inicializar();
-                ProductoNegocio productoNegocio = new ProductoNegocio();
-                List<Producto> lista = productoNegocio.listarProductos();
+                CompraTruchaNegocio compraTruchaNegocio = new CompraTruchaNegocio();
+                List<MostrarP> lista = compraTruchaNegocio.listarP();
                 gvProductos.DataSource = lista;
                 gvProductos.DataBind();
             }
-                /*      
-                 *      DataGridView1.Columns[1].Visible = false;
-
-
-                 *      dgvVerClientes.DataSource = ListarCli;
-                    dgvVerClientes.Columns[0].Visible = false;
-                    dgvVerClientes.Columns[6].Visible = false;        
-                    dgvVerClientes.Columns[10].Visible = false;*/
-
         }
-        protected void gvProductos_RowCreated(object sender, GridViewRowEventArgs e)
-        {
-            
-        
-        }
+
         private void Inicializar()
         {
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
@@ -82,7 +69,6 @@ namespace AppWeb
 
         protected void TreeViewProductos_SelectedNodeChanged(object sender, EventArgs e)
         {
-            //Response.Write("<script>window.alert('carga nodo');</script>");
             txtcantidad.Visible = true;
             btnVerCarro.Visible = true;
             btnAceptar.Visible = true;
@@ -93,7 +79,8 @@ namespace AppWeb
             lblStock.Visible = true;
         }
 
-        private void Cargadelabels(string id) {
+        private void Cargadelabels(string id)
+        {
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -102,7 +89,7 @@ namespace AppWeb
             {
                 conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select *from productos where id =" + id ;
+                comando.CommandText = "select *from productos where id =" + id;
                 comando.Connection = conexion;
                 conexion.Open();
                 lector = comando.ExecuteReader();
@@ -131,7 +118,7 @@ namespace AppWeb
         {
             base.LoadViewState(savedState);
             this.ProductosSelecionados = (ArrayList)this.ViewState["productoCarro"];
-         }
+        }
 
         protected override object SaveViewState()
         {
@@ -144,11 +131,6 @@ namespace AppWeb
             TreeNode node = TreeViewProductos.SelectedNode;
             ProductosSelecionados.Add(node.Value);
             ProductosSelecionados.Add(txtcantidad.Text);
-            Response.Write("<script>window.alert('Producto agregado al carrito de compras. ');</script>");
-        }
-
-        protected void btnVerCarro_Click(object sender, EventArgs e)
-        {
             int i = 0;
             ArrayList producto = this.ProductosSelecionados;
             DataTable dt = new DataTable();
@@ -157,7 +139,7 @@ namespace AppWeb
             dt.Columns.Add("PrecioVenta");
             dt.Columns.Add("Cantidad");
             dt.Columns.Add("Subtotal");
-            
+
 
             for (i = 0; i < producto.Count; i = i + 2)
             {
@@ -171,7 +153,7 @@ namespace AppWeb
                 {
                     conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
                     comando.CommandType = System.Data.CommandType.Text;
-                    comando.CommandText = "select p.Nombre, p.PrecioVenta, (select p.Estado * "+ producto[i +1 ] + ") as cantidad, (select p.PrecioVenta *"+ producto[i+ 1] + ") as Subtotal from Productos as p where ID =" + producto[i];
+                    comando.CommandText = "select p.Nombre, p.PrecioVenta, (select p.Estado * " + producto[i + 1] + ") as cantidad, (select p.PrecioVenta *" + producto[i + 1] + ") as Subtotal from Productos as p where ID =" + producto[i];
                     comando.Connection = conexion;
                     conexion.Open();
                     lector = comando.ExecuteReader();
@@ -182,9 +164,9 @@ namespace AppWeb
                         nuevo.Nombre = lector["Nombre"].ToString();
                         nuevo.PrecioVenta = nuevo.PrecioVenta = lector.GetDecimal(1);
                         nuevo.SubTotal = nuevo.SubTotal = lector.GetDecimal(3);
-                        dt.Rows.Add(producto[i], nuevo.Nombre,nuevo.PrecioVenta, producto[i + 1],nuevo.SubTotal);
+                        dt.Rows.Add(producto[i], nuevo.Nombre, nuevo.PrecioVenta, producto[i + 1], nuevo.SubTotal);
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -205,6 +187,15 @@ namespace AppWeb
             }
             lblNtotal.Text = suma.ToString();
         }
-        
+
+        protected void btnVerCarro_Click(object sender, EventArgs e)
+        {
+           
+        }
+        protected void gvProductos_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+
+
+        }
     }
 }

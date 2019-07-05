@@ -26,7 +26,7 @@ go
 
 create table Productos (
 ID int not null primary key,
-Nombre varchar(30) not null,
+Nombre varchar(30) not null unique,
 IdCategoria int foreign key references categorias(Id),
 IdMarca int foreign key references marcas(Id),
 Stock int not null,
@@ -85,7 +85,7 @@ Cp int not null foreign key references Cp(CodigoPostal),
 Nombre varchar(35) not null,
 Apellido varchar(35) not null,
 Telefono int not null,
-correo varchar(55) not null,
+correo varchar(55) not null unique,
 Contrasenia varchar(40) not null,
 Fnac date not null,
 calle varchar(50) not null,
@@ -101,7 +101,7 @@ Pass varchar(50) not null,
 Nombre varchar(50) not null,
 Apellido varchar(50) not null,
 Cargo varchar(50) not null,
-Correo varchar(50) not null,
+Correo varchar(50) not null unique,
 )
 go 
 

@@ -24,3 +24,10 @@ label, input, select, textarea {
     display: inline-block;
     text-align: center;
 }
+
+table {
+    margin: 15px;
+    padding: 15px;
+}
+
+

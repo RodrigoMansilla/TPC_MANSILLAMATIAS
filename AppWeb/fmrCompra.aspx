@@ -1,22 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="wfVerProductos.aspx.cs" Inherits="AppWeb.wfVerProductos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="fmrCompra.aspx.cs" Inherits="AppWeb.fmrCompra" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Productos</title>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <script src="Scripts/miLibreriaJS.js"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Mandali&display=swap" rel="stylesheet">
-     <link href="Estilos.css" rel="stylesheet" type="text/css">
-
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
 
     <style type="text/css">
         .auto-style2 {
@@ -25,21 +10,20 @@
         }
         .auto-style3 {
             width: 364px;
+            border-style: double;
         }
-        .auto-style4 {
-            width: 141px;
-        }
+        
     </style>
-</head>
-<body>
+
+
     
-    <form id="form1" runat="server">
+    
         <div>
            
             <table>
                 <tr>
                     <td>
-                     <asp:GridView ID="gvProductos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCreated="gvProductos_RowCreated" HorizontalAlign="Justify">
+                     <asp:GridView ID="gvProductos" runat="server" BackColor="#CCCCCC" BorderColor="#666666" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" HorizontalAlign="Justify">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -74,18 +58,18 @@
             <%--<asp:Label ID="lblCantidad" runat="server" TEXT="CANTIDAD"></asp:Label>--%>
                       
             
-            <asp:TextBox ID="txtcantidad" runat="server" placeholder="CANTIDAD" visible="false"></asp:TextBox>
+            <asp:TextBox ID="txtcantidad" runat="server" placeholder="CANTIDAD" Visible="false"></asp:TextBox>
                    <asp:RequiredFieldValidator ID="mreqEmail" runat="server" ControlToValidate="txtcantidad" ErrorMessage="*" Display="Dynamic" Forecolor="red" ></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="mregEmail" runat="server" ControlToValidate="txtcantidad" ErrorMessage="INTRODUZCA UN NUMERO" ValidationExpression="^\d+$" Display="Dynamic" Forecolor="red"></asp:RegularExpressionValidator>    
                     </div>
                    <br />
                    <br />
 
-                   <asp:Button ID="btnAceptar" runat="server" Text="AGREGAR AL CARRO" OnClick="btnAceptar_Click" visible="false" Height="48px" Width="241px" />
+                   <asp:Button ID="btnAceptar" runat="server" Text="AGREGAR AL CARRO" class="btn btn-primary" OnClick="btnAceptar_Click" visible="false" Height="48px" Width="241px" />
                    </td>
     <td class="auto-style3">
         <div style="margin-left: auto; margin-right: auto; text-align: center;">
-        <asp:Button ID="btnVerCarro" runat="server" Text="VER CARRITO DE COMPRAS" class="btn btn-primary" visible="false" OnClick="btnVerCarro_Click" />
+        <asp:Button ID="btnVerCarro" runat="server" Text="CARRITO DE COMPRAS" class="btn btn-primary" visible="false" OnClick="btnVerCarro_Click" />
             <br />
                         <asp:GridView ID="DVCarrito" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" HorizontalAlign="Justify">
                             <FooterStyle BackColor="#CCCCCC" />
@@ -99,8 +83,8 @@
                             <SortedDescendingHeaderStyle BackColor="#383838" />
                         </asp:GridView>
             <br />
-                        <asp:Label ID="lbltoto" class="form_label_align" runat="server" Text="TOTAL :" visible="false" ToolTip ="tu total caradeverga"></asp:Label>
-                        <asp:Label ID="lblNtotal" class='form_label_align' runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lbltoto" class="form_label_align" runat="server" Text="TOTAL :" visible="False" ToolTip ="tu total caradeverga" Font-Bold="True" Font-Size="Larger" Font-Underline="True"></asp:Label>
+                        <asp:Label ID="lblNtotal" class='form_label_align' runat="server" Text="" Font-Underline="true"></asp:Label>
             </div>
                             <br />
 
@@ -108,10 +92,12 @@
                 </1tr>
 
             </table>
+            <asp:Button ID="btnFinalizarCompra" runat="server" Text="Finalizar la compra" Height="78px" Width="1653px" CssClass="badge-info" />
         </div>
 
 
 
-    </form>
-</body>
-</html>
+    
+
+
+</asp:Content>

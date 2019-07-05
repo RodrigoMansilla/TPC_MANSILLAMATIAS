@@ -8,7 +8,7 @@ using Common.Cache;
 
 namespace AppWeb
 {
-    public partial class datoscostumer : System.Web.UI.Page
+    public partial class DatosClientes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
