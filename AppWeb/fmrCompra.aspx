@@ -92,7 +92,7 @@
                 </1tr>
 
             </table>
-            <asp:Button ID="btnFinalizarCompra" runat="server" Text="Finalizar la compra" Height="78px" Width="1653px" CssClass="badge-info" />
+            <asp:Button ID="btnFinalizarCompra" runat="server" Text="Finalizar la compra" Height="78px" Width="1653px" CssClass="badge-info" OnClick="btnFinalizarCompra_Click" Visible="false"/>
         </div>
 
 

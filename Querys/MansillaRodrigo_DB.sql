@@ -105,6 +105,14 @@ Correo varchar(50) not null unique,
 )
 go 
 
+create table Ventas(
+IdFactura int not null primary key identity,
+IdCliente int not null foreign key references Clientes (DNI),
+Total decimal(8,2) not null, 
+Fecha date not null, 
+)
+go
+
 -- CREACION DE PROCEDIMIENTOS
 
 create procedure Sp_AgregarProducto(
@@ -251,11 +259,6 @@ insert into usuarios values ((select count(*) from Usuarios)+1,(select correo fr
 end 
 go
 
-use MansillaRodrigo_DB
-go
-
-select * from Productos
-go
 
 create procedure SpCarrito(
 @aydi int, 
@@ -266,4 +269,18 @@ begin
 select p.Nombre, p.PrecioVenta, (select p.Estado *@cant ) as cantidad, (select p.PrecioVenta * @cant) as Subtotal from Productos as p where ID = @aydi
 end
 go
+
+create procedure SpCreaVenta(
+@correo varchar(50),
+@to decimal(8,2)
+)
+as
+begin 
+declare @aux int
+select  @aux =DNI from clientes where correo like @correo
+insert into Ventas values (@aux,@to,GETDATE())
+end
+go
+
+
 

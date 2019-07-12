@@ -47,7 +47,7 @@
             <asp:TextBox ID="txtpass" runat="server"></asp:TextBox> <%--TXTCONTRASEÑA--%>
             <br />
               
-            <asp:Button ID="btnAceptar" runat="server" OnClick="Button1_Click" Text="ACEPTAR" class="btn btn-warning"  /> <%--BOTON ACEPTAR--%>
+            <asp:Button ID="btnAceptar" runat="server" OnClick="Button1_Click" Text="ACEPTAR" class="btn btn-warning"  visible="false"/> <%--BOTON ACEPTAR--%>
             <br />
 
         </div>

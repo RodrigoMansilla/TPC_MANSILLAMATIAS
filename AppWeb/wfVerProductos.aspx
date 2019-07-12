@@ -22,12 +22,14 @@
         .auto-style2 {
             width: 256px;
             border-style: double;
+            height: 961px;
         }
         .auto-style3 {
             width: 364px;
+            height: 961px;
         }
-        .auto-style4 {
-            width: 141px;
+        .auto-style5 {
+            height: 961px;
         }
     </style>
 </head>
@@ -38,7 +40,7 @@
            
             <table>
                 <tr>
-                    <td>
+                    <td class="auto-style5">
                      <asp:GridView ID="gvProductos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCreated="gvProductos_RowCreated" HorizontalAlign="Justify">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <EditRowStyle BackColor="#999999" />
@@ -53,7 +55,7 @@
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
                      </td>
-        <td>
+        <td class="auto-style5">
                 <div style="margin-left: auto; margin-right: auto; text-align: center;">
             <asp:TreeView ID="TreeViewProductos" runat="server" OnSelectedNodeChanged="TreeViewProductos_SelectedNodeChanged" ImageSet="BulletedList2" ShowExpandCollapse="False">
                 <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />

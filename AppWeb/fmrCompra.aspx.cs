@@ -18,7 +18,8 @@ namespace AppWeb
     public partial class fmrCompra : System.Web.UI.Page
     {
         private ArrayList ProductosSelecionados = new ArrayList();
-
+        private int iki = 0;
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -77,6 +78,7 @@ namespace AppWeb
             lblNombre.Visible = true;
             lblPrecioVenta.Visible = true;
             lblStock.Visible = true;
+
         }
 
         private void Cargadelabels(string id)
@@ -118,6 +120,7 @@ namespace AppWeb
         {
             base.LoadViewState(savedState);
             this.ProductosSelecionados = (ArrayList)this.ViewState["productoCarro"];
+            
         }
 
         protected override object SaveViewState()
@@ -186,6 +189,8 @@ namespace AppWeb
                 suma = suma + Convert.ToDecimal(dr[4]);
             }
             lblNtotal.Text = suma.ToString();
+            btnFinalizarCompra.Visible = true;
+            
         }
 
         protected void btnVerCarro_Click(object sender, EventArgs e)
@@ -195,6 +200,32 @@ namespace AppWeb
         protected void gvProductos_RowCreated(object sender, GridViewRowEventArgs e)
         {
 
+
+        }
+
+        protected void btnFinalizarCompra_Click(object sender, EventArgs e)
+        {
+            decimal kiko;
+            kiko = Convert.ToDecimal(lblNtotal.Text);
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            try
+            {
+                accesoDatos.setearSP("SpCreaVenta");
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@correo", Common.Cache.UserLoginCache.Correo );
+                accesoDatos.Comando.Parameters.AddWithValue("@to", kiko);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
 
         }
     }
