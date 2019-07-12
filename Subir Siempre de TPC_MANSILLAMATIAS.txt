@@ -1,0 +1,59 @@
+el tipo 'System.web.ui.webcontrols.gridview' no tiene ninguna propiedad publica cuyo nombre sea 'boundfield'
+
+create table Usuarios(
+Id int not null primary key,
+User varchar(50) not null,
+Pass varchar(50) not null,
+Nombre varchar(50) not null,
+Apellido varchar(50) not null,
+Cargo varchar(50) not null,
+Correo varchar(50) not null,
+)
+go 
+
+/* BackColor="#FF6600" BorderColor="#00CC00" BorderStyle="Solid" Font-Bold="True" Font-Names="Arial" Font-Size="10pt" ForeColor="White"*/
+
+<form action="">
+<div class="form-group">
+el label 
+el imput 
+</div>
+
+
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+@import url('normalize.css');
+@import url('bootstrap.min.css');
+
+<link href="/estilos.css" rel="stylesheet" type=2text/css">
+
+.estilocentrado{
+display: block;
+width 1012px;
+margin 0px auto;
+text-align : left;
+}
+
+<asp:RequiredFieldValidator ID=
+
+if(!this.IsPostBack){
+inicializar
+}
+
+
+TENGO QUE CREAR LA TABLA DE VENTAS Y DE VENTASCLIENTES 
+
+VENTAS
+ID DE FACTURA 
+ID DEL CLIENTE 
+TOTAL
+FECHA 
+
+
+VENTASCLIENTE
+IDFACTURA
+IDPRODUCTO
+CANTIDAD
+SUBTOTAL
+
+tengo que hacer un sp que busque la ultima venta 

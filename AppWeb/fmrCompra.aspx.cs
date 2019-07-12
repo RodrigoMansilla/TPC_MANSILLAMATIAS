@@ -18,7 +18,7 @@ namespace AppWeb
     public partial class fmrCompra : System.Web.UI.Page
     {
         private ArrayList ProductosSelecionados = new ArrayList();
-        private int iki = 0;
+        
         
 
         protected void Page_Load(object sender, EventArgs e)
@@ -205,6 +205,8 @@ namespace AppWeb
 
         protected void btnFinalizarCompra_Click(object sender, EventArgs e)
         {
+
+            // aca grabo la venta sin el detalle de los productos 
             decimal kiko;
             kiko = Convert.ToDecimal(lblNtotal.Text);
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
@@ -226,6 +228,36 @@ namespace AppWeb
             {
                 accesoDatos.cerrarConexion();
             }
+
+            // aca grabo los detalles de venta 
+
+            int i = 0;
+            ArrayList producto = ProductosSelecionados;
+
+            for (i = 0; i < producto.Count; i = i + 2)
+            {
+                AccesoDatosManager accesoDatos1 = new AccesoDatosManager();
+                try
+                {
+                    accesoDatos1.setearSP("SpNuevosDetalles");
+                    accesoDatos1.Comando.Parameters.Clear();
+                    accesoDatos1.Comando.Parameters.AddWithValue("@correo", Common.Cache.UserLoginCache.Correo);
+                    accesoDatos1.Comando.Parameters.AddWithValue("@id", producto[i]);
+                    accesoDatos1.Comando.Parameters.AddWithValue("@cant", producto[i + 1]);
+                    accesoDatos1.abrirConexion();
+                    accesoDatos1.ejecutarAccion();
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    accesoDatos1.cerrarConexion();
+                }
+            }
+            Response.Redirect("~/frmFactura.aspx");
 
         }
     }

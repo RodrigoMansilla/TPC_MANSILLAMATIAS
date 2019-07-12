@@ -1,7 +1,6 @@
 use master
 go
 
-drop database MansillaRodrigo_DB
 create database MansillaRodrigo_DB
 go
 
@@ -110,6 +109,15 @@ IdFactura int not null primary key identity,
 IdCliente int not null foreign key references Clientes (DNI),
 Total decimal(8,2) not null, 
 Fecha date not null, 
+)
+go
+
+create table VentasClientes(
+IdDetalle int not null primary key identity,-- autonumerico
+IdFactura int not null foreign key references Ventas (IdFactura),--lo calculo con el max
+IdProducto int not null foreign key references productos (ID), -- lo traigo de la app
+Cantidad int not null,-- lo traigo de la app
+Subtotal decimal(8,2) not null -- hago un select para ver el precio y lo multiplico por la cant 
 )
 go
 
@@ -282,5 +290,18 @@ insert into Ventas values (@aux,@to,GETDATE())
 end
 go
 
-
+create procedure SpNuevosDetalles(
+@correo varchar(50),
+@id int,
+@cant int
+)
+as
+begin 
+declare @aux int 
+select @aux = max(IdFactura) from Ventas 
+declare @aux2 int 
+select @aux2 = p.precioventa from productos as p where ID = @id
+insert into VentasClientes values (@aux,@id,@cant,@aux2*@cant)
+end
+go
 
