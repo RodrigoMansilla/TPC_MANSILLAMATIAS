@@ -32,6 +32,13 @@
   border: solid;
 }
         
+        .auto-style7 {
+            height: 64px;
+        }
+        .auto-style8 {
+            height: 47px;
+        }
+        
     </style>
 
     <div class="auto-style4">
@@ -82,12 +89,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">
+                    <td colspan="3" class="auto-style7">
                         <asp:Label ID="lblNombres" runat="server" Text="NOMBRE Y APELLIDO : "></asp:Label> &nbsp <asp:Label ID="lblNombres1" runat="server" Text=""></asp:Label> &nbsp <asp:Label ID="lblNombres2" runat="server" Text=""></asp:Label>
                         <br />
                         <asp:Label ID="lblIVA" runat="server" Text="CONDICION FRENTE AL IVA : CONSUMIDOR FINAL."></asp:Label>
                     </td>
-                    <td>
+                    <td class="auto-style7">
                         <asp:Label ID="lbldni" runat="server" Text="DOCUMENTO  : "></asp:Label> &nbsp <asp:Label ID="lbldni1" runat="server" Text=""></asp:Label>
                         <br />
                         <asp:Label ID="lbldirrecion" runat="server" Text="DIRECCION : "></asp:Label> &nbsp <asp:Label ID="lbladdres" runat="server" Text=""></asp:Label>
@@ -100,27 +107,43 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="auto-style8">
                         <asp:Label ID="lblname" runat="server" Text="Nombre"></asp:Label>
                         <br />
-                        <asp:Label ID="lblname1" runat="server" Text=""></asp:Label>
+                        
                     </td>
-                    <td>
+                    <td class="auto-style8">
                         <asp:Label ID="lblcant" runat="server" Text="Cantidad"></asp:Label>
                         <br />
-                        <asp:Label ID="lblcant1" runat="server" Text=""></asp:Label>
                     </td>
-                    <td>
+                    <td class="auto-style8">
                         <asp:Label ID="lblprecio" runat="server" Text="Precio"></asp:Label>
                         <br />
-                        <asp:Label ID="lblprecio1" runat="server" Text=""></asp:Label>
                     </td>
-                    <td>
+                    <td class="auto-style8">
                         <asp:Label ID="lblsub" runat="server" Text="Subtotal"></asp:Label>
                         <br />
-                        <asp:Label ID="lblsub1" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
+
+                <tr>
+                    <td>
+                        <asp:GridView ID="gvName" runat="server" BorderStyle="None" GridLines="None" ShowHeader="False" ></asp:GridView>
+                    </td>
+                    
+                    <td>
+                        <asp:GridView ID="Gvcantidad" runat="server" BorderStyle="None" GridLines="None" ShowHeader="False"  ></asp:GridView>
+                    </td>
+                    
+                    <td>
+                        <asp:GridView ID="gvPrecio" runat="server" BorderStyle="None" GridLines="None" ShowHeader="False" ></asp:GridView>
+                    </td>
+                    
+                    <td>
+                        <asp:GridView ID="gvSubtotal" runat="server" BorderStyle="None" GridLines="None" ShowHeader="False"></asp:GridView>
+                    </td>
+                </tr>
+
                 <tr>
                     <td colspan="4">
                         <asp:Label ID="lblCompleto" runat="server" Text="TOTAL : "></asp:Label> &nbsp 

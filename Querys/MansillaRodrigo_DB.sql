@@ -304,4 +304,3 @@ select @aux2 = p.precioventa from productos as p where ID = @id
 insert into VentasClientes values (@aux,@id,@cant,@aux2*@cant)
 end
 go
-

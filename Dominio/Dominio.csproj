@@ -55,6 +55,7 @@
     <Compile Include="Cp.cs" />
     <Compile Include="DetalledeVenta.cs" />
     <Compile Include="InfoComercio.cs" />
+    <Compile Include="listarventa.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="ModificacionStock.cs" />
     <Compile Include="Cliente.cs" />

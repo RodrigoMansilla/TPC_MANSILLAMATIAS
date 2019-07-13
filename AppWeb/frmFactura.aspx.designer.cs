@@ -229,15 +229,6 @@ namespace AppWeb {
         protected global::System.Web.UI.WebControls.Label lblname;
         
         /// <summary>
-        /// Control lblname1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblname1;
-        
-        /// <summary>
         /// Control lblcant.
         /// </summary>
         /// <remarks>
@@ -245,15 +236,6 @@ namespace AppWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblcant;
-        
-        /// <summary>
-        /// Control lblcant1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblcant1;
         
         /// <summary>
         /// Control lblprecio.
@@ -265,15 +247,6 @@ namespace AppWeb {
         protected global::System.Web.UI.WebControls.Label lblprecio;
         
         /// <summary>
-        /// Control lblprecio1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblprecio1;
-        
-        /// <summary>
         /// Control lblsub.
         /// </summary>
         /// <remarks>
@@ -283,13 +256,40 @@ namespace AppWeb {
         protected global::System.Web.UI.WebControls.Label lblsub;
         
         /// <summary>
-        /// Control lblsub1.
+        /// Control gvName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblsub1;
+        protected global::System.Web.UI.WebControls.GridView gvName;
+        
+        /// <summary>
+        /// Control Gvcantidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView Gvcantidad;
+        
+        /// <summary>
+        /// Control gvPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvPrecio;
+        
+        /// <summary>
+        /// Control gvSubtotal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvSubtotal;
         
         /// <summary>
         /// Control lblCompleto.
