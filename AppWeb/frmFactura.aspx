@@ -1,5 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmFactura.aspx.cs" Inherits="AppWeb.frmFactura" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" EnableEventValidation = "false" CodeBehind="frmFactura.aspx.cs" Inherits="AppWeb.frmFactura" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    
+
+
     <style>
         div {
   width: 200px;
@@ -7,11 +11,11 @@
 }
         .auto-style2 {
             width: 254px;
-            height: 116px;
+            height: 21px;
         }
         .auto-style3 {
             width: 230px;
-            height: 116px;
+            height: 21px;
         }
         .auto-style4 {
             width: 1056px;
@@ -19,14 +23,18 @@
             height: 455px;
         }
         .auto-style5 {
+            border-style: solid;
+            border-color: inherit;
+            border-width: medium;
             width: 184px;
-            height: 116px;
-            border:solid;
+            height: 21px;
+            vertical-align:middle;
+              text-align:center;
         }
         
         .auto-style6 {
             width: 428px;
-            height: 116px;
+            height: 21px;
         }
         table {
   border: solid;
@@ -38,41 +46,42 @@
         .auto-style8 {
             height: 47px;
         }
+
+     .nuevo{
+         
+     }   
         
     </style>
-
+    <asp:Panel ID="Panel1" runat="server">
     <div class="auto-style4">
-        <table border="1" class="auto-style7">
+        <table border="1" class="auto-style7" id="table1">
             <tbody>
             <tr>
                 <td class="auto-style2">
- <asp:Label ID="lblNombreComercio" runat="server" Font-Size="XX-Large" ForeColor="Blue" Text="Pescaderia Tito" Font-Bold="True" Font-Overline="False" BorderColor="Black"></asp:Label>
+ <asp:Label ID="lblNombreComercio" runat="server" ForeColor="Blue" Text="Pescaderia Tito" Font-Bold="True" Font-Overline="False" BorderColor="Black"  size="5"></asp:Label>
             </td>
                 <td class="auto-style3">
-                    <br />
+                    <br />  
                     
-                    <asp:Label ID="lblDireccion" runat="server" Text="Carlos Tejedor 2555 Vicente López" Font-Size="Small"></asp:Label>
+                    <asp:Label ID="lblDireccion" runat="server" Text="Carlos Tejedor 2555 Vicente López"></asp:Label>
                     <br />
-                    <asp:Label ID="lblTelefono" runat="server" Text="03327-485432" Font-Size="Small"></asp:Label>
+                    <asp:Label ID="lblTelefono" runat="server" Text="03327-485432"></asp:Label>
                 </td>
-                <td class
-                    ="auto-style5">
-                    <%--solo para que quede un espacio --%>
-                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                    <asp:Label ID="lblB" runat="server" Text="B" BorderStyle="Solid" BorderWidth="5px" Font-Size="XX-Large"></asp:Label>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-
+                <td class="auto-style5" >
+                    
+                    <asp:Label ID="lblB" runat="server" Text="B" BorderStyle="Solid" BorderWidth="5px" Height="26px" Width="34px" ></asp:Label>
+                   
                 </td>
                 <td class="auto-style6">
 
-                    <asp:Label ID="lblFacuta" runat="server" Text="FACTURA" Font-Bold="True" Font-Size="X-Large"></asp:Label>
-                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                    <asp:Label ID="lblFacuta" runat="server" Text="FACTURA" Font-Bold="True"></asp:Label>
+                   
+<%--                   
                     <asp:Label ID="lblOriginal" runat="server" Text="ORIGINAL" display="block"></asp:Label>
-
-                    <br />
+                       --%>
+                    <div style="text-align:left";>
+                    <p>ORIGINAL</p>
+                    </div>
                     <asp:Label ID="lblFactura" runat="server" Text="Factura Nº : "></asp:Label> &nbsp <asp:Label ID="lblNfactura" runat="server" Text=""></asp:Label>
                         <br />
                     <asp:Label ID="lblFecha" runat="server" Text="Fecha de Emision: "></asp:Label> &nbsp <asp:Label ID="lblFechaEmision" runat="server" Text=""></asp:Label>
@@ -150,8 +159,14 @@
                         <asp:Label ID="lblCompleto1" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="4">
+                        <asp:Button ID="btnExportar" runat="server" Text="Exportar a Pdf" OnClick="btnExportar_Click" Width="1016px" />
+                    </td>
+                </tr>
                 </tbody>
                 </table>
             </div>
+        </asp:Panel>
         
 </asp:Content>

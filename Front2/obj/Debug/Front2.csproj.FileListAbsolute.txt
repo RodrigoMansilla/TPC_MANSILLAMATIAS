@@ -27,3 +27,5 @@ D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmCargarClient
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\obj\Debug\Front2.frmVerClientes.resources
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\Common.dll
 D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\Common.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\itextsharp.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\Front2\bin\Debug\itextsharp.xml

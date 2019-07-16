@@ -56,4 +56,5 @@ IDPRODUCTO
 CANTIDAD
 SUBTOTAL
 
-AHORA TENGO QUE MODIFICAR EL STOCK CUANDO ALGUIEN REALIZA UNA COMPRA PAPA
+StringWriter sw = new StringWriter();
+HtmlTextWriter hw = new HtmlTextWriter(sw);

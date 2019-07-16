@@ -29,3 +29,5 @@ D:\Internet Explorer\TPC_RodrigoMansilla\Dominio\obj\Debug\Dominio.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\Dominio\bin\Debug\Common.dll
 D:\Internet Explorer\TPC_RodrigoMansilla\Dominio\bin\Debug\Common.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\Dominio\obj\Debug\Dominio.csproj.CopyComplete
+D:\Internet Explorer\TPC_RodrigoMansilla\Dominio\bin\Debug\itextsharp.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\Dominio\bin\Debug\itextsharp.xml
