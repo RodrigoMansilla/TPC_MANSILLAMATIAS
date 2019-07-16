@@ -21,5 +21,10 @@ namespace AppWeb
         {
             Response.Redirect("~/fmrCompra.aspx");
         }
+
+        protected void btnVercompras_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ListadoCompras.aspx");
+        }
     }
 }

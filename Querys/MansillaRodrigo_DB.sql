@@ -1,3 +1,4 @@
+
 use master
 go
 
@@ -315,3 +316,4 @@ begin
 update Productos set Stock=Stock-@cant where ID = @id
 end
 go
+

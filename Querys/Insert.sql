@@ -1,4 +1,4 @@
-use MansillaRodrigo_DB 
+use hola 
 go
 
 insert into Categorias (Id,Nombre,Estado) values ((select count(*) from Categorias)+1,'Celulares y Smartphones',1)
@@ -27,9 +27,13 @@ insert into Categorias (Id,Nombre,Estado) values ((select count(*) from Categori
  insert into Productos (ID,Nombre,IdCategoria,IdMarca,Stock,StockMinimo,PrecioCompra,PrecioVenta,Ganancia,Estado) values ((select count(*) from Productos)+1,'Smart Tv Philips 32 Hd ',6,7,0,1,0,0,0,1)
  
  insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,Estado,FCompra) values ((select count(*) from Compras)+1,1,5,10000,13200,13200-10000,1,GETDATE())
- insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,Estado,FCompra) values ((select count(*) from Compras)+1,6,10,11000,15750,15750-11000,1,GETDATE())
+ insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,Estado,FCompra) values ((select count(*) from Compras)+1,2,10,11000,15750,15750-11000,1,GETDATE())
  insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,Estado,FCompra) values ((select count(*) from Compras)+1,3,50,700,1350,1350-700,1,GETDATE())
+ insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,Estado,FCompra) values ((select count(*) from Compras)+1,4,5,10000,13200,13200-10000,1,GETDATE())
+ insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,Estado,FCompra) values ((select count(*) from Compras)+1,5,10,11000,15750,15750-11000,1,GETDATE())
+ insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,Estado,FCompra) values ((select count(*) from Compras)+1,6,50,700,1350,1350-700,1,GETDATE())
 
+ 
  insert into Provincias (id,Nombre) values (1,'Buenos Aires')
  insert into Provincias (id,Nombre) values (2,'Catamarca')
  insert into Provincias (id,Nombre) values (3,'Chaco')
@@ -65,6 +69,12 @@ insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1609,'BOULOGNE ',
 insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1640,'MARTINEZ','Buenos Aires', 1)
 insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1642,'SAN ISIDRO','Buenos Aires', 1)
 insert into Cp (CodigoPostal,Partido,Provincia,estado) values (1619,'GARIN','Buenos Aires', 1)
+
+
+insert into clientes values ((select count(*) from Clientes)+1,10000,1607,'Rodrigo','Mansilla',1530205065,'rodrigo@ro.com',123,getdate(),'Reconquista 1366',getdate(),1)
+insert into clientes values ((select count(*) from Clientes)+1,20000,1621,'Roberto','Sanchez',1530235405,'roberto@sa.com',456,getdate(),'Godoy Cruz 132',getdate(),1)
+insert into clientes values ((select count(*) from Clientes)+1,30000,1640,'Gladys','Fernandes',1530542141,'gladys@fe.com',789,getdate(),'Calle 4 N 54',getdate(),1)
+
 
 
 

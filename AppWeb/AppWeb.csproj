@@ -120,7 +120,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="DatosClientes.aspx" />
-    <Content Include="datoscostumer.aspx" />
     <Content Include="Estilos.css" />
     <Content Include="favicon.ico" />
     <Content Include="fmrCompra.aspx" />
@@ -136,10 +135,10 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Inicio.aspx" />
+    <Content Include="ListadoCompras.aspx" />
+    <Content Include="NewFolder1\depositphotos_89211356-stock-photo-online-shopping-banner-with-bags.jpg" />
     <Content Include="wfVerProductos.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Index.aspx" />
-    <Content Include="lista.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -184,13 +183,6 @@
     <Compile Include="DatosClientes.aspx.designer.cs">
       <DependentUpon>DatosClientes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="datoscostumer.aspx.cs">
-      <DependentUpon>datoscostumer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="datoscostumer.aspx.designer.cs">
-      <DependentUpon>datoscostumer.aspx</DependentUpon>
-    </Compile>
     <Compile Include="fmrCompra.aspx.cs">
       <DependentUpon>fmrCompra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,13 +200,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,12 +207,12 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="lista.aspx.cs">
-      <DependentUpon>lista.aspx</DependentUpon>
+    <Compile Include="ListadoCompras.aspx.cs">
+      <DependentUpon>ListadoCompras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="lista.aspx.designer.cs">
-      <DependentUpon>lista.aspx</DependentUpon>
+    <Compile Include="ListadoCompras.aspx.designer.cs">
+      <DependentUpon>ListadoCompras.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">
