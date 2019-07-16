@@ -83,17 +83,19 @@ namespace AppWeb
         protected void TreeViewProductos_SelectedNodeChanged(object sender, EventArgs e)
         {
             //Response.Write("<script>window.alert('carga nodo');</script>");
-            txtcantidad.Visible = true;
+            //txtcantidad.Visible = true;
+            int a;
             btnVerCarro.Visible = true;
             btnAceptar.Visible = true;
             TreeNode nodo = TreeViewProductos.SelectedNode;
-            Cargadelabels(nodo.Value);
+            a=Cargadelabels(nodo.Value);
+            cargacombo(a);
             lblNombre.Visible = true;
             lblPrecioVenta.Visible = true;
             lblStock.Visible = true;
         }
 
-        private void Cargadelabels(string id) {
+        private int Cargadelabels(string id) {
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -115,6 +117,7 @@ namespace AppWeb
                 }
                 lector.Close();
                 conexion.Dispose();
+                return Convert.ToInt32(lblStock.Text);
             }
             catch (Exception ex)
             {
@@ -125,6 +128,17 @@ namespace AppWeb
                 conexion.Close();
                 conexion.Dispose();
             }
+        }
+
+        private void cargacombo(int numero)
+        {
+            int i;
+            
+            for (i=0;i<numero; i++)
+            {
+                ComboStock.Items.Add(Convert.ToString(i));
+            }
+
         }
 
         protected override void LoadViewState(object savedState)
@@ -143,7 +157,7 @@ namespace AppWeb
         {
             TreeNode node = TreeViewProductos.SelectedNode;
             ProductosSelecionados.Add(node.Value);
-            ProductosSelecionados.Add(txtcantidad.Text);
+            //ProductosSelecionados.Add(txtcantidad.Text); ACA TENGO QUE TOMAR LO QUE ESTA EN EL DROP DAWON
             Response.Write("<script>window.alert('Producto agregado al carrito de compras. ');</script>");
         }
 

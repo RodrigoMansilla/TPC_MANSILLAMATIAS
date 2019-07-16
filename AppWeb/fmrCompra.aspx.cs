@@ -70,19 +70,23 @@ namespace AppWeb
 
         protected void TreeViewProductos_SelectedNodeChanged(object sender, EventArgs e)
         {
-            txtcantidad.Visible = true;
+            
+            int a;
             btnVerCarro.Visible = true;
             btnAceptar.Visible = true;
+            ComboStock.Visible = true;
             TreeNode nodo = TreeViewProductos.SelectedNode;
-            Cargadelabels(nodo.Value);
+            a=Cargadelabels(nodo.Value);
+            cargacombo(a);
             lblNombre.Visible = true;
             lblPrecioVenta.Visible = true;
             lblStock.Visible = true;
 
         }
 
-        private void Cargadelabels(string id)
+        private int Cargadelabels(string id)
         {
+            int arba=0;
             AccesoDatosManager accesoDatos = new AccesoDatosManager();
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -101,9 +105,11 @@ namespace AppWeb
                     lblNombre.Text = "NOMBRE : " + lector["Nombre"].ToString();
                     lblPrecioVenta.Text = "PRECIO : " + lector["PrecioVenta"].ToString();
                     lblStock.Text = "STOCK " + lector["Stock"].ToString();
+                    arba = lector.GetInt32(4);
                 }
                 lector.Close();
                 conexion.Dispose();
+                return arba;
             }
             catch (Exception ex)
             {
@@ -114,6 +120,17 @@ namespace AppWeb
                 conexion.Close();
                 conexion.Dispose();
             }
+        }
+
+        private void cargacombo(int numero)
+        {
+            int i;
+            ComboStock.Items.Clear();
+            for (i = 0; i < numero; i++)
+            {
+                ComboStock.Items.Add(Convert.ToString(i+1));
+            }
+
         }
 
         protected override void LoadViewState(object savedState)
@@ -133,7 +150,7 @@ namespace AppWeb
         {
             TreeNode node = TreeViewProductos.SelectedNode;
             ProductosSelecionados.Add(node.Value);
-            ProductosSelecionados.Add(txtcantidad.Text);
+            ProductosSelecionados.Add(ComboStock.SelectedValue);
             int i = 0;
             ArrayList producto = this.ProductosSelecionados;
             DataTable dt = new DataTable();
@@ -203,33 +220,53 @@ namespace AppWeb
 
         }
 
+        
+
         protected void btnFinalizarCompra_Click(object sender, EventArgs e)
         {
+            GraboVenta();  // aca grabo la venta sin el detalle de los productos 
+            
 
-            // aca grabo la venta sin el detalle de los productos 
-            decimal kiko;
-            kiko = Convert.ToDecimal(lblNtotal.Text);
-            AccesoDatosManager accesoDatos = new AccesoDatosManager();
-            try
+            GraboDetalle();// aca grabo los detalles de venta 
+
+            
+            Mmodstock(); // ACA TENGO MODIFICO EL STOCK, DEL PRODUCTO QUE VENDI
+
+
+            Response.Redirect("~/frmFactura.aspx");
+        }
+
+       private void Mmodstock(){
+
+            int i = 0;
+            ArrayList producto = ProductosSelecionados;
+
+            for (i = 0; i < producto.Count; i = i + 2)
             {
-                accesoDatos.setearSP("SpCreaVenta");
-                accesoDatos.Comando.Parameters.Clear();
-                accesoDatos.Comando.Parameters.AddWithValue("@correo", Common.Cache.UserLoginCache.Correo );
-                accesoDatos.Comando.Parameters.AddWithValue("@to", kiko);
-                accesoDatos.abrirConexion();
-                accesoDatos.ejecutarAccion();
+                AccesoDatosManager accesoDatos1 = new AccesoDatosManager();
+                try
+                {
+                    accesoDatos1.setearSP("SPActStock");
+                    accesoDatos1.Comando.Parameters.Clear();
+                    accesoDatos1.Comando.Parameters.AddWithValue("@id", producto[i]);
+                    accesoDatos1.Comando.Parameters.AddWithValue("@cant", producto[i + 1]);
+                    accesoDatos1.abrirConexion();
+                    accesoDatos1.ejecutarAccion();
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    accesoDatos1.cerrarConexion();
+                }
 
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                accesoDatos.cerrarConexion();
-            }
-
-            // aca grabo los detalles de venta 
+        }
+    private void GraboDetalle()
+        {
 
             int i = 0;
             ArrayList producto = ProductosSelecionados;
@@ -257,7 +294,32 @@ namespace AppWeb
                     accesoDatos1.cerrarConexion();
                 }
             }
-            Response.Redirect("~/frmFactura.aspx");
+        }
+
+        private void GraboVenta()
+        {
+            decimal kiko;
+            kiko = Convert.ToDecimal(lblNtotal.Text);
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            try
+            {
+                accesoDatos.setearSP("SpCreaVenta");
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@correo", Common.Cache.UserLoginCache.Correo);
+                accesoDatos.Comando.Parameters.AddWithValue("@to", kiko);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+
 
         }
     }

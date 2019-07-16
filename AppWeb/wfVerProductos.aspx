@@ -75,10 +75,7 @@
             <asp:Label ID="lblStock" runat="server" ForeColor="#0066FF" ></asp:Label> <br />
             <%--<asp:Label ID="lblCantidad" runat="server" TEXT="CANTIDAD"></asp:Label>--%>
                       
-            
-            <asp:TextBox ID="txtcantidad" runat="server" placeholder="CANTIDAD" visible="false"></asp:TextBox>
-                   <asp:RequiredFieldValidator ID="mreqEmail" runat="server" ControlToValidate="txtcantidad" ErrorMessage="*" Display="Dynamic" Forecolor="red" ></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="mregEmail" runat="server" ControlToValidate="txtcantidad" ErrorMessage="INTRODUZCA UN NUMERO" ValidationExpression="^\d+$" Display="Dynamic" Forecolor="red"></asp:RegularExpressionValidator>    
+                       <asp:DropDownList ID="ComboStock" runat="server"></asp:DropDownList>
                     </div>
                    <br />
                    <br />

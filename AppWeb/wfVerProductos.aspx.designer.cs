@@ -76,31 +76,13 @@ namespace AppWeb {
         protected global::System.Web.UI.WebControls.Label lblStock;
         
         /// <summary>
-        /// Control txtcantidad.
+        /// Control ComboStock.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcantidad;
-        
-        /// <summary>
-        /// Control mreqEmail.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator mreqEmail;
-        
-        /// <summary>
-        /// Control mregEmail.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator mregEmail;
+        protected global::System.Web.UI.WebControls.DropDownList ComboStock;
         
         /// <summary>
         /// Control btnAceptar.

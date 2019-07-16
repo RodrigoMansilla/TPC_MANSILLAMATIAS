@@ -304,3 +304,14 @@ select @aux2 = p.precioventa from productos as p where ID = @id
 insert into VentasClientes values (@aux,@id,@cant,@aux2*@cant)
 end
 go
+
+
+create procedure SPActStock(
+@id int,
+@cant int
+)
+as
+begin 
+update Productos set Stock=Stock-@cant where ID = @id
+end
+go
