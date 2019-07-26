@@ -11,6 +11,7 @@ namespace AceesoDatos
     public abstract class ConnectionToSql
     {
         private readonly string connetion;
+
         public ConnectionToSql()
         {
             connetion = "data source= localhost\\SQLEXPRESS; initial catalog=MansillaRodrigo_DB; integrated security=sspi";

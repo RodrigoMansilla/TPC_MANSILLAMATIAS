@@ -38,7 +38,6 @@
             this.GruopBox = new System.Windows.Forms.GroupBox();
             this.RadioOtros = new System.Windows.Forms.RadioButton();
             this.RadioVencidos = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnaceptar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.GruopBox.SuspendLayout();
@@ -87,7 +86,6 @@
             this.combitodeproductos.Name = "combitodeproductos";
             this.combitodeproductos.Size = new System.Drawing.Size(121, 21);
             this.combitodeproductos.TabIndex = 4;
-
             // 
             // txtCant
             // 
@@ -95,6 +93,7 @@
             this.txtCant.Name = "txtCant";
             this.txtCant.Size = new System.Drawing.Size(100, 20);
             this.txtCant.TabIndex = 5;
+            this.txtCant.TextChanged += new System.EventHandler(this.txtCant_TextChanged);
             // 
             // RadioDefectuosos
             // 
@@ -138,15 +137,6 @@
             this.RadioVencidos.UseVisualStyleBackColor = true;
             this.RadioVencidos.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(290, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(269, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "En caso de sacar stock, porner la cantidad en negativo";
-            // 
             // btnaceptar
             // 
             this.btnaceptar.Location = new System.Drawing.Point(144, 345);
@@ -174,7 +164,6 @@
             this.ClientSize = new System.Drawing.Size(800, 398);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnaceptar);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.GruopBox);
             this.Controls.Add(this.txtCant);
             this.Controls.Add(this.combitodeproductos);
@@ -204,7 +193,6 @@
         private System.Windows.Forms.GroupBox GruopBox;
         private System.Windows.Forms.RadioButton RadioOtros;
         private System.Windows.Forms.RadioButton RadioVencidos;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnaceptar;
         private System.Windows.Forms.Button btncancelar;
     }

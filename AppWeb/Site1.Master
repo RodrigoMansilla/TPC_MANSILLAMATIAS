@@ -34,20 +34,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    
-                    <a class="navbar-brand" href="#">
-                      <img id="brand-image" alt="Website logo" src="https://st2.depositphotos.com/5501600/8921/i/950/depositphotos_89211356-stock-photo-online-shopping-banner-with-bags.jpg" />
-                    </a>
-                </div>
-
-                <%-- SECCION DONDE AGREGAMOS LOS WEB FORMS --%>
-                <div class="navbar-collapse collapse">
-                </div>
-            </div>
-        </div>
+            
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

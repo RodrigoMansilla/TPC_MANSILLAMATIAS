@@ -32,6 +32,8 @@ namespace Front2
 
         }
 
+        
+
         private void fmrModificacionDeStock_Load(object sender, EventArgs e)
         {
             ProductoNegocio productoNegocio = new ProductoNegocio();
@@ -39,7 +41,7 @@ namespace Front2
             {
                 combitodeproductos.DataSource = productoNegocio.listarProductos();
 
-
+                
 
                 if (Productolocal != null)
                 {
@@ -134,7 +136,9 @@ namespace Front2
             this.Dispose();
         }
 
+        private void txtCant_TextChanged(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

@@ -48,10 +48,33 @@
         }
 
      .nuevo{
-         
+         text-indent: 40px;
      }   
         
     </style>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Inicio</a>  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="DatosClientes">inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="fmrCompra">Volver a comprar <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="ListadoCompras">Mis compras <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
     <asp:Panel ID="Panel1" runat="server">
     <div class="auto-style4">
         <table border="1" class="auto-style7" id="table1">
@@ -82,13 +105,13 @@
                     <div style="text-align:left";>
                     <p>ORIGINAL</p>
                     </div>
-                    <asp:Label ID="lblFactura" runat="server" Text="Factura Nº : "></asp:Label> &nbsp <asp:Label ID="lblNfactura" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblFactura" runat="server" Text="Factura Nº : "></asp:Label>  <asp:Label ID="lblNfactura" runat="server" Text=""></asp:Label>
                         <br />
-                    <asp:Label ID="lblFecha" runat="server" Text="Fecha de Emision: "></asp:Label> &nbsp <asp:Label ID="lblFechaEmision" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblFecha" runat="server" Text="Fecha de Emision: "></asp:Label>  <asp:Label ID="lblFechaEmision" runat="server" Text=""></asp:Label>
                     <br />
-                    <asp:Label ID="lblcuit" runat="server" Text="CUIT: "></asp:Label> &nbsp  <asp:Label ID="lblcuit1" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblcuit" runat="server" Text="CUIT: "></asp:Label>   <asp:Label ID="lblcuit1" runat="server" Text=""></asp:Label>
                     <br />
-                    <asp:Label ID="lblInicioActividad" runat="server" Text="Inicio de actividades: "></asp:Label> &nbsp <asp:Label ID="lblInicioActividad1" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblInicioActividad" runat="server" Text="Inicio de actividades: "></asp:Label>  <asp:Label ID="lblInicioActividad1" runat="server" Text=""></asp:Label>
 
                 </td>
                     </tr>
@@ -99,14 +122,14 @@
                 </tr>
                 <tr>
                     <td colspan="3" class="auto-style7">
-                        <asp:Label ID="lblNombres" runat="server" Text="NOMBRE Y APELLIDO : "></asp:Label> &nbsp <asp:Label ID="lblNombres1" runat="server" Text=""></asp:Label> &nbsp <asp:Label ID="lblNombres2" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblNombres" runat="server" Text="NOMBRE Y APELLIDO : "></asp:Label>  <asp:Label ID="lblNombres1" runat="server" class="nuevo" Text=""></asp:Label> <asp:Label ID="lblNombres2" runat="server" Text=""></asp:Label>
                         <br />
                         <asp:Label ID="lblIVA" runat="server" Text="CONDICION FRENTE AL IVA : CONSUMIDOR FINAL."></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:Label ID="lbldni" runat="server" Text="DOCUMENTO  : "></asp:Label> &nbsp <asp:Label ID="lbldni1" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lbldni" runat="server" Text="DOCUMENTO  : "></asp:Label>  <asp:Label ID="lbldni1" runat="server" Text=""></asp:Label>
                         <br />
-                        <asp:Label ID="lbldirrecion" runat="server" Text="DIRECCION : "></asp:Label> &nbsp <asp:Label ID="lbladdres" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lbldirrecion" runat="server" Text="DIRECCION : "></asp:Label>  <asp:Label ID="lbladdres" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -155,7 +178,7 @@
 
                 <tr>
                     <td colspan="4">
-                        <asp:Label ID="lblCompleto" runat="server" Text="TOTAL : "></asp:Label> &nbsp 
+                        <asp:Label ID="lblCompleto" runat="server" Text="TOTAL : "></asp:Label> 
                         <asp:Label ID="lblCompleto1" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
