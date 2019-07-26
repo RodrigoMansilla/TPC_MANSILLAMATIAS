@@ -136,7 +136,7 @@ namespace Negocio
             try
             {
 
-                accesoDatos.setearSP("SPModificarProducto2");//CAMBIAR ESTO
+                accesoDatos.setearSP("SPModificarProducto2");
 
                 accesoDatos.Comando.Parameters.Clear();
                 accesoDatos.Comando.Parameters.AddWithValue("@Nom", modificar.Nombre);
@@ -145,7 +145,7 @@ namespace Negocio
                 accesoDatos.Comando.Parameters.AddWithValue("@precioventa", modificar.PrecioVenta);
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
-                //MessageBox.Show("llegue aca1");
+                
 
             }
             catch (Exception ex)

@@ -1,31 +1,30 @@
-
 use master
 go
 
-create database MansillaRodrigo_DB
+create database MansillaRodrigo3_DB
 go
 
-use MansillaRodrigo_DB
+use MansillaRodrigo3_DB
 go
 
 -- CREACION DE TABLAS
 
 create table Categorias (
-Id int primary key not null,
+Id int primary key not null identity,
 Nombre varchar(50) not null,
 Estado bit not null default 1
 )
 go
 
 create table Marcas(
-Id int primary key not null,
+Id int primary key not null identity,
 Nombre varchar(50) not null,
 Estado bit not null default 1
 )
 go
 
 create table Productos (
-ID int not null primary key,
+ID int not null primary key identity,
 Nombre varchar(30) not null unique,
 IdCategoria int foreign key references categorias(Id),
 IdMarca int foreign key references marcas(Id),
@@ -39,7 +38,7 @@ Estado bit not null default 1
 go
 
 create table Compras(
-IdCompra int primary key not null,
+IdCompra int primary key not null identity,
 IdProducto int not null foreign key references Productos(ID),
 Cantidad decimal(8,2) not null,
 PrecioCompra decimal(8,2) not null,
@@ -53,7 +52,7 @@ Alter table Compras add FCompra date not null
 go
 
 Create table ModiStock(
-Id int not null primary key,
+Id int not null primary key identity,
 idProducto int not null foreign key references Productos(ID),
 Cantidad int not null,
 Comentario varchar(30) null,
@@ -64,7 +63,7 @@ NameProduct varchar(30) null
 go
 
 create table Provincias (
-id int not null primary key,
+id int not null primary key identity,
 Nombre varchar(35) not null
 )
 go
@@ -75,11 +74,11 @@ Partido varchar(35) not null,
 Provincia varchar(35) not null,
 estado bit null
 )
-
 go
 
+
 create table Clientes (
-ID int not null,
+ID int not null identity,
 DNI int not null primary key,
 Cp int not null foreign key references Cp(CodigoPostal),
 Nombre varchar(35) not null,
@@ -95,7 +94,7 @@ Estado bit null
 go
 
 create table Usuarios(
-Id int not null primary key,
+Id int not null primary key identity,
 LoginName varchar(50) not null,
 Pass varchar(50) not null,
 Nombre varchar(50) not null,
@@ -132,7 +131,7 @@ create procedure Sp_AgregarProducto(
 )
 as
 begin  
-insert into Productos (Id,Nombre,IdCategoria,IdMarca,Stock,StockMinimo,PrecioCompra,PrecioVenta,Ganancia,Estado) values ((select count(*)from productos)+1,@nom,@idcat,@idmarca,0,@stm,0,0,0,1)
+insert into Productos (Nombre,IdCategoria,IdMarca,Stock,StockMinimo,PrecioCompra,PrecioVenta,Ganancia,Estado) values (@nom,@idcat,@idmarca,0,@stm,0,0,0,1)
 end
 go
 
@@ -154,7 +153,7 @@ create procedure SPAgregarCategoria(
 )
 as
 begin
-insert into categorias (Id,Nombre,Estado) values ((select count(*) from categorias)+1,@Nombre,1)
+insert into categorias (Nombre,Estado) values (@Nombre,1)
 end
 go
 
@@ -179,6 +178,7 @@ update Productos set PrecioCompra = @preciocompra, PrecioVenta = @precioventa, S
 end
 go
 
+
 create procedure SPAgregarCompra(
 @nom varchar(30), -- EL NOMBRE SIEMPRE VA EXISTIR POR QUE LO ELIJE DE UN COMBOBOX, NI HACE FALTA VERIFICAR EL MISMO.
 @cant int,
@@ -189,9 +189,7 @@ as
 begin
 declare @aux int, @aux2 int -- DECLARO VARIABLES LOCALES
 select @aux=id from Productos where Nombre like @nom -- OBTENGO EN VARIABLE EL ID DEL PRODUCTO QUE LLEGA DE LA APP
-select @aux2 = count(*) from compras  -- CUENTO LAS COMPRAS QUE TENGO EN LA BASE DE DATOS
-select @aux2 = @aux2 + 1 -- LE SUMO 1 A LAS COMPRAS
-insert into Compras (IdCompra,IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,FCompra)values (@aux2,@aux,@cant,@PC,@PV,@PV-@PC,getdate())
+insert into Compras (IdProducto,Cantidad,PrecioCompra,PrecioVenta,Ganancia,FCompra)values (@aux,@cant,@PC,@PV,@PV-@PC,getdate())
 end
 go
 
@@ -205,7 +203,7 @@ as
 begin
 declare @aux int
 select  @aux = id from Productos where Nombre like @name
-insert into ModiStock (Id,idProducto,Cantidad,Comentario,FechaModificacion,estado,NameProduct) values ((select count(*) from ModiStock)+1,@aux,@cant,@Coment,GETDATE(),1,@name)
+insert into ModiStock (idProducto,Cantidad,Comentario,FechaModificacion,estado,NameProduct) values (@aux,@cant,@Coment,GETDATE(),1,@name)
 end
 go
 
@@ -218,7 +216,7 @@ as
 begin
 declare @aux int
 select  @aux = id from Productos where Nombre like @name
-update Productos set Stock=Stock+(@cant) where Nombre like @name
+update Productos set Stock=Stock+(@cant*-1) where Nombre like @name
 end
 go
 
@@ -246,7 +244,7 @@ create procedure Sp_AgregarCliente(
 )
 as
 begin
-insert into Clientes (ID, DNI, Cp ,Nombre, Apellido,Telefono, correo,Contrasenia ,Fnac, calle, FAlta, Estado) values ((select count(*) from Clientes)+1,@dn,@part,@nom,@ap,@tl,@co,@pass,@fn,@cn,GETDATE(),1)
+insert into Clientes (DNI, Cp ,Nombre, Apellido,Telefono, correo,Contrasenia ,Fnac, calle, FAlta, Estado) values (@dn,@part,@nom,@ap,@tl,@co,@pass,@fn,@cn,GETDATE(),1)
 end 
 go
 
@@ -264,7 +262,7 @@ create trigger ro on clientes
 after insert 
 as 
 begin 
-insert into usuarios values ((select count(*) from Usuarios)+1,(select correo from inserted),(select Contrasenia from inserted),(select Nombre from inserted),(select Apellido from inserted),'Cliente',(select correo from inserted))  
+insert into usuarios values ((select correo from inserted),(select Contrasenia from inserted),(select Nombre from inserted),(select Apellido from inserted),'Cliente',(select correo from inserted))  
 end 
 go
 

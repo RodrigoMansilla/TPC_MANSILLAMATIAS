@@ -10,7 +10,7 @@ namespace AceesoDatos
 {
     public class AccesoDatosManager
     {
-        public static string cadenaConexion = "data source= localhost\\SQLEXPRESS; initial catalog=MansillaRodrigo_DB; integrated security=sspi";
+        public static string cadenaConexion = "data source= localhost\\SQLEXPRESS; initial catalog=MansillaRodrigo3_DB; integrated security=sspi";
         private SqlCommand comando;
         private SqlConnection conexion;
         private SqlDataReader lector;
@@ -111,7 +111,7 @@ namespace AceesoDatos
             private readonly string connetion;
             public ConnectionToSql()
             {
-                connetion = "data source= localhost\\SQLEXPRESS; initial catalog=MansillaRodrigo_DB; integrated security=sspi"; 
+                connetion = "data source= localhost\\SQLEXPRESS; initial catalog=MansillaRodrigo3_DB; integrated security=sspi"; 
 
             }
             protected SqlConnection GetConnection()
