@@ -145,8 +145,8 @@ namespace Negocio
                 accesoDatos.Comando.Parameters.AddWithValue("@precioventa", modificar.PrecioVenta);
                 accesoDatos.abrirConexion();
                 accesoDatos.ejecutarAccion();
-                
 
+                
             }
             catch (Exception ex)
             {

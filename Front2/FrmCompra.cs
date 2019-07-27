@@ -67,7 +67,7 @@ namespace Front2
                 Productolocal.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
 
                 // UPDATEA PRODUCTOS 
-
+                MessageBox.Show("llego aca y mando a modificar");
                 negocio.modificarProducto2(Productolocal);
 
                 // CREA REGISTRO EN TABLA COMPRAS 
