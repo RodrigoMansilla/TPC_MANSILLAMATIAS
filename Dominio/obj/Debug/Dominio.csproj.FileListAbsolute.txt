@@ -31,3 +31,16 @@ D:\Internet Explorer\TPC_RodrigoMansilla\Dominio\bin\Debug\Common.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\Dominio\obj\Debug\Dominio.csproj.CopyComplete
 D:\Internet Explorer\TPC_RodrigoMansilla\Dominio\bin\Debug\itextsharp.dll
 D:\Internet Explorer\TPC_RodrigoMansilla\Dominio\bin\Debug\itextsharp.xml
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\bin\Debug\Dominio.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\bin\Debug\Dominio.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\bin\Debug\Common.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\bin\Debug\itextsharp.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\bin\Debug\Common.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\bin\Debug\itextsharp.xml
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\obj\Debug\Dominio.Properties.Resources.resources
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\obj\Debug\Dominio.csproj.GenerateResource.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\obj\Debug\Dominio.csproj.CopyComplete
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\obj\Debug\Dominio.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Dominio\obj\Debug\Dominio.pdb

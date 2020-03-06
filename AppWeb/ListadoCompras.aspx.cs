@@ -24,7 +24,7 @@ namespace AppWeb
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            labelid.Text = "la concha";
+            labelid.Text = "se rompio";
         }
 
         public int leerIdCliente(string id)

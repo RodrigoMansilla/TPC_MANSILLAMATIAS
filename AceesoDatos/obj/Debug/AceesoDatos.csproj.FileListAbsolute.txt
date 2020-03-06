@@ -30,3 +30,16 @@ D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\bin\Debug\Common.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\obj\Debug\AceesoDatos.csproj.CopyComplete
 D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\bin\Debug\itextsharp.dll
 D:\Internet Explorer\TPC_RodrigoMansilla\AceesoDatos\bin\Debug\itextsharp.xml
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\bin\Debug\AceesoDatos.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\bin\Debug\AceesoDatos.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\bin\Debug\Common.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\bin\Debug\itextsharp.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\bin\Debug\Common.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\bin\Debug\itextsharp.xml
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\obj\Debug\AceesoDatos.csprojAssemblyReference.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\obj\Debug\AceesoDatos.Properties.Resources.resources
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\obj\Debug\AceesoDatos.csproj.GenerateResource.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\obj\Debug\AceesoDatos.csproj.CoreCompileInputs.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\obj\Debug\AceesoDatos.csproj.CopyComplete
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\obj\Debug\AceesoDatos.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\AceesoDatos\obj\Debug\AceesoDatos.pdb

@@ -7,3 +7,12 @@ D:\Internet Explorer\TPC_RodrigoMansilla\Common\obj\Debug\Common.pdb
 D:\Internet Explorer\TPC_RodrigoMansilla\Common\bin\Debug\itextsharp.dll
 D:\Internet Explorer\TPC_RodrigoMansilla\Common\bin\Debug\itextsharp.xml
 D:\Internet Explorer\TPC_RodrigoMansilla\Common\obj\Debug\Common.csproj.CopyComplete
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Common\bin\Debug\Common.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Common\bin\Debug\Common.pdb
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Common\bin\Debug\itextsharp.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Common\bin\Debug\itextsharp.xml
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Common\obj\Debug\Common.csproj.CopyComplete
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Common\obj\Debug\Common.dll
+D:\Internet Explorer\TPC_RodrigoMansilla\TPC_MANSILLAMATIAS\Common\obj\Debug\Common.pdb
