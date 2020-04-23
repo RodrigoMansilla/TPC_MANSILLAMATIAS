@@ -16,6 +16,10 @@
              text-align: center;
          }
 
+         .auto-style2 {
+             height: 261px;
+         }
+
     </style>
 
     <table>
@@ -33,11 +37,11 @@
                 </td>
             </tr>
         <tr>
-            <td>
-        <asp:Button ID="btnVerProductos" runat="server" Height="73px" Text="Ver Productos" Width="324px" OnClick="btnVerProductos_Click" />
-        </td>
-            <td>
+            <td class="auto-style2">
+                &nbsp;</td>
+            <td class="auto-style2">
                 <asp:Button ID="btnVercompras" runat="server" Text="Ver Compras" Height="73px" Width="324px" OnClick="btnVercompras_Click" />
+        <asp:Button ID="btnVerProductos" runat="server" Height="73px" Text="Ver Productos" Width="324px" OnClick="btnVerProductos_Click" />
             </td>
                 </tr>
             </table>
